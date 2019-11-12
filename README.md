@@ -10,3 +10,11 @@ pod install
 cd todo
 yarn ios
 ```
+
+
+## react native ant-design part setup notes
+
+```
+yarn add @ant-design/react-native
+react-native link @ant-design/icons-react-native
+```

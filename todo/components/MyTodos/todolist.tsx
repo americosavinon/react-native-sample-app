@@ -90,7 +90,6 @@ export default class todolist extends Component {
         ];
 
         const style = {
-            justifyContent: 'left',
             height: '100%',
             backgroundColor: 'white',
         } as any;

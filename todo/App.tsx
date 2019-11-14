@@ -48,7 +48,7 @@ export default class App extends React.Component {
             centerComponent={{ text: 'MY Todos', style: { color: '#fff' } }}
             rightComponent={{ icon: 'home', color: '#fff' }}
           />
-          <Text>Dashboard ...</Text>
+          <Text>Hello there!</Text>
         </View>);
       case Constants.TAB_TODOS:
         return (<View style={{ flex: 1, backgroundColor: 'white' }}>

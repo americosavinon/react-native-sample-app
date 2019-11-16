@@ -1,1 +1,0 @@
-## we use this folder for try of expo cli

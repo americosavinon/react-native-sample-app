@@ -15,6 +15,7 @@ class NavLink extends Component {
         return (<FAB.Group
             open={this.state.open}
             icon={this.state.open ? 'minus-box' : 'plus-box'}
+            fabStyle={{ backgroundColor: 'black', marginBottom: 25 }}
             actions={[
                 { icon: 'creation', label: 'Show All', onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL) },
                 { icon: 'creation', label: 'Active', onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE) },

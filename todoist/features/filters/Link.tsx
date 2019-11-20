@@ -8,7 +8,6 @@ const Link = ({ active, children, setVisibilityFilter, filter }) => (
         <Button onPress={() => setVisibilityFilter(filter)}
             disabled={active}
             mode="text"
-
             labelStyle={{ textDecorationLine: active ? 'none' : 'underline', color: active ? 'purple' : 'gray' }}
         >
             {children}

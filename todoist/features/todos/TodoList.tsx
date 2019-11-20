@@ -2,20 +2,23 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 import { List } from 'react-native-paper';
+import { FlatList, StyleSheet, Text, ScrollView, View, ActivityIndicator } from 'react-native';
 
 const TodoList = ({ todos, toggleTodo, removeTodo }) => (
-    <List.Section>
-        <List.Subheader>My Todos:</List.Subheader>
-        {todos.map(todo => (
-            <Todo key={todo.id} {...todo} onClick={() => {
-                toggleTodo(todo.id)
-            }
-            } onDel={() => {
-                removeTodo(todo.id)
-            }
-            } />
-        ))}
-    </List.Section>
+    <ScrollView>
+        <List.Section>
+            <List.Subheader>My Todos:</List.Subheader>
+            {todos.map(todo => (
+                <Todo key={todo.id} {...todo} onClick={() => {
+                    toggleTodo(todo.id)
+                }
+                } onDel={() => {
+                    removeTodo(todo.id)
+                }
+                } />
+            ))}
+        </List.Section>
+    </ScrollView>
 )
 
 TodoList.propTypes = {

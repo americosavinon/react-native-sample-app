@@ -23,7 +23,7 @@ const todosSlice = createSlice({
             }
         },
         removeTodo(state, action) {
-            return state.filter((todo, i) => i !== action.payload.index)
+            return state.filter(todo => todo.id !== action.payload)
         }
     }
 })

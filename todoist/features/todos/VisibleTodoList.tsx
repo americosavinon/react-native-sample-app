@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { createSelector } from '@reduxjs/toolkit'
-import { toggleTodo } from './todosSlice'
+import { toggleTodo, removeTodo } from './todosSlice'
 import TodoList from './TodoList'
 import { VisibilityFilters } from '../filters/filtersSlice'
 
@@ -27,7 +27,7 @@ const mapStateToProps = state => ({
     todos: selectVisibleTodos(state)
 })
 
-const mapDispatchToProps = { toggleTodo }
+const mapDispatchToProps = { toggleTodo, removeTodo }
 
 export default connect(
     mapStateToProps,

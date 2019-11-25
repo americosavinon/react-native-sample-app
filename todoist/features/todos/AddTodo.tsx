@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from './todosSlice'
 import { VisibilityFilters, setVisibilityFilter } from '../filters/filtersSlice'
+import { ToggleFilter } from '../toggles/toggleSlice'
 import { View } from 'react-native'
 import { TextInput, Button } from 'react-native-paper'
 
@@ -10,6 +11,12 @@ const AddTodo = (props) => {
 
     const onChange = e => {
         setTodoText(e)
+    }
+
+    console.log(props.toggleState)
+
+    if (props.toggleState == ToggleFilter.HIDE) {
+        return null
     }
 
     return (
@@ -42,9 +49,15 @@ const AddTodo = (props) => {
     )
 }
 
+const mapStateToProps = function (state) {
+    return {
+        toggleState: state.toggleFilter,
+    }
+}
+
 const mapDispatchToProps = { addTodo, setVisibilityFilter }
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(AddTodo)

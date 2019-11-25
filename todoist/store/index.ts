@@ -25,6 +25,7 @@ const preloadedState = {
 }
 
 const persistConfig = {
+    version: 1,
     key: 'root',
     storage: AsyncStorage
 };

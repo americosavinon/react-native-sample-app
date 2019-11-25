@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-// we have 3 item as initialized
-let nextTodoId = 4
+import uuid from 'uuid/v1'
 
 const todosSlice = createSlice({
     name: 'todos',
@@ -13,7 +11,7 @@ const todosSlice = createSlice({
                 state.push({ id, text, completed: false })
             },
             prepare(text) {
-                return { payload: { text, id: nextTodoId++ } }
+                return { payload: { text, id: uuid() } }
             }
         },
         toggleTodo(state, action) {

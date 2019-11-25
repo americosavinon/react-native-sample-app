@@ -915,6 +915,11 @@
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@manaflair/redux-batch/-/redux-batch-1.0.0.tgz#3af65dc3ac4ba81cf115c96f9759a6d4077b49f5"
   integrity sha1-OvZdw6xLqBzxFclvl1mm1Ad7SfU=
 
+"@react-native-community/async-storage@^1.6.3":
+  version "1.6.3"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/async-storage/-/async-storage-1.6.3.tgz#1a713e8c5cacd543ab8539080a5ce57ad917da88"
+  integrity sha1-GnE+jFys1UOrhTkIClzletkX2og=
+
 "@react-native-community/cli@^1.2.1":
   version "1.12.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/cli/-/cli-1.12.0.tgz#f4cbc2204af63a87d5736d2fa6a018c1fd5efd44"
@@ -4714,6 +4719,11 @@ redux-logger@^3.0.6:
   integrity sha1-91VZZvMJjzyIYExEnPC69XeCdL8=
   dependencies:
     deep-diff "^0.3.5"
+
+redux-persist@^6.0.0:
+  version "6.0.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/redux-persist/-/redux-persist-6.0.0.tgz#b4d2972f9859597c130d40d4b146fecdab51b3a8"
+  integrity sha1-tNKXL5hZWXwTDUDUsUb+zatRs6g=
 
 redux-thunk@^2.3.0:
   version "2.3.0"

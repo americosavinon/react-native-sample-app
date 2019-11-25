@@ -2,15 +2,15 @@ import React from 'react';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import { StyleSheet, View } from 'react-native';
-import { Provider as PaperProvider, Text, Button } from 'react-native-paper';
+import { Provider as PaperProvider, Text, Button, ActivityIndicator } from 'react-native-paper';
 import { Provider as StoreProvider } from 'react-redux';
-import NavBar from './components/Navigation';
 import HeaderNav from './components/Header';
-import store from './store'
+import { store, persistor } from './store'
 import VisibleTodoList from './features/todos/VisibleTodoList';
 import Footer from './features/filters/Footer';
 import AddTodo from './features/todos/AddTodo';
 import NavLink from './features/filters/NavLink';
+import { PersistGate } from 'redux-persist/integration/react'
 
 export default class App extends React.Component {
 
@@ -30,16 +30,24 @@ export default class App extends React.Component {
     this.setState({ isReady: true });
   }
 
+  renderLoading = () => {
+    <View style={styles.container}>
+      <ActivityIndicator size="large" />
+    </View>
+  }
+
   render() {
     return (
       <StoreProvider store={store}>
-        <PaperProvider>
-          <HeaderNav></HeaderNav>
-          <AddTodo></AddTodo>
-          <VisibleTodoList />
-          <Footer></Footer>
-          <NavLink></NavLink>
-        </PaperProvider>
+        <PersistGate loading={this.renderLoading()} persistor={persistor}>
+          <PaperProvider>
+            <HeaderNav></HeaderNav>
+            <AddTodo></AddTodo>
+            <VisibleTodoList />
+            <Footer></Footer>
+            {/* <NavLink></NavLink> */}
+          </PaperProvider>
+        </PersistGate>
       </StoreProvider>
     );
   }

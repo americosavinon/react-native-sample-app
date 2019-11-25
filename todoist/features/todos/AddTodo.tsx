@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from './todosSlice'
+import { VisibilityFilters, setVisibilityFilter } from '../filters/filtersSlice'
 import { View } from 'react-native'
-import { FAB, Portal, TextInput, Button } from 'react-native-paper'
+import { TextInput, Button } from 'react-native-paper'
 
-const mapDispatch = { addTodo }
-
-const AddTodo = ({ addTodo }) => {
+const AddTodo = (props) => {
     const [todoText, setTodoText] = useState('')
 
     const onChange = e => {
-        // console.log(e)
         setTodoText(e)
     }
 
@@ -30,18 +28,23 @@ const AddTodo = ({ addTodo }) => {
                 onChangeText={onChange}
                 style={{ width: '100%' }}
             />
-            <Button mode="contained" icon="plus-box" uppercase={false} style={{ width: 180, marginTop: 10, marginLeft: 'auto', marginRight: 10 }} onPress={() => {
-                if (!todoText.trim()) {
-                    return
-                }
-                addTodo(todoText)
-                setTodoText('')
-            }}>Add Todo</Button>
+            <Button mode="contained" icon="plus-box" uppercase={false}
+                style={{ width: 180, marginTop: 10, marginLeft: 'auto', marginRight: 10 }} onPress={() => {
+                    if (!todoText.trim()) {
+                        return
+                    }
+                    props.addTodo(todoText)
+                    setTodoText('')
+                    // switch to all tasks
+                    props.setVisibilityFilter(VisibilityFilters.SHOW_ALL)
+                }}>Add Todo</Button>
         </View>
     )
 }
 
+const mapDispatchToProps = { addTodo, setVisibilityFilter }
+
 export default connect(
     null,
-    mapDispatch
+    mapDispatchToProps
 )(AddTodo)

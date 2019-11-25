@@ -13,8 +13,6 @@ const AddTodo = (props) => {
         setTodoText(e)
     }
 
-    console.log(props.toggleState)
-
     if (props.toggleState == ToggleFilter.HIDE) {
         return null
     }

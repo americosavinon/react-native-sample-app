@@ -27,7 +27,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <ImageBackground source={require('./assets/images/background2.jpg')} style={{ width: '100%', flex: 1 }}>
+      <ImageBackground source={require('./assets/images/background4.jpg')} style={styles.imageContainer}>
         <StoreProvider store={store}>
           <PersistGate loading={this.renderLoading()} persistor={persistor}>
             <PaperProvider>
@@ -43,5 +43,12 @@ class App extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  imageContainer: {
+    width: '100%',
+    flex: 1,
+  },
+});
 
 export default App;

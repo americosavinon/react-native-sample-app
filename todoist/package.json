@@ -1,4 +1,7 @@
 {
+  "name": "todoist",
+  "version": "1.0.2",
+  "description": "Todoist app demo for React Native",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "lint-ts": "eslint --fix './**/*.{ts,tsx}'",
@@ -9,7 +12,8 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "build-ios": "expo build:ios",
-    "test": "jest"
+    "test": "jest",
+    "release": "release-it"
   },
   "keywords": [
     "android",
@@ -46,6 +50,7 @@
     "@rally/stylelint-config": "^0.1.0",
     "@rally/tsconfig": "^0.0.3",
     "@react-native-community/eslint-config": "^0.0.5",
+    "@release-it/conventional-changelog": "^1.1.0",
     "@types/react": "^16.8.23",
     "@types/react-native": "^0.57.65",
     "@types/redux-logger": "^3.0.7",
@@ -54,6 +59,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "jest": "^24.9.0",
     "prettier": "1.19.1",
+    "release-it": "^12.4.3",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",

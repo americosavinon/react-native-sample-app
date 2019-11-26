@@ -1,43 +1,37 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux';
 
 // We'll use redux-logger just as an example of adding another middleware
-import { createLogger } from 'redux-logger'
+import { createLogger } from 'redux-logger';
 
 // And use redux-batch as an example of adding enhancers
-import { reduxBatch } from '@manaflair/redux-batch'
-import { persistStore, persistReducer } from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist';
 
-import rootReducer from '../reducers'
-import { AsyncStorage } from 'react-native'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import rootReducer from '../reducers';
+import { AsyncStorage } from 'react-native';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const middleware = []
+const middleware = [];
 
-if (__DEV__) {
-    middleware.push(createLogger())
+if (process.env.NODE_ENV !== 'production') {
+  middleware.push(createLogger());
 }
 
-const preloadedState = {
-    todos: [
-    ],
-    visibilityFilter: 'SHOW_ALL'
-}
+// const preloadedState = {
+//   todos: [],
+//   visibilityFilter: 'SHOW_ALL'
+// };
 
 const persistConfig = {
-    version: 1,
-    key: 'root',
-    storage: AsyncStorage
+  version: 1,
+  key: 'root',
+  storage: AsyncStorage
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducer)
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = createStore(persistedReducer,
-    undefined,
-    composeWithDevTools(applyMiddleware(...middleware))
-)
+export const store = createStore(persistedReducer, undefined, composeWithDevTools(applyMiddleware(...middleware)));
 
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);
 
 /*
 const store = configureStore({
@@ -47,10 +41,3 @@ const store = configureStore({
     preloadedState,
     enhancers: [reduxBatch]
 })*/
-
-// The store has been created with these options:
-// - The slice reducers were automatically passed to combineReducers()
-// - redux-thunk and redux-logger were added as middleware
-// - The Redux DevTools Extension is disabled for production
-// - The middleware, batch, and devtools enhancers were automatically composed together
-// export default store

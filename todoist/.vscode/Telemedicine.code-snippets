@@ -1,0 +1,54 @@
+{
+  // Place your telemedicine-ui workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  "Thunk Action Creator": {
+    "scope": "javascript,typescript",
+    "prefix": "thunk",
+    "body": [
+      "export const ${1:actionName} = (): ThunkResult => (dispatch, getState, { sdk }) => {",
+      "  $0",
+      "}"
+    ],
+    "description": "Thunk Action Creator with void return type"
+  },
+  "Thunk Action Creator with ReturnType": {
+    "scope": "javascript,typescript",
+    "prefix": "thunkr",
+    "body": [
+      "export const ${1:actionName} = (): ThunkResult<${2:ReturnType}> => (dispatch, getState, { sdk }) => {",
+      "  $0",
+      "}"
+    ],
+    "description": "Thunk Action Creator with ReturnType"
+  },
+  "Async Thunk Action Creator": {
+    "scope": "javascript,typescript",
+    "prefix": "athunk",
+    "body": [
+      "export const ${1:actionName} = (): ThunkResult => async (dispatch, getState, { sdk }) => {",
+      "  $0",
+      "}"
+    ],
+    "description": "Async Thunk Action Creator"
+  },
+  "Async Thunk Action Creator with ReturnType": {
+    "scope": "javascript,typescript",
+    "prefix": "athunkr",
+    "body": [
+      "export const ${1:actionName} = (): ThunkResult<${2:ReturnType}> => async (dispatch, getState, { sdk }) => {",
+      "  $0",
+      "}"
+    ],
+    "description": "Async Thunk Action Creator with ReturnType"
+  },
+  "Tell TypeScript to shut up": {
+    "scope": "javascript,typescript",
+    "prefix": "stfu",
+    "body": ["// @ts-ignore"],
+    "description": "Tell TypeScript to shut up. I will add types later"
+  }
+}

@@ -10,17 +10,8 @@ import AddTodo from './features/todos/AddTodo';
 import { PersistGate } from 'redux-persist/integration/react';
 
 class App extends React.Component {
-  styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-
   renderLoading = () => {
-    <View style={this.styles.container}>
+    <View style={styles.container}>
       <ActivityIndicator size="large" />
     </View>;
   };
@@ -48,6 +39,12 @@ const styles = StyleSheet.create({
   imageContainer: {
     width: '100%',
     flex: 1,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 

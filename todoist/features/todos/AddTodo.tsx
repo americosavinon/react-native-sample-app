@@ -27,7 +27,7 @@ const AddTodo = props => {
         justifyContent: 'space-around',
         flexWrap: 'wrap',
         height: 'auto',
-        borderRadius: 10
+        borderRadius: 10,
       }}
     >
       <TextInput label="What you want to do?" value={todoText} onChangeText={onChange} style={{ width: '100%' }} />
@@ -54,7 +54,7 @@ const AddTodo = props => {
 
 const mapStateToProps = function(state) {
   return {
-    toggleState: state.toggleFilter
+    toggleState: state.toggleFilter,
   };
 };
 

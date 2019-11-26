@@ -21,7 +21,7 @@ const selectVisibleTodos = createSelector([selectTodos, selectFilter], (todos, f
 });
 
 const mapStateToProps = state => ({
-  todos: selectVisibleTodos(state)
+  todos: selectVisibleTodos(state),
 });
 
 const mapDispatchToProps = { toggleTodo, removeTodo };

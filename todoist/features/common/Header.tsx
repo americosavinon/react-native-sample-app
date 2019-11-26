@@ -10,7 +10,7 @@ class HeaderNav extends React.Component {
   };
 
   _handleMore = () => {
-    if (this.props.toggleState == ToggleFilter.SHOW) {
+    if (this.props.toggleState === ToggleFilter.SHOW) {
       this.props.setToggleFilter(ToggleFilter.HIDE);
     } else {
       this.props.setToggleFilter(ToggleFilter.SHOW);
@@ -23,7 +23,7 @@ class HeaderNav extends React.Component {
         <Appbar.Action icon="exit-to-app" onPress={this._goBack} />
         <Appbar.Content title="My Todos" subtitle="Simple Demo" />
         <Appbar.Action
-          icon={this.props.toggleState == ToggleFilter.SHOW ? 'minus' : 'plus'}
+          icon={this.props.toggleState === ToggleFilter.SHOW ? 'minus' : 'plus'}
           onPress={this._handleMore}
         />
       </Appbar.Header>
@@ -33,7 +33,7 @@ class HeaderNav extends React.Component {
 
 const mapStateToProps = function(state) {
   return {
-    toggleState: state.toggleFilter
+    toggleState: state.toggleFilter,
   };
 };
 

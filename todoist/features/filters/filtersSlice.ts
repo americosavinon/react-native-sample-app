@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
   SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
+  SHOW_ACTIVE: 'SHOW_ACTIVE',
 };
 
 const filtersSlice = createSlice({
@@ -13,8 +13,8 @@ const filtersSlice = createSlice({
     setVisibilityFilter(state, action) {
       // console.log(state);
       return action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const { setVisibilityFilter } = filtersSlice.actions;

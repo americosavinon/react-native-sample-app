@@ -7,7 +7,7 @@ class NavLink extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      open: false
+      open: false,
     };
   }
 
@@ -21,18 +21,18 @@ class NavLink extends Component {
           {
             icon: 'creation',
             label: 'Show All',
-            onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL)
+            onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL),
           },
           {
             icon: 'creation',
             label: 'Active',
-            onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE)
+            onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_ACTIVE),
           },
           {
             icon: 'creation',
             label: 'Completed',
-            onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED)
-          }
+            onPress: () => this.props.setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED),
+          },
         ]}
         onStateChange={({ open }) => this.setState({ open })}
         onPress={() => {

@@ -6,5 +6,5 @@ import toggleFilterReducer from '../features/toggles/toggleSlice';
 export default combineReducers({
   todos: todosReducer,
   visibilityFilter: visibilityFilterReducer,
-  toggleFilter: toggleFilterReducer
+  toggleFilter: toggleFilterReducer,
 });

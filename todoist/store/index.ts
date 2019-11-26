@@ -24,7 +24,7 @@ if (process.env.NODE_ENV !== 'production') {
 const persistConfig = {
   version: 1,
   key: 'root',
-  storage: AsyncStorage
+  storage: AsyncStorage,
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

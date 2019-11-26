@@ -12,13 +12,13 @@ const Todo = ({ onClick, onDel, completed, text, id }) => {
         textDecorationLine: completed ? 'line-through' : 'none',
         borderWidth: 0,
         width: '100%',
-        marginTop: 5
+        marginTop: 5,
       }}
       onPress={() => {
         onClick();
       }}
-      left={props => <List.Icon style={styles.checkboxButton} icon={completed ? 'check-circle' : 'panorama-fisheye'} />}
-      right={props => (
+      left={() => <List.Icon style={styles.checkboxButton} icon={completed ? 'check-circle' : 'panorama-fisheye'} />}
+      right={() => (
         <IconButton
           icon="delete"
           style={styles.deleteButton}
@@ -29,7 +29,7 @@ const Todo = ({ onClick, onDel, completed, text, id }) => {
           }}
         />
       )}
-    ></List.Item>
+    />
   );
 };
 
@@ -38,7 +38,7 @@ Todo.propTypes = {
   onDel: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
   text: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -46,12 +46,12 @@ const styles = StyleSheet.create({
     width: 30,
     height: 25,
     borderWidth: 0,
-    marginTop: 15
+    marginTop: 15,
   },
   deleteButton: {
     borderWidth: 0,
     marginTop: 12,
-    width: 32
+    width: 32,
   },
   todoItemContainer: {
     borderRadius: 10,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     shadowColor: 'white',
     shadowOffset: {
       width: 0,
-      height: 5
+      height: 5,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     marginBottom: 6,
     marginLeft: 5,
     marginRight: 5,
-    paddingTop: 0
-  }
+    paddingTop: 0,
+  },
 });
 
 export default Todo;

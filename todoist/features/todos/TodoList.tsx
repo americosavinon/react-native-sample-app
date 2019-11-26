@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Todo from './Todo';
 import { List } from 'react-native-paper';
-import { FlatList, StyleSheet, Text, ScrollView, View, ActivityIndicator } from 'react-native';
+import { ScrollView } from 'react-native';
 
 const TodoList = ({ todos, toggleTodo, removeTodo }) => (
   <ScrollView>
@@ -29,11 +29,11 @@ TodoList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired
+      text: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
   toggleTodo: PropTypes.func.isRequired,
-  removeTodo: PropTypes.func.isRequired
+  removeTodo: PropTypes.func.isRequired,
 };
 
 export default TodoList;

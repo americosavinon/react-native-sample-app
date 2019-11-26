@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
-  extends: ['plugin:@typescript-eslint/recommended', '@rally'],
+  extends: ['@rally', '@react-native-community'], // @react-native-community, we can optional add community eslint rule
   rules: {
-    '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: false }]
+    '@typescript-eslint/no-use-before-define': ['error', { variables: false, functions: true, classes: true }]
   }
 };

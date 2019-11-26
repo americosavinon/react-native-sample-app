@@ -15,8 +15,8 @@ class App extends React.Component {
       flex: 1,
       backgroundColor: '#fff',
       alignItems: 'center',
-      justifyContent: 'center'
-    }
+      justifyContent: 'center',
+    },
   });
 
   renderLoading = () => {
@@ -31,10 +31,10 @@ class App extends React.Component {
         <StoreProvider store={store}>
           <PersistGate loading={this.renderLoading()} persistor={persistor}>
             <PaperProvider>
-              <HeaderNav></HeaderNav>
-              <AddTodo></AddTodo>
+              <HeaderNav />
+              <AddTodo />
               <VisibleTodoList />
-              <Footer></Footer>
+              <Footer />
               {/* <NavLink></NavLink> */}
             </PaperProvider>
           </PersistGate>

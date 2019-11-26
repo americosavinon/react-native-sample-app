@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const ToggleFilter = {
   SHOW: 'SHOW',
-  HIDE: 'HIDE'
+  HIDE: 'HIDE',
 };
 
 const toggleSlice = createSlice({
@@ -12,8 +12,8 @@ const toggleSlice = createSlice({
     setToggleFilter(state, action) {
       // console.log(state);
       return action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const { setToggleFilter } = toggleSlice.actions;

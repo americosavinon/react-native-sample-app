@@ -12,7 +12,7 @@ const todosSlice = createSlice({
       },
       prepare(text) {
         return { payload: { text, id: uuid() } };
-      }
+      },
     },
     toggleTodo(state, action) {
       const todo = state.find(todo => todo.id === action.payload);
@@ -22,8 +22,8 @@ const todosSlice = createSlice({
     },
     removeTodo(state, action) {
       return state.filter(todo => todo.id !== action.payload);
-    }
-  }
+    },
+  },
 });
 
 export const { addTodo, toggleTodo, removeTodo } = todosSlice.actions;

@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderColor: 'gray',
     backgroundColor: 'white',
-    paddingBottom: 10
-  }
+    paddingBottom: 10,
+  },
 });
 
 const Footer = () => (

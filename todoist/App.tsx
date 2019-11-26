@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ImageBackground } from 'react-native';
 import { Provider as PaperProvider, Text, Button, ActivityIndicator } from 'react-native-paper';
 import { Provider as StoreProvider } from 'react-redux';
 import HeaderNav from './components/Header';
@@ -38,17 +38,19 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <StoreProvider store={store}>
-        <PersistGate loading={this.renderLoading()} persistor={persistor}>
-          <PaperProvider>
-            <HeaderNav></HeaderNav>
-            <AddTodo></AddTodo>
-            <VisibleTodoList />
-            <Footer></Footer>
-            {/* <NavLink></NavLink> */}
-          </PaperProvider>
-        </PersistGate>
-      </StoreProvider>
+      <ImageBackground source={require('./assets/images/background2.jpg')} style={{ width: '100%', flex: 1 }}>
+        <StoreProvider store={store}>
+          <PersistGate loading={this.renderLoading()} persistor={persistor}>
+            <PaperProvider>
+              <HeaderNav></HeaderNav>
+              <AddTodo></AddTodo>
+              <VisibleTodoList />
+              <Footer></Footer>
+              {/* <NavLink></NavLink> */}
+            </PaperProvider>
+          </PersistGate>
+        </StoreProvider>
+      </ImageBackground >
     );
   }
 }

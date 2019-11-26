@@ -7,7 +7,7 @@ import { FlatList, StyleSheet, Text, ScrollView, View, ActivityIndicator } from 
 const TodoList = ({ todos, toggleTodo, removeTodo }) => (
     <ScrollView>
         <List.Section>
-            <List.Subheader>My Todos:</List.Subheader>
+            <List.Subheader style={{ color: 'white' }} >My Todos:</List.Subheader>
             {todos.map(todo => (
                 <Todo key={todo.id} {...todo} onClick={() => {
                     toggleTodo(todo.id)

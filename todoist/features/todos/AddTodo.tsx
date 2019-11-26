@@ -20,12 +20,13 @@ const AddTodo = (props) => {
     return (
         <View style={{
             top: 8,
-            paddingLeft: 2,
-            paddingRight: 2,
+            paddingLeft: 5,
+            paddingRight: 5,
             flexDirection: "row",
             justifyContent: "space-around",
             flexWrap: "wrap",
-            height: 'auto'
+            height: 'auto',
+            borderRadius: 10,
         }}>
             <TextInput
                 label='What you want to do?'

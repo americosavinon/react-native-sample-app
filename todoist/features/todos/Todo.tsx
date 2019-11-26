@@ -1,28 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { List, Colors, Button, IconButton } from 'react-native-paper';
 import { View, StyleSheet } from 'react-native'
 
-const Todo = ({ onClick, onDel, completed, text, id }) => (
-    <View style={styles.todoItemContainer}>
-        <List.Icon color={Colors.blue500} icon={completed ? 'check' : 'bookmark'} style={{ borderWidth: 0, width: 20, height: 20 }} />
+const Todo = ({ onClick, onDel, completed, text, id }) => {
+
+    return (
         <List.Item title={text}
-            style={{ padding: 1, borderWidth: 0, width: '70%' }}
-            titleStyle={{ textDecorationLine: completed ? 'line-through' : 'none', borderWidth: 0 }}
-            onPress={onClick}
+            style={styles.todoItemContainer}
+            titleStyle={{ textDecorationLine: completed ? 'line-through' : 'none', borderWidth: 0, width: '100%', marginTop: 5 }}
+            onPress={() => {
+                onClick()
+            }}
+            left={props => <List.Icon style={styles.checkboxButton} icon={completed ? 'check-circle' : 'panorama-fisheye'} />}
+            right={props => <IconButton
+                icon="delete"
+                style={styles.deleteButton}
+                color={Colors.black}
+                size={20}
+                onPress={() => {
+                    onDel(id)
+                }
+                } />}
         >
         </List.Item>
-        <IconButton
-            icon="delete"
-            color={Colors.black}
-            size={20}
-            onPress={() => {
-                onDel(id)
-            }
-            }
-        />
-    </View>
-)
+    )
+}
 
 Todo.propTypes = {
     onClick: PropTypes.func.isRequired,
@@ -33,25 +36,36 @@ Todo.propTypes = {
 }
 
 const styles = StyleSheet.create({
+    checkboxButton: {
+        width: 30,
+        height: 25,
+        borderWidth: 0,
+        marginTop: 15
+    },
+    deleteButton: {
+        borderWidth: 0,
+        marginTop: 12,
+        width: 32
+    },
     todoItemContainer: {
-        flexDirection: 'row',
         borderRadius: 10,
+        height: 45,
         justifyContent: "space-around",
         borderWidth: 1,
         borderColor: 'white',
-        backgroundColor: '#fff',
-        shadowColor: "gray",
+        backgroundColor: 'white',
+        shadowColor: "white",
         shadowOffset: {
             width: 0,
-            height: 2,
+            height: 5,
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
         marginBottom: 6,
-        marginLeft: 3,
-        marginRight: 3,
-        paddingTop: 5,
+        marginLeft: 5,
+        marginRight: 5,
+        paddingTop: 0
     },
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ImageBackground } from 'react-native';
+import { StyleSheet, View, ImageBackground, Button } from 'react-native';
 import { Provider as PaperProvider, ActivityIndicator } from 'react-native-paper';
 import { Provider as StoreProvider } from 'react-redux';
 import HeaderNav from './features/common/Header';
@@ -8,12 +8,19 @@ import VisibleTodoList from './features/todos/VisibleTodoList';
 import Footer from './features/filters/Footer';
 import AddTodo from './features/todos/AddTodo';
 import { PersistGate } from 'redux-persist/integration/react';
+import MyProfile from './features/common/MyProfile';
 
 class App extends React.Component {
+  profile: any;
+
   renderLoading = () => {
     <View style={styles.container}>
       <ActivityIndicator size="large" />
     </View>;
+  };
+
+  showProfile = () => {
+    this.profile.toggleSnapPoints();
   };
 
   render() {
@@ -22,11 +29,15 @@ class App extends React.Component {
         <StoreProvider store={store}>
           <PersistGate loading={this.renderLoading()} persistor={persistor}>
             <PaperProvider>
-              <HeaderNav />
+              <HeaderNav toggleFunc={this.showProfile} />
               <AddTodo />
               <VisibleTodoList />
               <Footer />
-              {/* <NavLink></NavLink> */}
+              <MyProfile
+                ref={profile => {
+                  this.profile = profile;
+                }}
+              />
             </PaperProvider>
           </PersistGate>
         </StoreProvider>

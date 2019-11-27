@@ -1,10 +1,13 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import { Appbar } from 'react-native-paper';
 import { connect } from 'react-redux';
 import { ToggleFilter, setToggleFilter } from '../toggles/toggleSlice';
 
 class HeaderNav extends React.Component {
-  _goBack = () => {};
+  _toggleProfile = () => {
+    this.props.toggleFunc();
+  };
 
   _handleMore = () => {
     if (this.props.toggleState === ToggleFilter.SHOW) {
@@ -17,7 +20,7 @@ class HeaderNav extends React.Component {
   render() {
     return (
       <Appbar.Header>
-        <Appbar.Action icon="home" onPress={this._goBack} />
+        <Appbar.Action icon="home" onPress={this._toggleProfile} />
         <Appbar.Content title="My Todos" subtitle="Simple Demo" />
         <Appbar.Action
           icon={this.props.toggleState === ToggleFilter.SHOW ? 'minus' : 'plus'}
@@ -27,6 +30,10 @@ class HeaderNav extends React.Component {
     );
   }
 }
+
+HeaderNav.protoTypes = {
+  toggleFunc: PropTypes.func,
+};
 
 const mapStateToProps = function(state) {
   return {

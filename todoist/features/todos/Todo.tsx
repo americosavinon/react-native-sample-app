@@ -4,32 +4,33 @@ import { List, Colors, IconButton } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 
 const Todo = ({ onClick, onDel, completed, text, id }) => {
+  const renderLeft = () => (
+    <List.Icon style={styles.checkboxButton} icon={completed ? 'check-circle' : 'panorama-fisheye'} />
+  );
+
+  const renderRight = () => (
+    <IconButton
+      icon="delete"
+      style={styles.deleteButton}
+      color={Colors.black}
+      size={20}
+      onPress={() => {
+        onDel(id);
+      }}
+    />
+  );
+
   return (
     <List.Item
       title={text}
       rippleColor={Colors.purple100}
       style={styles.todoItemContainer}
-      titleStyle={{
-        textDecorationLine: completed ? 'line-through' : 'none',
-        borderWidth: 0,
-        width: '100%',
-        marginTop: 5,
-      }}
+      titleStyle={completed ? styles.completeItem : styles.noncompleteItem}
       onPress={() => {
         onClick();
       }}
-      left={() => <List.Icon style={styles.checkboxButton} icon={completed ? 'check-circle' : 'panorama-fisheye'} />}
-      right={() => (
-        <IconButton
-          icon="delete"
-          style={styles.deleteButton}
-          color={Colors.black}
-          size={20}
-          onPress={() => {
-            onDel(id);
-          }}
-        />
-      )}
+      left={renderLeft}
+      right={renderRight}
     />
   );
 };
@@ -43,6 +44,18 @@ Todo.propTypes = {
 };
 
 const styles = StyleSheet.create({
+  completeItem: {
+    textDecorationLine: 'line-through',
+    borderWidth: 0,
+    width: '100%',
+    marginTop: 5,
+  },
+  noncompleteItem: {
+    textDecorationLine: 'none',
+    borderWidth: 0,
+    width: '100%',
+    marginTop: 5,
+  },
   checkboxButton: {
     width: 30,
     height: 25,

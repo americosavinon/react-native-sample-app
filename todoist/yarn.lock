@@ -7885,6 +7885,11 @@ realpath-native@^1.1.0:
   dependencies:
     util.promisify "^1.0.0"
 
+reanimated-bottom-sheet@^1.0.0-alpha.18:
+  version "1.0.0-alpha.18"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/reanimated-bottom-sheet/-/reanimated-bottom-sheet-1.0.0-alpha.18.tgz#f1f3ddbcee67473000647173b33bf41b1c069739"
+  integrity sha1-8fPdvO5nRzAAZHFzszv0GxwGlzk=
+
 rechoir@^0.6.2:
   version "0.6.2"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"

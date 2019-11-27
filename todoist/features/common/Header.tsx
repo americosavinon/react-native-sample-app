@@ -2,12 +2,9 @@ import * as React from 'react';
 import { Appbar } from 'react-native-paper';
 import { connect } from 'react-redux';
 import { ToggleFilter, setToggleFilter } from '../toggles/toggleSlice';
-import { Alert, BackHandler } from 'react-native';
 
 class HeaderNav extends React.Component {
-  _goBack = () => {
-    Alert.alert('ready to exit?', '', [{ text: 'OK', onPress: () => BackHandler.exitApp() }]);
-  };
+  _goBack = () => {};
 
   _handleMore = () => {
     if (this.props.toggleState === ToggleFilter.SHOW) {
@@ -20,7 +17,7 @@ class HeaderNav extends React.Component {
   render() {
     return (
       <Appbar.Header>
-        <Appbar.Action icon="exit-to-app" onPress={this._goBack} />
+        <Appbar.Action icon="home" onPress={this._goBack} />
         <Appbar.Content title="My Todos" subtitle="Simple Demo" />
         <Appbar.Action
           icon={this.props.toggleState === ToggleFilter.SHOW ? 'minus' : 'plus'}

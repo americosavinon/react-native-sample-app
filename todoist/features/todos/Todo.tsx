@@ -7,6 +7,7 @@ const Todo = ({ onClick, onDel, completed, text, id }) => {
   return (
     <List.Item
       title={text}
+      rippleColor={Colors.purple100}
       style={styles.todoItemContainer}
       titleStyle={{
         textDecorationLine: completed ? 'line-through' : 'none',
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     shadowColor: 'white',
     shadowOffset: {
       width: 0,
-      height: 5,
+      height: 10,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,

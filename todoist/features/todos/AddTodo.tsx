@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { addTodo } from './todosSlice';
 import { VisibilityFilters, setVisibilityFilter } from '../filters/filtersSlice';
 import { ToggleFilter } from '../toggles/toggleSlice';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 const AddTodo = props => {
@@ -13,29 +13,18 @@ const AddTodo = props => {
     setTodoText(e);
   };
 
-  if (props.toggleState == ToggleFilter.HIDE) {
+  if (props.toggleState === ToggleFilter.HIDE) {
     return null;
   }
 
   return (
-    <View
-      style={{
-        top: 8,
-        paddingLeft: 5,
-        paddingRight: 5,
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        flexWrap: 'wrap',
-        height: 'auto',
-        borderRadius: 10,
-      }}
-    >
-      <TextInput label="What you want to do?" value={todoText} onChangeText={onChange} style={{ width: '100%' }} />
+    <View style={styles.container}>
+      <TextInput label="What you want to do?" value={todoText} onChangeText={onChange} style={styles.taskInput} />
       <Button
         mode="contained"
         icon="plus-box"
         uppercase={false}
-        style={{ width: 180, marginTop: 10, marginLeft: 'auto', marginRight: 10 }}
+        style={styles.saveButton}
         onPress={() => {
           if (!todoText.trim()) {
             return;
@@ -51,6 +40,28 @@ const AddTodo = props => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    top: 8,
+    paddingLeft: 5,
+    paddingRight: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    height: 'auto',
+    borderRadius: 10,
+  },
+  taskInput: {
+    width: '100 %',
+  },
+  saveButton: {
+    width: 180,
+    marginTop: 10,
+    marginLeft: 'auto',
+    marginRight: 10,
+  },
+});
 
 const mapStateToProps = function(state) {
   return {

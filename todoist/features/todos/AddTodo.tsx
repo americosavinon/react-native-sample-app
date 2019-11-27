@@ -1,65 +1,176 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import BottomSheet from 'reanimated-bottom-sheet';
+import { TextInput, Button } from 'react-native-paper';
 import { connect } from 'react-redux';
 import { addTodo } from './todosSlice';
+import { ToggleFilter, setToggleFilter } from '../toggles/toggleSlice';
 import { VisibilityFilters, setVisibilityFilter } from '../filters/filtersSlice';
-import { ToggleFilter } from '../toggles/toggleSlice';
-import { View, StyleSheet } from 'react-native';
-import { TextInput, Button } from 'react-native-paper';
 
-const AddTodo = props => {
-  const [todoText, setTodoText] = useState('');
-
-  const onChange = e => {
-    setTodoText(e);
-  };
-
-  if (props.toggleState === ToggleFilter.HIDE) {
-    return null;
+class AddTodoModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      todoText: '',
+    };
   }
 
-  return (
-    <View style={styles.container}>
-      <TextInput label="What you want to do?" value={todoText} onChangeText={onChange} style={styles.taskInput} />
-      <Button
-        mode="contained"
-        icon="plus-box"
-        uppercase={false}
-        style={styles.saveButton}
-        onPress={() => {
-          if (!todoText.trim()) {
-            return;
-          }
-          props.addTodo(todoText);
-          setTodoText('');
-          // switch to all tasks
-          props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
-        }}
-      >
-        Add Todo
-      </Button>
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.toggleState !== this.props.toggleState) {
+      if (this.props.toggleState === ToggleFilter.HIDE) {
+        this.bs.current.snapTo(1);
+      } else {
+        this.bs.current.snapTo(0);
+      }
+    }
+  }
+
+  onChange = e => {
+    this.setState({ todoText: e });
+  };
+
+  renderInner = () => {
+    return (
+      <View style={styles.panel}>
+        <Text style={styles.panelTitle}>New Todo:</Text>
+        <View>
+          <TextInput
+            label="What you want to do?"
+            value={this.state.todoText}
+            onChangeText={this.onChange}
+            style={styles.taskInput}
+          />
+          <Button
+            mode="contained"
+            icon="plus-box"
+            uppercase={false}
+            style={styles.saveButton}
+            onPress={() => {
+              if (!this.state.todoText.trim()) {
+                return;
+              }
+              this.props.addTodo(this.state.todoText);
+
+              this.state.todoText = '';
+
+              // switch to all tasks
+              this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
+              this.props.setToggleFilter(ToggleFilter.HIDE);
+            }}
+          >
+            Add Todo
+          </Button>
+        </View>
+      </View>
+    );
+  };
+
+  renderHeader = () => (
+    <View style={styles.header}>
+      <View style={styles.panelHeader}>
+        <View style={styles.panelHandle} />
+      </View>
     </View>
   );
-};
+
+  // Create ref to control the bottomsheet object
+  bs = React.createRef();
+
+  render() {
+    return (
+      <BottomSheet
+        ref={this.bs}
+        snapPoints={['50%', 0]}
+        renderContent={this.renderInner}
+        renderHeader={this.renderHeader}
+        initialSnap={1}
+        onCloseEnd={() => {
+          this.props.setToggleFilter(ToggleFilter.HIDE);
+        }}
+      />
+    );
+  }
+}
+
+const IMAGE_SIZE = 200;
 
 const styles = StyleSheet.create({
   container: {
-    top: 8,
-    paddingLeft: 5,
-    paddingRight: 5,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
-    height: 'auto',
-    borderRadius: 10,
-  },
-  taskInput: {
-    width: '100 %',
+    backgroundColor: '#F5FCFF',
+    borderWidth: 1,
   },
   saveButton: {
     width: 180,
     marginTop: 10,
     marginLeft: 'auto',
     marginRight: 10,
+  },
+  taskInput: {
+    width: '100 %',
+  },
+  box: {
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
+  },
+  panelContainer: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  panel: {
+    height: 1000,
+    padding: 20,
+    backgroundColor: '#f7f5eee8',
+  },
+  header: {
+    backgroundColor: '#f7f5eee8',
+    shadowColor: '#000000',
+    paddingTop: 20,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+  },
+  panelHeader: {
+    alignItems: 'center',
+  },
+  panelHandle: {
+    width: 40,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#00000040',
+    marginBottom: 10,
+  },
+  panelTitle: {
+    fontSize: 27,
+    height: 35,
+  },
+  panelSubtitle: {
+    fontSize: 14,
+    color: 'gray',
+    height: 30,
+    marginBottom: 10,
+  },
+  panelButton: {
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: '#318bfb',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  panelButtonTitle: {
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: 'white',
+  },
+  photo: {
+    width: '100%',
+    height: 225,
+    marginTop: 30,
+  },
+  map: {
+    height: '100%',
+    width: '100%',
   },
 });
 
@@ -69,6 +180,6 @@ const mapStateToProps = function(state) {
   };
 };
 
-const mapDispatchToProps = { addTodo, setVisibilityFilter };
+const mapDispatchToProps = { addTodo, setVisibilityFilter, setToggleFilter };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);
+export default connect(mapStateToProps, mapDispatchToProps)(AddTodoModal);

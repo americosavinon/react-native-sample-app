@@ -19,6 +19,8 @@ export default class MyProfile extends React.Component {
         <Text> Stats Data Show here! (v1.0.3) </Text>
         <Text></Text>
         <TextInput label="Sample Form!" style={styles.taskInput} />
+        <Text></Text>
+        <Text>github: https://github.com/peterlin99512/react-native-sample-app</Text>
       </View>
     </View>
   );
@@ -48,7 +50,7 @@ export default class MyProfile extends React.Component {
     return (
       <BottomSheet
         ref={this.bs}
-        snapPoints={['80%', 0]}
+        snapPoints={['88%', 0]}
         renderContent={this.renderInner}
         renderHeader={this.renderHeader}
         initialSnap={this.state.snapIndex}

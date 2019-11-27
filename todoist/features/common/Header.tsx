@@ -6,15 +6,15 @@ import { ToggleFilter, setToggleFilter } from '../toggles/toggleSlice';
 
 class HeaderNav extends React.Component {
   _toggleProfile = () => {
-    this.props.toggleFunc();
+    this.props.toggleProfileFunc();
   };
 
   _handleMore = () => {
-    if (this.props.toggleState === ToggleFilter.SHOW) {
-      this.props.setToggleFilter(ToggleFilter.HIDE);
-    } else {
-      this.props.setToggleFilter(ToggleFilter.SHOW);
-    }
+    // if (this.props.toggleState === ToggleFilter.SHOW) {
+    //   this.props.setToggleFilter(ToggleFilter.HIDE);
+    // } else {
+    //   this.props.setToggleFilter(ToggleFilter.SHOW);
+    // }
   };
 
   render() {
@@ -22,17 +22,14 @@ class HeaderNav extends React.Component {
       <Appbar.Header>
         <Appbar.Action icon="home" onPress={this._toggleProfile} />
         <Appbar.Content title="My Todos" subtitle="Simple Demo" />
-        <Appbar.Action
-          icon={this.props.toggleState === ToggleFilter.SHOW ? 'minus' : 'plus'}
-          onPress={this._handleMore}
-        />
+        <Appbar.Action icon="menu" onPress={this._handleMore} />
       </Appbar.Header>
     );
   }
 }
 
 HeaderNav.protoTypes = {
-  toggleFunc: PropTypes.func,
+  toggleProfileFunc: PropTypes.func,
 };
 
 const mapStateToProps = function(state) {

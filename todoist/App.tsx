@@ -6,9 +6,10 @@ import HeaderNav from './features/common/Header';
 import { store, persistor } from './store';
 import VisibleTodoList from './features/todos/VisibleTodoList';
 import Footer from './features/filters/Footer';
-import AddTodo from './features/todos/AddTodo';
+import AddTodoModal from './features/todos/AddTodo';
 import { PersistGate } from 'redux-persist/integration/react';
 import MyProfile from './features/common/MyProfile';
+import AddTodoFab from './features/todos/AddTodoFab';
 
 class App extends React.Component {
   profile: any;
@@ -23,16 +24,21 @@ class App extends React.Component {
     this.profile.toggleSnapPoints();
   };
 
+  showNewTask = () => {
+    this.task.toggleSnapPoints();
+  };
+
   render() {
     return (
       <ImageBackground source={require('./assets/images/background4.jpg')} style={styles.imageContainer}>
         <StoreProvider store={store}>
           <PersistGate loading={this.renderLoading()} persistor={persistor}>
             <PaperProvider>
-              <HeaderNav toggleFunc={this.showProfile} />
-              <AddTodo />
+              <HeaderNav toggleProfileFunc={this.showProfile} />
+              <AddTodoModal />
               <VisibleTodoList />
               <Footer />
+              <AddTodoFab />
               <MyProfile
                 ref={profile => {
                   this.profile = profile;

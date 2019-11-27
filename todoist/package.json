@@ -12,7 +12,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "build-ios": "expo build:ios",
-    "test": "jest",
+    "test": "jest --coverage",
     "release": "release-it"
   },
   "keywords": [

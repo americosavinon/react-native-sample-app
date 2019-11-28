@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, ImageBackground, Button } from 'react-native';
+import { StyleSheet, View, ImageBackground } from 'react-native';
 import { Provider as PaperProvider, ActivityIndicator } from 'react-native-paper';
 import { Provider as StoreProvider } from 'react-redux';
 import HeaderNav from './features/common/Header';
@@ -22,10 +22,6 @@ class App extends React.Component {
 
   showProfile = () => {
     this.profile.toggleSnapPoints();
-  };
-
-  showNewTask = () => {
-    this.task.toggleSnapPoints();
   };
 
   render() {

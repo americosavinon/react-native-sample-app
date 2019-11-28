@@ -49,15 +49,17 @@ class AddTodoModal extends React.Component {
             uppercase={false}
             style={styles.saveButton}
             onPress={() => {
+              console.log('test');
               if (!this.state.todoText.trim()) {
                 return;
               }
-              this.props.addTodo(this.state.todoText);
 
+              this.bs.current.snapTo(1);
+
+              this.props.addTodo(this.state.todoText);
               this.state.todoText = '';
 
               this.props.setToggleFilter(ToggleFilter.HIDE);
-
               // switch to all tasks
               this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
             }}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native';
 import BottomSheet from 'reanimated-bottom-sheet';
 import { TextInput, Button } from 'react-native-paper';
 import { connect } from 'react-redux';
@@ -34,40 +34,42 @@ class AddTodoModal extends React.Component {
 
   renderInner = () => {
     return (
-      <View style={styles.panel}>
-        <Text style={styles.panelTitle}>New Todo:</Text>
-        <View>
-          <TextInput
-            label="What you want to do?"
-            value={this.state.todoText}
-            onChangeText={this.onChange}
-            style={styles.taskInput}
-          />
-          <Button
-            mode="contained"
-            icon="plus-box"
-            uppercase={false}
-            style={styles.saveButton}
-            onPress={() => {
-              console.log('test');
-              if (!this.state.todoText.trim()) {
-                return;
-              }
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+        <View style={styles.panel}>
+          <Text style={styles.panelTitle}>New Todo:</Text>
+          <View>
+            <TextInput
+              label="What you want to do?"
+              value={this.state.todoText}
+              onChangeText={this.onChange}
+              style={styles.taskInput}
+            />
+            <Button
+              mode="contained"
+              icon="plus-box"
+              uppercase={false}
+              style={styles.saveButton}
+              onPress={() => {
+                console.log('test');
+                if (!this.state.todoText.trim()) {
+                  return;
+                }
 
-              this.bs.current.snapTo(1);
+                this.bs.current.snapTo(1);
 
-              this.props.addTodo(this.state.todoText);
-              this.state.todoText = '';
+                this.props.addTodo(this.state.todoText);
+                this.state.todoText = '';
 
-              this.props.setToggleFilter(ToggleFilter.HIDE);
-              // switch to all tasks
-              this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
-            }}
-          >
-            Save Todo
-          </Button>
+                this.props.setToggleFilter(ToggleFilter.HIDE);
+                // switch to all tasks
+                this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
+              }}
+            >
+              Save Todo
+            </Button>
+          </View>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     );
   };
 
@@ -86,7 +88,7 @@ class AddTodoModal extends React.Component {
     return (
       <BottomSheet
         ref={this.bs}
-        snapPoints={['50%', 0]}
+        snapPoints={['40%', 0]}
         renderContent={this.renderInner}
         renderHeader={this.renderHeader}
         initialSnap={1}
@@ -103,7 +105,7 @@ const IMAGE_SIZE = 200;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#F5FCFF',
-    borderWidth: 1,
+    borderWidth: 0,
   },
   saveButton: {
     width: 180,

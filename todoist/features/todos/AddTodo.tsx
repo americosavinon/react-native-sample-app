@@ -13,6 +13,9 @@ class AddTodoModal extends React.Component {
     this.state = {
       todoText: '',
     };
+
+    // initialize the toggle Filter as hide
+    props.setToggleFilter(ToggleFilter.HIDE);
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {

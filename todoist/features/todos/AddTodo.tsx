@@ -56,12 +56,13 @@ class AddTodoModal extends React.Component {
 
               this.state.todoText = '';
 
+              this.props.setToggleFilter(ToggleFilter.HIDE);
+
               // switch to all tasks
               this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
-              this.props.setToggleFilter(ToggleFilter.HIDE);
             }}
           >
-            Add Todo
+            Save Todo
           </Button>
         </View>
       </View>

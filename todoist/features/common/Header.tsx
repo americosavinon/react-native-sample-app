@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Appbar } from 'react-native-paper';
 import { connect } from 'react-redux';
-import { ToggleFilter, setToggleFilter } from '../toggles/toggleSlice';
+import { setToggleFilter } from '../toggles/toggleSlice';
 
 class HeaderNav extends React.Component {
   _toggleProfile = () => {

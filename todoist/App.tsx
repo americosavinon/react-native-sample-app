@@ -31,15 +31,16 @@ class App extends React.Component {
           <PersistGate loading={this.renderLoading()} persistor={persistor}>
             <PaperProvider>
               <HeaderNav toggleProfileFunc={this.showProfile} />
-              <AddTodoModal />
               <VisibleTodoList />
               <Footer />
+
               <AddTodoFab />
               <MyProfile
                 ref={profile => {
                   this.profile = profile;
                 }}
               />
+              <AddTodoModal />
             </PaperProvider>
           </PersistGate>
         </StoreProvider>

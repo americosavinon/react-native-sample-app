@@ -21,9 +21,9 @@ class AddTodoModal extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.toggleState !== this.props.toggleState) {
       if (this.props.toggleState === ToggleFilter.HIDE) {
-        this.bs.current.snapTo(1);
-      } else {
         this.bs.current.snapTo(0);
+      } else {
+        this.bs.current.snapTo(1);
       }
     }
   }
@@ -34,42 +34,41 @@ class AddTodoModal extends React.Component {
 
   renderInner = () => {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
-        <View style={styles.panel}>
-          <Text style={styles.panelTitle}>New Todo:</Text>
-          <View>
-            <TextInput
-              label="What you want to do?"
-              value={this.state.todoText}
-              onChangeText={this.onChange}
-              style={styles.taskInput}
-            />
-            <Button
-              mode="contained"
-              icon="plus-box"
-              uppercase={false}
-              style={styles.saveButton}
-              onPress={() => {
-                console.log('test');
-                if (!this.state.todoText.trim()) {
-                  return;
-                }
+      <View style={styles.panel}>
+        <Text style={styles.panelTitle}>New Todo:</Text>
+        <Text style={styles.panelSubtitle}>e.g. Make a plan for tomorrow!</Text>
+        <View>
+          <TextInput
+            label="What you want to do?"
+            value={this.state.todoText}
+            onChangeText={this.onChange}
+            style={styles.taskInput}
+          />
+          <Button
+            mode="contained"
+            icon="plus-box"
+            uppercase={false}
+            style={styles.saveButton}
+            onPress={() => {
+              console.log('test');
+              if (!this.state.todoText.trim()) {
+                return;
+              }
 
-                this.bs.current.snapTo(1);
+              this.bs.current.snapTo(0);
 
-                this.props.addTodo(this.state.todoText);
-                this.state.todoText = '';
+              this.props.addTodo(this.state.todoText);
+              this.state.todoText = '';
 
-                this.props.setToggleFilter(ToggleFilter.HIDE);
-                // switch to all tasks
-                this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
-              }}
-            >
-              Save Todo
-            </Button>
-          </View>
+              this.props.setToggleFilter(ToggleFilter.HIDE);
+              // switch to all tasks
+              this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
+            }}
+          >
+            Save Todo
+          </Button>
         </View>
-      </KeyboardAvoidingView>
+      </View>
     );
   };
 
@@ -86,16 +85,20 @@ class AddTodoModal extends React.Component {
 
   render() {
     return (
-      <BottomSheet
-        ref={this.bs}
-        snapPoints={['40%', 0]}
-        renderContent={this.renderInner}
-        renderHeader={this.renderHeader}
-        initialSnap={1}
-        onCloseEnd={() => {
-          this.props.setToggleFilter(ToggleFilter.HIDE);
-        }}
-      />
+      <KeyboardAvoidingView style={styles.bottomsheetContainer} behavior="position">
+        <BottomSheet
+          ref={this.bs}
+          snapPoints={[0, 300]}
+          renderContent={this.renderInner}
+          renderHeader={this.renderHeader}
+          initialSnap={0}
+          enabledBottomClamp={true}
+          onCloseEnd={() => {
+            this.props.setToggleFilter(ToggleFilter.HIDE);
+          }}
+        />
+        <Text></Text>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -103,6 +106,10 @@ class AddTodoModal extends React.Component {
 const IMAGE_SIZE = 200;
 
 const styles = StyleSheet.create({
+  bottomsheetContainer: {
+    height: 1,
+    lineHeight: 1,
+  },
   container: {
     backgroundColor: '#F5FCFF',
     borderWidth: 0,
@@ -128,7 +135,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   panel: {
-    height: 1000,
+    height: 400,
     padding: 20,
     backgroundColor: '#f7f5eee8',
   },

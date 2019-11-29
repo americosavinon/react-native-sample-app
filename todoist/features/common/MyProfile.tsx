@@ -18,9 +18,9 @@ export default class MyProfile extends React.Component {
         <Text style={styles.panelSubtitle}>Task List</Text>
         <View>
           <Text> Stats Data Show here! (v1.0.3) </Text>
-          <Text></Text>
+          <Text />
           <TextInput label="Sample Form!" style={styles.taskInput} />
-          <Text></Text>
+          <Text />
           <Text>github: https://github.com/peterlin99512/react-native-sample-app</Text>
         </View>
       </View>
@@ -36,10 +36,10 @@ export default class MyProfile extends React.Component {
   );
 
   toggleSnapPoints = () => {
-    if (this.state.snapIndex == 0) {
-      this.state.snapIndex = 1;
+    if (this.state.snapIndex === 0) {
+      this.setState({ snapIndex: 1 });
     } else {
-      this.state.snapIndex = 0;
+      this.setState({ snapIndex: 0 });
     }
 
     this.bs.current.snapTo(this.state.snapIndex);

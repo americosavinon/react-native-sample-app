@@ -18,7 +18,7 @@ class AddTodoModal extends React.Component {
     props.setToggleFilter(ToggleFilter.HIDE);
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(prevProps) {
     if (prevProps.toggleState !== this.props.toggleState) {
       if (this.props.toggleState === ToggleFilter.HIDE) {
         this.bs.current.snapTo(0);
@@ -59,7 +59,7 @@ class AddTodoModal extends React.Component {
               Keyboard.dismiss();
 
               this.props.addTodo(this.state.todoText);
-              this.state.todoText = '';
+              this.setState({ todoText: '' });
 
               this.props.setToggleFilter(ToggleFilter.HIDE);
 
@@ -99,7 +99,7 @@ class AddTodoModal extends React.Component {
             this.props.setToggleFilter(ToggleFilter.HIDE);
           }}
         />
-        <Text></Text>
+        <Text />
       </KeyboardAvoidingView>
     );
   }

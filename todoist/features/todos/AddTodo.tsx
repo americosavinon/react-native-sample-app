@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, KeyboardAvoidingView, Keyboard } from 'react-native';
 import BottomSheet from 'reanimated-bottom-sheet';
 import { TextInput, Button } from 'react-native-paper';
 import { connect } from 'react-redux';
@@ -56,11 +56,13 @@ class AddTodoModal extends React.Component {
               }
 
               this.bs.current.snapTo(0);
+              Keyboard.dismiss();
 
               this.props.addTodo(this.state.todoText);
               this.state.todoText = '';
 
               this.props.setToggleFilter(ToggleFilter.HIDE);
+
               // switch to all tasks
               this.props.setVisibilityFilter(VisibilityFilters.SHOW_ALL);
             }}

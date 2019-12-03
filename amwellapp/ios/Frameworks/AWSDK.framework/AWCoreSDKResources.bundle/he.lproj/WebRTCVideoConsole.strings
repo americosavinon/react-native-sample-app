@@ -1,0 +1,51 @@
+/* Class = "UIButton"; accessibilityHint = "This will turn the camera on and off."; ObjectID = "1G8-Zz-enV"; */
+"1G8-Zz-enV.accessibilityHint" = "פעולה זו תהפוך את המצלמה לסירוגין.";
+
+/* Class = "UIButton"; accessibilityLabel = "Camera"; ObjectID = "1G8-Zz-enV"; */
+"1G8-Zz-enV.accessibilityLabel" = "מצלמה";
+
+/* Class = "UILabel"; text = "Family Physician - PLACEHOLDER"; ObjectID = "5Qv-hY-z4G"; */
+"5Qv-hY-z4G.text" = "זקוק לתרגום";
+
+/* Class = "UIButton"; accessibilityHint = "This will turn the microphone on and off."; ObjectID = "8Xe-CN-PO5"; */
+"8Xe-CN-PO5.accessibilityHint" = "פעולה זו תפעיל את המיקרופון ותכבה אותו.";
+
+/* Class = "UIButton"; accessibilityLabel = "Microphone"; ObjectID = "8Xe-CN-PO5"; */
+"8Xe-CN-PO5.accessibilityLabel" = "מיקרופון";
+
+/* Class = "UILabel"; text = "Flip"; ObjectID = "aCW-Tb-iuE"; */
+"aCW-Tb-iuE.text" = "תהפכו";
+
+/* Class = "UIBarButtonItem"; title = "Placeholder Button"; ObjectID = "ael-dE-7oU"; */
+"ael-dE-7oU.title" = "זקוק לתרגום";
+
+/* Class = "UIBarButtonItem"; title = "4:20"; ObjectID = "BFN-xQ-c4W"; */
+"BFN-xQ-c4W.title" = "זקוק לתרגום";
+
+/* Class = "UILabel"; text = "Mic"; ObjectID = "CXS-oV-Eb3"; */
+"CXS-oV-Eb3.text" = "מיקרופון";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eB6-m5-j39"; */
+"eB6-m5-j39.text" = "זקוק לתרגום";
+
+/* Class = "UILabel"; text = "Mary Jones - PLACEHOLDER"; ObjectID = "Gof-GX-Kab"; */
+"Gof-GX-Kab.text" = "זקוק לתרגום";
+
+/* Class = "UIButton"; accessibilityHint = "This will switch the camera from back to front."; ObjectID = "HpT-vu-XKZ"; */
+"HpT-vu-XKZ.accessibilityHint" = "פעולה זו תעביר את המצלמה מהחזית לפנים.";
+
+/* Class = "UIButton"; accessibilityLabel = "Switch Camera"; ObjectID = "HpT-vu-XKZ"; */
+"HpT-vu-XKZ.accessibilityLabel" = "החלפת מצלמה";
+
+/* Class = "UILabel"; text = "Camera"; ObjectID = "JUC-tN-tSB"; */
+"JUC-tN-tSB.text" = "מצלמה";
+
+/* Class = "UINavigationItem"; title = "Video Visit"; ObjectID = "OUM-8I-r9H"; */
+"OUM-8I-r9H.title" = "ביקור וידאו";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "q2v-Mf-lrb"; */
+"q2v-Mf-lrb.text" = "זקוק לתרגום";
+
+/* Class = "UIButton"; normalTitle = "End"; ObjectID = "TFt-x4-lOX"; */
+"TFt-x4-lOX.normalTitle" = "סוף";
+

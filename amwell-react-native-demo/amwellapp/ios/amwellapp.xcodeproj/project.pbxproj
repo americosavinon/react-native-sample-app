@@ -11,13 +11,8 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		314B0C602396AA8200BB7F36 /* AmwellService.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B0C5F2396AA8100BB7F36 /* AmwellService.m */; };
-		31D6F9DF2395A60E00E38D62 /* AWSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6F9DE2395A60E00E38D62 /* AWSDK.framework */; };
-		31D6F9E02395A60E00E38D62 /* AWSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6F9DE2395A60E00E38D62 /* AWSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		31D6F9E32395A62300E38D62 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6F9E22395A62200E38D62 /* WebRTC.framework */; };
-		31D6F9E42395A62300E38D62 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6F9E22395A62200E38D62 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		31D6F7F723998EC700595D4F /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D6F7F623998EC700595D4F /* Dummy.swift */; };
 		31D6F9E62395A6C300E38D62 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6F9E52395A6C300E38D62 /* HealthKit.framework */; };
-		31E4154B2395FFE900678563 /* AmwellService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4154A2395FFE900678563 /* AmwellService.swift */; };
 		409D23678EB4B5B2DB3428BD /* libPods-amwellapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5789CD712A200C364F447950 /* libPods-amwellapp.a */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				31D6F9E02395A60E00E38D62 /* AWSDK.framework in Embed Frameworks */,
-				31D6F9E42395A62300E38D62 /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,12 +39,9 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = amwellapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = amwellapp/main.m; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		314B0C5F2396AA8100BB7F36 /* AmwellService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmwellService.m; sourceTree = "<group>"; };
-		31D6F9DE2395A60E00E38D62 /* AWSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDK.framework; path = Frameworks/AWSDK.framework; sourceTree = "<group>"; };
-		31D6F9E22395A62200E38D62 /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/WebRTC.framework; sourceTree = "<group>"; };
+		31D6F7F323998E1800595D4F /* amwellapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "amwellapp-Bridging-Header.h"; path = "amwellapp/amwellapp-Bridging-Header.h"; sourceTree = "<group>"; };
+		31D6F7F623998EC700595D4F /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dummy.swift; path = amwellapp/Dummy.swift; sourceTree = "<group>"; };
 		31D6F9E52395A6C300E38D62 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		31E415492395FFE900678563 /* amwellapp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "amwellapp-Bridging-Header.h"; sourceTree = "<group>"; };
-		31E4154A2395FFE900678563 /* AmwellService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmwellService.swift; sourceTree = "<group>"; };
 		5789CD712A200C364F447950 /* libPods-amwellapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-amwellapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC8EC1866FABDCB27C97A4E /* Pods-amwellapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amwellapp.debug.xcconfig"; path = "Target Support Files/Pods-amwellapp/Pods-amwellapp.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -65,8 +55,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31D6F9E62395A6C300E38D62 /* HealthKit.framework in Frameworks */,
-				31D6F9DF2395A60E00E38D62 /* AWSDK.framework in Frameworks */,
-				31D6F9E32395A62300E38D62 /* WebRTC.framework in Frameworks */,
 				409D23678EB4B5B2DB3428BD /* libPods-amwellapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +72,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				31D6F7F323998E1800595D4F /* amwellapp-Bridging-Header.h */,
+				31D6F7F623998EC700595D4F /* Dummy.swift */,
 			);
 			name = amwellapp;
 			sourceTree = "<group>";
@@ -92,24 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				31D6F9E52395A6C300E38D62 /* HealthKit.framework */,
-				31D6F9E22395A62200E38D62 /* WebRTC.framework */,
-				31D6F9DE2395A60E00E38D62 /* AWSDK.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
 				5789CD712A200C364F447950 /* libPods-amwellapp.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		31E415482395FFCA00678563 /* amwell */ = {
-			isa = PBXGroup;
-			children = (
-				314B0C5F2396AA8100BB7F36 /* AmwellService.m */,
-				31E4154A2395FFE900678563 /* AmwellService.swift */,
-				31E415492395FFE900678563 /* amwellapp-Bridging-Header.h */,
-			);
-			path = amwell;
 			sourceTree = "<group>";
 		};
 		48A9C5B87691F203123F9445 /* Pods */ = {
@@ -131,7 +109,6 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				31E415482395FFCA00678563 /* amwell */,
 				13B07FAE1A68108700A75B9A /* amwellapp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -304,10 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E4154B2395FFE900678563 /* AmwellService.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				31D6F7F723998EC700595D4F /* Dummy.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				314B0C602396AA8200BB7F36 /* AmwellService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +323,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = amwellapp;
-				SWIFT_OBJC_BRIDGING_HEADER = "amwell/amwellapp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "amwellapp/amwellapp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -375,7 +351,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = amwellapp;
-				SWIFT_OBJC_BRIDGING_HEADER = "amwell/amwellapp-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "amwellapp/amwellapp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

@@ -18,6 +18,7 @@
 		31D6F9E42395A62300E38D62 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6F9E22395A62200E38D62 /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		31D6F9E62395A6C300E38D62 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D6F9E52395A6C300E38D62 /* HealthKit.framework */; };
 		31E4154B2395FFE900678563 /* AmwellService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E4154A2395FFE900678563 /* AmwellService.swift */; };
+		409D23678EB4B5B2DB3428BD /* libPods-amwellapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5789CD712A200C364F447950 /* libPods-amwellapp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +67,7 @@
 				31D6F9E62395A6C300E38D62 /* HealthKit.framework in Frameworks */,
 				31D6F9DF2395A60E00E38D62 /* AWSDK.framework in Frameworks */,
 				31D6F9E32395A62300E38D62 /* WebRTC.framework in Frameworks */,
+				409D23678EB4B5B2DB3428BD /* libPods-amwellapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +165,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				31D6F9E12395A60E00E38D62 /* Embed Frameworks */,
+				9C71ED3324DD41FE8C58D6B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +256,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C71ED3324DD41FE8C58D6B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-amwellapp/Pods-amwellapp-frameworks.sh",
+				"${PODS_ROOT}/../../../react-native-amwellservice/ios/Frameworks/AWSDK.framework",
+				"${PODS_ROOT}/../../../react-native-amwellservice/ios/Frameworks/WebRTC.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-amwellapp/Pods-amwellapp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD4C38642228810C00325AF5 /* Start Packager */ = {

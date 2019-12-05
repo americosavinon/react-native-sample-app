@@ -12,6 +12,14 @@ export default class App extends React.Component {
         console.log("failed!");
       }
     );
+    // Amwellservice.authenticateConsumerWithUsername().then(
+    //   function(value) {
+    //     console.log(value); // "Success"
+    //   },
+    //   function(value) {
+    //     console.log("failed!");
+    //   }
+    // );
   }
 
   render() {

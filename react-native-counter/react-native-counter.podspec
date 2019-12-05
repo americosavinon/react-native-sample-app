@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   s.source_files = "ios/src/**/*.{h,m,swift}"
   s.requires_arc = true
   s.vendored_frameworks = "ios/Frameworks/AWSDK.framework","ios/Frameworks/WebRTC.framework"
+  s.swift_versions = "5.0"
 
   s.dependency "React", "0.61.5"
   # ...

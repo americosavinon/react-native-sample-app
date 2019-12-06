@@ -1,0 +1,146 @@
+/* 
+  Localizable.strings
+  AWSDK
+
+  Created by Calvin Chestnut on 9/28/15.
+  Copyright © 2015 American Well.
+  All rights reserved.
+ 
+  It is illegal to use, reproduce or distribute
+  any part of this Intellectual Property without
+  prior written authorization from American Well.
+*/
+
+
+// Accessibility
+
+"console.button.end" = "समाप्त";
+"console.button.end.hint" = "आपकी यात्रा समाप्त हो जाती है";
+
+"console.button.inviteGuest" = "अतिथि आमंत्रित करें";
+"console.button.inviteGuest.hint" = "आपकी यात्रा के लिए एक मेहमान को आमंत्रित करता है";
+
+"console.button.refresh" = "ताज़ा";
+"console.button.refresh.hint" = "यदि आप कनेक्शन समस्याओं का अनुभव कर रहे हैं तो आपकी यात्रा को ताज़ा करती है";
+
+"console.button.camera" = "टॉगल कैमरा";
+"console.button.camera.hint" = "सामने, पीछे, और अक्षम कैमरा के बीच टॉगल '";
+"console.button.camera.front" = "सामने का कैमरा";
+"console.button.camera.rear" = "पिछला कैमरा";
+"console.button.camera.none" = "कैमरा अक्षम";
+
+"console.muting.muted" = "म्यूट कर दिया गया";
+"console.muting.unmuted" = "अनम्यूट किया गया";
+
+"console.button.speaker" = "मौन अध्यक्ष";
+"console.button.speaker.hint" = "अपने स्पीकर म्यूट";
+
+"console.button.mic" = "म्यूट माइक्रोफ़ोन";
+"console.button.mic.hint" = "आपका माइक्रोफ़ोन अक्षम करता है";
+
+"console.button.dock" = "टॉगल पार्टिसिपेंट डॉक";
+"console.button.dock.hint" = "अन्य वीडियो प्रतिभागियों को दिखाने वाली एक डॉक खोलता है";
+
+"console.ivrButton.title.hint" = "अपनी सेलुलर योजना के साथ डॉक्टर को कॉल";
+"console.cancelButton.title.hint" = "पुष्टि के बाद यात्रा रद्द";
+
+
+
+// Text
+"console.cancel.confirm.instructions" = "यह आपकी यात्रा को रद्द कर देगा यदि आपको अधिक समय चाहिए, तो स्क्रीन पर कहीं भी टैप करें।";
+"console.cancel.confirm" = "यात्रा रद्द करें";
+
+"console.cancelButton.confirm.title" = "पक्का आप रद्द करना चाहते हैं?";
+"console.cancelButton.confirm.message" = "यदि आप यात्रा को रद्द करते हैं तो आपसे शुल्क नहीं लिया जाएगा";
+"console.cancelButton.title" = "रद्द करना";
+
+"console.connect.timeout.title" = "हमें खेद है, हम इस प्रदाता से कनेक्ट नहीं कर सके।";
+"console.connect.timeout.message" = "प्रदाता अनुपलब्ध या वीडियो समस्याओं का अनुभव कर सकता है कृपया किसी अन्य प्रदाता का चयन करें या अधिक जानकारी के लिए ग्राहक सहयोग से संपर्क करें।";
+
+"console.connect.disconnected.message" = "विज़िट स्थिति को अपडेट करने के लिए नेटवर्क से कनेक्ट करने में कोई समस्या थी।";
+
+"console.end.confirm.instructions" = "यह आपकी यात्रा खत्म कर देगा यदि आपको अधिक समय चाहिए, तो स्क्रीन पर कहीं भी टैप करें।";
+"console.end.confirm" = "अंत यात्रा";
+
+"console.extension.title" = "क्या आप इस यात्रा का विस्तार करना चाहते हैं?";
+"console.extension.message" = "%@ ने इस बातचीत को बढ़ाने की पेशकश की है %@ अतिरिक्त मिनट%@ के लिए आपको%@ चार्ज किया जाएगा।";
+"console.extension.option.accept" = "हाँ";
+"console.extension.option.decline" = "नहीं";
+
+"console.guest.connect.timeout.title" = "हमें खेद है, हम इस यात्रा से जुड़ नहीं पाए।";
+"console.guest.connect.timeout.message" = "बाद में पुन: प्रयास करें";
+"console.guest.end.confirm.instructions" = "यह आपको यात्रा से डिस्कनेक्ट करेगा।";
+"console.guest.end.confirm" = "छुट्टी छोड़ो";
+"console.guest.waiting.canceled.title" = "रद्द की गई यात्रा";
+"console.guest.waiting.canceled.message" = "उपभोक्ता ने इस यात्रा को रद्द कर दिया है";
+"console.guest.waiting.disconnected" = "ऐसा लगता है कि आपका वीडियो डिस्कनेक्ट हो गया है।";
+"console.guest.waiting.ending" = "कृपया प्रतीक्षा करें। \n आप यात्रा छोड़ रहे हैं।";
+"console.guest.waiting.loading" = "कृपया प्रतीक्षा करें जब तक आप यात्रा से जुड़े हों";
+"console.guest.waiting.refreshing" = "वीडियो रीफ्रेश कर रहा है ... \n यदि आप अपना कनेक्शन खो देते हैं, तो आप अपने निमंत्रण ईमेल में अब जुड़ें बटन को टैप करके विज़िट पर पुनः जुड़ सकते हैं।";
+
+"console.invite.max.title" = "अतिथि नहीं जोड़ा जा सकता";
+"console.invite.max.message" = "आपने भेजे गए आमंत्रणों की अधिकतम संख्या तक पहुंच गए हैं";
+"console.invite.title" = "अतिथि आमंत्रित करें";
+"console.invite.message" = "कृपया उस मेहमान का ईमेल पता दर्ज करें जिसे आप यात्रा पर आमंत्रित करना चाहते हैं";
+"console.invite.placeholder" = "अतिथि ईमेल पता";
+"console.invite.invite" = "आमंत्रित करें";
+"console.invite.invalid.message" = "कृपया एक वैध ई - मेल एड्रेस डालें";
+"console.invite.failed.title" = "आमंत्रण विफल";
+"console.invite.failed.message" = "आमंत्रण भेजने में विफल बाद में पुन: प्रयास करें।";
+"console.invite.invalid.title" = "ईमेल अमान्य";
+"console.invite.invalie.message" = "कृपया एक वैध ई - मेल एड्रेस डालें";
+"console.invite.duplicate.message" = "This guest has already been invited";
+
+"console.ivr.confirm.title" = "वापस कॉल करें";
+"console.ivr.confirm.message" = "क्या आप वाकई फोन पर प्रदाता से बात करना चाहते हैं?";
+
+"console.ivr.error.title" = "हमें खेद है";
+"console.ivr.error.message" = "यात्रा समाप्त करने और कॉलबैक सक्षम करने का प्रयास करने में एक त्रुटि हुई थी।";
+
+"console.ivrButton.title" = "फ़ोन के माध्यम से बात करें";
+
+"console.providerSuggestEnd.message.free" = "%@ इस यात्रा को खत्म करना चाहते हैं।";
+"console.providerSuggestEnd.message.paid" = "%@ इस यात्रा को समाप्त करना चाहेंगे यदि आप अभी समाप्त करते हैं तो आपको अभी भी पूरी राशि का भुगतान किया जाएगा।";
+"console.providerSuggestEnd.end" = "अंत यात्रा";
+"console.providerSuggestEnd.continue" = "यात्रा जारी रखें";
+
+"console.splitscreen.warning" = "वीडियो देखने के लिए पूर्ण स्क्रीन मोड दर्ज करें";
+
+"console.timeRemainingAlert.message" = "आपके पास एक मिनट बाकी है।";
+
+"console.titleBar.timeRemaining.compact" = "% d मिनस वाम";
+"console.titleBar.timeRemaining.regular" = "% d मिनट शेष";
+"console.titleBar.timeRemaining.oneMinute.compact" = "1 मिन वाम";
+"console.titleBar.timeRemaining.oneMinute.regular" = "1 मिनट शेष";
+
+"console.waiting.consumerDisconnected" = "ऐसा लगता है कि आपका वीडियो डिस्कनेक्ट हो गया है हम आपको फिर से कनेक्ट करने का प्रयास कर रहे हैं।";
+"console.waiting.consumerDisconnectedExtended.top" = "ऐसा लगता है कि आपको पुनः कनेक्ट करने में समस्या हो रही है हम अभी भी आपको कनेक्ट करने का प्रयास कर रहे हैं।";
+"console.waiting.consumerDisconnectedExtended.bottom.ivr" = "अगर आप चाहें, तो आप फोन पर प्रदाता से बात कर सकते हैं, या वीडियो के लिए इंतजार कर सकते हैं।";
+"console.waiting.consumerDisconnectedExtended.bottom" = "यदि आप इंतजार नहीं करना चाहते हैं, तो आप यात्रा समाप्त कर सकते हैं।";
+"console.waiting.disconnected" = "ऐसा लगता है कि आपका वीडियो डिस्कनेक्ट हो गया है अपनी यात्रा को पूरा करने के लिए फिर से शुरू या समाप्त करने के लिए ताज़ा करें टैप करें।";
+"console.waiting.ending" = "कृपया प्रतीक्षा करें। \n आपकी यात्रा अप लपेट रही है।";
+"console.waiting.loading" = "'कस कर लटकाएं! हम आपको%@ के साथ कनेक्ट कर रहे हैं";
+"console.waiting.notConnected" = "ऐसा लगता है कि आपको समस्या को जोड़ने में परेशानी हो रही है।";
+"console.waiting.notConnected.extended" = "हम अभी भी आपको कनेक्ट करने की कोशिश कर रहे हैं यदि आप प्रतीक्षा नहीं करना चाहते हैं, तो आप यात्रा को रद्द कर सकते हैं";
+"console.waiting.providerDisconnected" = "हम%@ वीडियो पुनः कनेक्ट कर रहे हैं कृपया अपने प्रदाता की यात्रा में शामिल होने की प्रतीक्षा करें।";
+"console.waiting.providerDisconnectedExtended.top" = "हम फिर से जुड़ने के लिए%@ का इंतजार कर रहे हैं।";
+"console.waiting.providerDisconnectedExtended.bottom.ivr" = "अगर आप चाहें, तो आप फोन पर प्रदाता से बात कर सकते हैं, या वीडियो के लिए इंतजार कर सकते हैं।";
+"console.waiting.providerDisconnectedExtended.bottom" = "यदि आप इंतजार नहीं करना चाहते हैं, तो आप यात्रा समाप्त कर सकते हैं।";
+"console.waiting.providerNotConnected" = "आपने कनेक्ट किया है, लेकिन हम अभी भी%@ के वीडियो लोड कर रहे हैं।";
+"console.waiting.providerNotConnected.free.ivr" = "अगर आप प्रतीक्षा नहीं करना चाहते हैं, तो आप फोन पर प्रदाता से बात कर सकते हैं या यात्रा रद्द कर सकते हैं।";
+"console.waiting.providerNotConnected.paid.ivr" = "अगर आप प्रतीक्षा नहीं करना चाहते हैं, तो आप फोन पर प्रदाता से बात कर सकते हैं या यात्रा को रद्द कर सकते हैं। \n यदि आप रद्द करते हैं तो आपसे शुल्क नहीं लिया जाएगा।";
+"console.waiting.providerNotConnected.free" = "यदि आप इंतजार नहीं करना चाहते हैं, तो आप इस यात्रा को रद्द कर सकते हैं।";
+"console.waiting.providerNotConnected.paid" = "यदि आप प्रतीक्षा नहीं करना चाहते हैं, तो आप इस यात्रा को रद्द कर सकते हैं। \n यदि आप रद्द करते हैं तो आपसे शुल्क नहीं लिया जाएगा।";
+"console.waiting.refreshing" = "ताज़ा वीडियो ... \n यदि आप अपना कनेक्शन खो देते हैं तो प्रदाता आपको वापस बुलाएगा।";
+
+"misc.cancel" = "रद्द करना";
+"misc.confirm" = "की पुष्टि करें";
+"misc.no" = "नहीं";
+"misc.ok" = "ठीक";
+"misc.yes" = "हाँ";
+"misc.enabled" = "सक्षम";
+"misc.disabled" = "अक्षम";
+
+"topic.none" = "कोई नहीं";
+
+"test.noparams" = "संदेश स्ट्रिंग";

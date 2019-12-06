@@ -1,1 +1,0 @@
-### react native sample app with amwell mobile sdk (ios) integration example.

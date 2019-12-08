@@ -8,13 +8,12 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "postinstall": "node ./scripts/postinstall.js"
+    "postinstall": "node node_modules/react-native-amwellservice/scripts/module_postinstall.js"
   },
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.5",
-    "react-native-amwellservice": "../react-native-amwellservice/",
-    "react-native-module1": "../react-native-module1"
+    "react-native-amwellservice": "../react-native-amwellservice/"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",

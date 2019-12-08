@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311CA052239CABD6002A3C78 /* Amwellservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311CA051239CABD6002A3C78 /* Amwellservice.swift */; };
 		31CBB2DC239B594D00D098AC /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CBB2DA239B594D00D098AC /* WebRTC.framework */; };
 		31CBB2DD239B594D00D098AC /* AWSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CBB2DB239B594D00D098AC /* AWSDK.framework */; };
 		31CBB2E0239B59BE00D098AC /* Amwellservice.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CBB2DE239B59BE00D098AC /* Amwellservice.m */; };
@@ -27,10 +28,11 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libAmwellservice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAmwellservice.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		311CA050239CABD5002A3C78 /* Amwellservice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amwellservice-Bridging-Header.h"; sourceTree = "<group>"; };
+		311CA051239CABD6002A3C78 /* Amwellservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Amwellservice.swift; path = src/Amwellservice.swift; sourceTree = "<group>"; };
 		31CBB2DA239B594D00D098AC /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/WebRTC.framework; sourceTree = "<group>"; };
 		31CBB2DB239B594D00D098AC /* AWSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDK.framework; path = Frameworks/AWSDK.framework; sourceTree = "<group>"; };
 		31CBB2DE239B59BE00D098AC /* Amwellservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Amwellservice.m; path = src/Amwellservice.m; sourceTree = "<group>"; };
-		31CBB2DF239B59BE00D098AC /* Amwellservice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Amwellservice.h; path = src/Amwellservice.h; sourceTree = "<group>"; };
 		379E028D0EAFEC4F00794656 /* Pods-Amwellservice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amwellservice.debug.xcconfig"; path = "Target Support Files/Pods-Amwellservice/Pods-Amwellservice.debug.xcconfig"; sourceTree = "<group>"; };
 		610678D2D37CDFD49D2C1B73 /* Pods-Amwellservice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amwellservice.release.xcconfig"; path = "Target Support Files/Pods-Amwellservice/Pods-Amwellservice.release.xcconfig"; sourceTree = "<group>"; };
 		ABD256AF7B5E5CAA57474FB2 /* Pods_Amwellservice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amwellservice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +72,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				31CBB2DF239B59BE00D098AC /* Amwellservice.h */,
+				311CA050239CABD5002A3C78 /* Amwellservice-Bridging-Header.h */,
+				311CA051239CABD6002A3C78 /* Amwellservice.swift */,
 				31CBB2DE239B59BE00D098AC /* Amwellservice.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				108AD2E94D5FA0910BB09698 /* Pods */,
@@ -120,6 +123,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -172,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31CBB2E0239B59BE00D098AC /* Amwellservice.m in Sources */,
+				311CA052239CABD6002A3C78 /* Amwellservice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 379E028D0EAFEC4F00794656 /* Pods-Amwellservice.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -285,10 +291,14 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Amwellservice;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Amwellservice-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -296,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 610678D2D37CDFD49D2C1B73 /* Pods-Amwellservice.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
@@ -306,10 +317,13 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Amwellservice;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Amwellservice-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

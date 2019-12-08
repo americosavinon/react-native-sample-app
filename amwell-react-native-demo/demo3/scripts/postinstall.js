@@ -9,3 +9,4 @@ console.log('    ' + process.env.npm_package_name);
 console.log('    ' + process.env.PWD);
 
 // run some clean up script here to avoid issue about
+console.log(process.argv);

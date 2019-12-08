@@ -5230,9 +5230,6 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
 react-native-amwellservice@../react-native-amwellservice/:
   version "1.0.0"
 
-react-native-module1@../react-native-module1:
-  version "1.0.0"
-
 react-native@0.61.5:
   version "0.61.5"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"

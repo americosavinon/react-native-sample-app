@@ -16,6 +16,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* demo3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* demo3Tests.m */; };
+		311CA055239CAF0C002A3C78 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311CA054239CAF0C002A3C78 /* Dummy.swift */; };
 		8745C5A3E4230D8E5936FB4B /* libPods-demo3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 023EAC0FF47EC1E01FA8D3FD /* libPods-demo3.a */; };
 		A96F5B5FDDF76C7656745569 /* libPods-demo3Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54080634398C4A12B463A20 /* libPods-demo3Tests.a */; };
 		AD654AF0ACF11401E73CE97B /* libPods-demo3-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8332C30ED9BDDF2F746E0BE1 /* libPods-demo3-tvOS.a */; };
@@ -57,6 +58,8 @@
 		2D02E47B1E0B4A5D006451C7 /* demo3-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo3-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* demo3-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "demo3-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7A34C4150C332DAC93D92A /* Pods-demo3-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3-tvOS.release.xcconfig"; path = "Target Support Files/Pods-demo3-tvOS/Pods-demo3-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		311CA053239CAF0C002A3C78 /* demo3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "demo3-Bridging-Header.h"; sourceTree = "<group>"; };
+		311CA054239CAF0C002A3C78 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dummy.swift; path = demo3/Dummy.swift; sourceTree = "<group>"; };
 		65AB7E02BAEA90E8FF476039 /* Pods-demo3-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-demo3-tvOS/Pods-demo3-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8332C30ED9BDDF2F746E0BE1 /* libPods-demo3-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo3-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B50391F84F23362CBD2BF74 /* libPods-demo3-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo3-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +135,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				311CA054239CAF0C002A3C78 /* Dummy.swift */,
+				311CA053239CAF0C002A3C78 /* demo3-Bridging-Header.h */,
 			);
 			name = demo3;
 			sourceTree = "<group>";
@@ -161,7 +166,6 @@
 				A46BC52D6B2808E0339A5188 /* Pods-demo3Tests.debug.xcconfig */,
 				F269968C9C41B621C527F68E /* Pods-demo3Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -293,6 +297,9 @@
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -309,6 +316,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -550,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				311CA055239CAF0C002A3C78 /* Dummy.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +612,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A46BC52D6B2808E0339A5188 /* Pods-demo3Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -626,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F269968C9C41B621C527F68E /* Pods-demo3Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = demo3Tests/Info.plist;
@@ -647,6 +658,7 @@
 			baseConfigurationReference = A121B4DED615DFDDA5AB1DA9 /* Pods-demo3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = demo3/Info.plist;
@@ -658,6 +670,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = demo3;
+				SWIFT_OBJC_BRIDGING_HEADER = "demo3-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -667,6 +682,7 @@
 			baseConfigurationReference = A0C01913EA030581A349B455 /* Pods-demo3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = demo3/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -677,6 +693,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = demo3;
+				SWIFT_OBJC_BRIDGING_HEADER = "demo3-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

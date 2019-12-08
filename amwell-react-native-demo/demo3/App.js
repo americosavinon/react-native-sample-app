@@ -30,9 +30,23 @@ const App: () => React$Node = () => {
   console.log('hello');
   console.log(Amwellservice);
 
-  Amwellservice.sampleMethod('Testing', 123, message => {
-    console.log(message);
-  });
+  Amwellservice.test().then(
+    function(value) {
+      console.log(value); // "Success"
+    },
+    function(value) {
+      console.log('failed!');
+    },
+  );
+
+  Amwellservice.initialize().then(
+    function(value) {
+      console.log(value); // "Success"
+    },
+    function(value) {
+      console.log('failed!');
+    },
+  );
 
   return (
     <>

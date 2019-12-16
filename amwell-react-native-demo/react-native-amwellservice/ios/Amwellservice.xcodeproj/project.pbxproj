@@ -28,8 +28,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libAmwellservice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAmwellservice.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		311CA050239CABD5002A3C78 /* Amwellservice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Amwellservice-Bridging-Header.h"; sourceTree = "<group>"; };
 		311CA051239CABD6002A3C78 /* Amwellservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Amwellservice.swift; path = src/Amwellservice.swift; sourceTree = "<group>"; };
+		31ACBFF723A7D8CB003FA2F1 /* Amwellservice-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Amwellservice-Bridging-Header.h"; path = "src/Amwellservice-Bridging-Header.h"; sourceTree = "<group>"; };
 		31CBB2DA239B594D00D098AC /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebRTC.framework; path = Frameworks/WebRTC.framework; sourceTree = "<group>"; };
 		31CBB2DB239B594D00D098AC /* AWSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDK.framework; path = Frameworks/AWSDK.framework; sourceTree = "<group>"; };
 		31CBB2DE239B59BE00D098AC /* Amwellservice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Amwellservice.m; path = src/Amwellservice.m; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
-				311CA050239CABD5002A3C78 /* Amwellservice-Bridging-Header.h */,
+				31ACBFF723A7D8CB003FA2F1 /* Amwellservice-Bridging-Header.h */,
 				311CA051239CABD6002A3C78 /* Amwellservice.swift */,
 				31CBB2DE239B59BE00D098AC /* Amwellservice.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -296,7 +296,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Amwellservice;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Amwellservice-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "src/Amwellservice-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -322,7 +322,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Amwellservice;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Amwellservice-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "src/Amwellservice-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

@@ -17,9 +17,9 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* demo3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* demo3Tests.m */; };
 		311CA055239CAF0C002A3C78 /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311CA054239CAF0C002A3C78 /* Dummy.swift */; };
-		8745C5A3E4230D8E5936FB4B /* libPods-demo3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 023EAC0FF47EC1E01FA8D3FD /* libPods-demo3.a */; };
-		A96F5B5FDDF76C7656745569 /* libPods-demo3Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D54080634398C4A12B463A20 /* libPods-demo3Tests.a */; };
+		A534A44E86F356F17461CB75 /* Pods_demo3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A1BC700CFDB1BA8A11EEF1A /* Pods_demo3.framework */; };
 		AD654AF0ACF11401E73CE97B /* libPods-demo3-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8332C30ED9BDDF2F746E0BE1 /* libPods-demo3-tvOS.a */; };
+		CEF69FB582559255F3D5F986 /* Pods_demo3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26035E05A11B7022F3B9FBE0 /* Pods_demo3Tests.framework */; };
 		CF241D50255423300E966E15 /* libPods-demo3-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B50391F84F23362CBD2BF74 /* libPods-demo3-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +45,6 @@
 		00E356EE1AD99517003FC87E /* demo3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demo3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* demo3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = demo3Tests.m; sourceTree = "<group>"; };
-		023EAC0FF47EC1E01FA8D3FD /* libPods-demo3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo3.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13314FADD23356D176DDDE90 /* Pods-demo3-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-demo3-tvOSTests/Pods-demo3-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* demo3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = demo3/AppDelegate.h; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = demo3/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = demo3/main.m; sourceTree = "<group>"; };
 		1E2E2B30BCB2888D4BA34045 /* Pods-demo3-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-demo3-tvOSTests/Pods-demo3-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		26035E05A11B7022F3B9FBE0 /* Pods_demo3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* demo3-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo3-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* demo3-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "demo3-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7A34C4150C332DAC93D92A /* Pods-demo3-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3-tvOS.release.xcconfig"; path = "Target Support Files/Pods-demo3-tvOS/Pods-demo3-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,11 +62,11 @@
 		311CA054239CAF0C002A3C78 /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dummy.swift; path = demo3/Dummy.swift; sourceTree = "<group>"; };
 		65AB7E02BAEA90E8FF476039 /* Pods-demo3-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-demo3-tvOS/Pods-demo3-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		8332C30ED9BDDF2F746E0BE1 /* libPods-demo3-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo3-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A1BC700CFDB1BA8A11EEF1A /* Pods_demo3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_demo3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B50391F84F23362CBD2BF74 /* libPods-demo3-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo3-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C01913EA030581A349B455 /* Pods-demo3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3.release.xcconfig"; path = "Target Support Files/Pods-demo3/Pods-demo3.release.xcconfig"; sourceTree = "<group>"; };
 		A121B4DED615DFDDA5AB1DA9 /* Pods-demo3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3.debug.xcconfig"; path = "Target Support Files/Pods-demo3/Pods-demo3.debug.xcconfig"; sourceTree = "<group>"; };
 		A46BC52D6B2808E0339A5188 /* Pods-demo3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3Tests.debug.xcconfig"; path = "Target Support Files/Pods-demo3Tests/Pods-demo3Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D54080634398C4A12B463A20 /* libPods-demo3Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-demo3Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F269968C9C41B621C527F68E /* Pods-demo3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo3Tests.release.xcconfig"; path = "Target Support Files/Pods-demo3Tests/Pods-demo3Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A96F5B5FDDF76C7656745569 /* libPods-demo3Tests.a in Frameworks */,
+				CEF69FB582559255F3D5F986 /* Pods_demo3Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8745C5A3E4230D8E5936FB4B /* libPods-demo3.a in Frameworks */,
+				A534A44E86F356F17461CB75 /* Pods_demo3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,10 +146,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				023EAC0FF47EC1E01FA8D3FD /* libPods-demo3.a */,
 				8332C30ED9BDDF2F746E0BE1 /* libPods-demo3-tvOS.a */,
 				9B50391F84F23362CBD2BF74 /* libPods-demo3-tvOSTests.a */,
-				D54080634398C4A12B463A20 /* libPods-demo3Tests.a */,
+				9A1BC700CFDB1BA8A11EEF1A /* Pods_demo3.framework */,
+				26035E05A11B7022F3B9FBE0 /* Pods_demo3Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -491,13 +491,59 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-demo3/Pods-demo3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
+				"${BUILT_PRODUCTS_DIR}/FBReactNativeSpec/FBReactNativeSpec.framework",
+				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
+				"${BUILT_PRODUCTS_DIR}/RCTTypeSafety/RCTTypeSafety.framework",
+				"${BUILT_PRODUCTS_DIR}/React-Core/React.framework",
+				"${BUILT_PRODUCTS_DIR}/React-CoreModules/CoreModules.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTActionSheet/RCTActionSheet.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTAnimation/RCTAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTBlob/RCTBlob.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTImage/RCTImage.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTLinking/RCTLinking.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTNetwork/RCTNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTSettings/RCTSettings.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTText/RCTText.framework",
+				"${BUILT_PRODUCTS_DIR}/React-RCTVibration/RCTVibration.framework",
+				"${BUILT_PRODUCTS_DIR}/React-cxxreact/cxxreact.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsi/jsi.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsiexecutor/jsireact.framework",
+				"${BUILT_PRODUCTS_DIR}/React-jsinspector/jsinspector.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactCommon/ReactCommon.framework",
+				"${BUILT_PRODUCTS_DIR}/Yoga/yoga.framework",
+				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
 				"${PODS_ROOT}/../../node_modules/react-native-amwellservice/ios/Frameworks/AWSDK.framework",
 				"${PODS_ROOT}/../../node_modules/react-native-amwellservice/ios/Frameworks/WebRTC.framework",
+				"${BUILT_PRODUCTS_DIR}/react-native-amwellservice/react_native_amwellservice.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBReactNativeSpec.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTTypeSafety.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreModules.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTActionSheet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTBlob.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTLinking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTSettings.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RCTVibration.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/cxxreact.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsireact.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/jsinspector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactCommon.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/react_native_amwellservice.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -29,7 +29,7 @@ class Amwellservice: NSObject {
     }
     
     @objc func constantsToExport() -> [String: Any]! {
-      return ["name": "Amwellservice"]
+        return ["name": "Amwellservice"]
     }
     
     // ========== Demo Functions ==========
@@ -39,7 +39,10 @@ class Amwellservice: NSObject {
         print("count is \(count)")
     }
     
-    @objc func setCount(_ value: Int, resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
+    @objc(setCount:resolver:rejecter:)
+    func setCount(_ value: Int,
+                        resolver resolve: RCTPromiseResolveBlock,
+                        rejecter reject: RCTPromiseRejectBlock) -> Void {
         if (value < 0) {
             let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Invalid count value."])
             reject("init_fail", "Count input value can't be less than 0!", error)
@@ -51,16 +54,18 @@ class Amwellservice: NSObject {
     
     @objc func getCount(_ callback: RCTResponseSenderBlock) {
         callback([count,               // variable
-        123.9,               // int or float
-        "third argument",    // string
-        [1, 2.2, "3"],       // array
-        ["a": 1, "b": 2]     // object
+            123.9,               // int or float
+            "third argument",    // string
+            [1, 2.2, "3"],       // array
+            ["a": 1, "b": 2]     // object
         ])
     }
     // ========== Demo End ==========
     
     // AWSDK Serivce Initialize Example
-    @objc func initialize (_ resolve: @escaping RCTPromiseResolveBlock, reject: @escaping RCTPromiseRejectBlock) {
+    @objc(initialize:rejecter:)
+    func initialize (_ resolve: @escaping RCTPromiseResolveBlock,
+                           reject: @escaping RCTPromiseRejectBlock) -> Void {
         AWSDKService.initialize(withLaunchParams: [kAWSDKBundleID: "com.uhg.amwelldemo",
                                                    kAWSDKUrl: "https://iot58.amwellintegration.com/",
                                                    kAWSDKKey: "bf8a5665"]) { (success, error) in
@@ -74,3 +79,4 @@ class Amwellservice: NSObject {
     }
     
 }
+

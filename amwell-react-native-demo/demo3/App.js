@@ -27,20 +27,10 @@ import {
 import Amwellservice from 'react-native-amwellservice';
 
 const App: () => React$Node = () => {
-  console.log('hello');
+  console.log(' ======== Testing =======');
   console.log(Amwellservice);
 
-  // Amwellservice.test().then(
-  //   function(value) {
-  //     console.log(value); // "Success"
-  //   },
-  //   function(value) {
-  //     console.log('failed!');
-  //   },
-  // );
-
   Amwellservice.triggerRequest();
-
   Amwellservice.initialize().then(
     function(value) {
       console.log(value); // "Success"
@@ -50,6 +40,21 @@ const App: () => React$Node = () => {
     },
   );
 
+  Amwellservice.increment();
+
+  Amwellservice.getCount(value => {
+    console.log('Get Count called:');
+    console.log(value);
+  });
+
+  Amwellservice.setCount(99).then(
+    function(value) {
+      console.log(value); // "3"
+    },
+    function(value) {
+      console.log('failed!');
+    },
+  );
   return (
     <>
       <StatusBar barStyle="dark-content" />

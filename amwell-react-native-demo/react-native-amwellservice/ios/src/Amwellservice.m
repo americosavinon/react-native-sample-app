@@ -3,7 +3,10 @@
 
 @interface RCT_EXTERN_MODULE(Amwellservice, NSObject)
 
-RCT_EXTERN_METHOD(initialize:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject );
+RCT_EXTERN_METHOD(initialize:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject);
 RCT_EXTERN_METHOD(triggerRequest);
+RCT_EXTERN_METHOD(increment);
+RCT_EXTERN_METHOD(getCount:(RCTResponseSenderBlock)callback)
+RCT_EXTERN_METHOD(setCount:(Int)value (RCTPromiseResolveBlock)resolve reject:(RCTPromiseRejectBlock)reject);
 
 @end

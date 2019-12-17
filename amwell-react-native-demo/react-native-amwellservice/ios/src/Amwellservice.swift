@@ -39,7 +39,7 @@ class Amwellservice: NSObject {
         print("count is \(count)")
     }
     
-    @objc(setCount:resolver:rejecter:)
+    @objc(count:resolver:rejecter:)
     func setCount(_ value: Int,
                   resolver resolve: RCTPromiseResolveBlock,
                   rejecter reject: RCTPromiseRejectBlock) -> Void {
@@ -63,7 +63,7 @@ class Amwellservice: NSObject {
     // ========== Demo End ==========
     
     // AWSDK Serivce Initialize Example
-    @objc(initialize:rejecter:)
+    @objc(resolve:rejecter:)
     func initialize (_ resolve: @escaping RCTPromiseResolveBlock,
                      reject: @escaping RCTPromiseRejectBlock) -> Void {
         AWSDKService.initialize(withLaunchParams: [kAWSDKBundleID: "com.uhg.amwelldemo",
@@ -75,6 +75,26 @@ class Amwellservice: NSObject {
                                                         reject("init_fail", "looks like init failed!", error)
                                                     }
                                                     
+        }
+    }
+    
+    // AWSDKAuthenticationService with username and password
+    @objc(userName:password:resolver:rejecter:)
+    func authenticateConsumer(_ userName: String,
+                              password: String,
+                  resolver resolve: @escaping RCTPromiseResolveBlock,
+                  rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        
+        // the initialize function need to be called first
+        AWSDKAuthenticationService.authenticateConsumer(withUsername: userName,
+                                                        password: password,
+                                                        consumerAuthKey: nil) { (success, error) in
+                                                            if (success != nil) {
+                                                                resolve("AWSDKAuthenticationService authenticateConsumer successfully!")
+                                                            } else {
+                                                                reject("auth_fail", "looks like init failed!", error)
+                                                            }
+                                                            
         }
     }
     

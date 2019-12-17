@@ -26,20 +26,38 @@ class AmwellserviceTests: XCTestCase {
         target = nil
         super.tearDown()
     }
+    
+    func testAuthentication() {
+        
+        let exp = expectation(description: "Test testAuthentication Async function!")
+        
+        self.target.initialize({ (value) in
+            
+            self.target.authenticateConsumer("yunfeng.lin@rallyhealth.com",
+                                        password: "cs123!@#", resolver: { (value) in
+                                            XCTAssertTrue(value! as? String == "AWSDKAuthenticationService authenticateConsumer successfully!")
+                                            
+                                            // Don't forget to fulfill the expectation in the async callback
+                                            exp.fulfill()
+                                            
+                                        }, rejecter: { (error, type, Error) in
+                                            XCTAssertTrue(error! == "auth_fail")
+                                            exp.fulfill()
+                                        })
+            
+        }) { (error, type, Error) in
+            print(error!)
+            exp.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 
-    func testExample() {
+    func testsetCount() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let exp = expectation(description: "Test setCount Async function!")
         
-        AWSDKAuthenticationService.authenticateConsumer(withUsername: "", password: "", consumerAuthKey: nil) { (success, error) in
-            if (success != nil) {
-                print("AWSDKService initialize successfully!")
-            } else {
-                print("init_fail")
-            }
-        }
-
         target.setCount(_: 3, resolver: { (value) in
             XCTAssertTrue(value! as? Int == 3)
             
@@ -47,7 +65,7 @@ class AmwellserviceTests: XCTestCase {
             exp.fulfill()
             
         }, rejecter: { (error, type, Error) in
-            XCTAssertTrue(error! as? String == "init_fail")
+            XCTAssertTrue(error! == "init_fail")
             exp.fulfill()
         })
         

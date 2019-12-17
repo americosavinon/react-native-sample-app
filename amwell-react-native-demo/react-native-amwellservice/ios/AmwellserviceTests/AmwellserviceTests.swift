@@ -8,6 +8,7 @@
 
 import XCTest
 
+@testable import AWSDK
 @testable import Amwellservice
 
 class AmwellserviceTests: XCTestCase {
@@ -30,6 +31,14 @@ class AmwellserviceTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let exp = expectation(description: "Test setCount Async function!")
+        
+        AWSDKAuthenticationService.authenticateConsumer(withUsername: "", password: "", consumerAuthKey: nil) { (success, error) in
+            if (success != nil) {
+                print("AWSDKService initialize successfully!")
+            } else {
+                print("init_fail")
+            }
+        }
 
         target.setCount(_: 3, resolver: { (value) in
             XCTAssertTrue(value! as? Int == 3)

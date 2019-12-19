@@ -82,21 +82,145 @@ class Amwellservice: NSObject {
     @objc(userName:password:resolver:rejecter:)
     func authenticateConsumer(_ userName: String,
                               password: String,
-                  resolver resolve: @escaping RCTPromiseResolveBlock,
-                  rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+                              resolver resolve: @escaping RCTPromiseResolveBlock,
+                              rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
         
         // the initialize function need to be called first
         AWSDKAuthenticationService.authenticateConsumer(withUsername: userName,
                                                         password: password,
-                                                        consumerAuthKey: nil) { (success, error) in
-                                                            if (success != nil) {
-                                                                resolve("AWSDKAuthenticationService authenticateConsumer successfully!")
-                                                            } else {
+                                                        consumerAuthKey: nil) { (result, error) in
+                                                            
+                                                            if (error != nil) {
                                                                 reject("auth_fail", "looks like init failed!", error)
+                                                            } else {
+                                                                let consumer = result! as? AWSDKConsumer
+                                                                resolve(consumer!)
                                                             }
                                                             
         }
     }
     
+    @objc(consumer:resolver:rejecter:)
+    func fetchPractices(_ consumer: AWSDKConsumer,
+                        resolver resolve: @escaping RCTPromiseResolveBlock,
+                        rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        
+        AWSDKPracticeService.fetchPractices(for: consumer) {
+            (result, error) in
+            
+            if (error != nil) {
+                reject("fetchPractices_fail", "looks like init failed!", error)
+            } else {
+                resolve(result!)
+            }
+        }
+    }
+    
+    @objc(consumer:practice:resolver:rejecter:)
+    func getConsumerSpecialties(_ consumer: AWSDKConsumer,
+                                practice: AWSDKPractice,
+                                resolver resolve: @escaping RCTPromiseResolveBlock,
+                                rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        
+        practice.fetchSpecialties(for: consumer) {
+            (result, error) in
+            
+            if (error != nil) {
+                reject("getConsumerSpecialties_fail", "looks like get specialties failed!", error)
+            } else {
+                resolve(result!)
+            }
+        }
+    }
+    
+    @objc(consumer:specialty:resolver:rejecter:)
+    func createVisitContextForConsumer(_ consumer: AWSDKConsumer,
+                                specialty: AWSDKOnDemandSpecialty,
+                                resolver resolve: @escaping RCTPromiseResolveBlock,
+                                rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        
+        let option = AWSDKProviderSearchOptions.init()
+        option.name = "Test Four"
+        option.consumer = consumer
+        
+        AWSDKProviderService.performProviderSearch(with: option)
+        {
+            (result, error) in
+            
+            if (error != nil) {
+                print(error)
+            } else {
+                print(result!)
+                
+                let providers = result as! [AWSDKProviderSearchResult]
+                let searchResult = providers.count
+                
+                providers[0].fetchDetails() {
+                    (data, error) in
+
+                    if (error != nil) {
+                        print(error)
+                    } else {
+                        print(data)
+                        
+                        if #available(iOS 9.0, *) {
+                            let t1 = data!.nameComponents.givenName
+                        } else {
+                            // Fallback on earlier versions
+                        }
+                        
+                        AWSDKVisitContext.createVisitContext(for: consumer, provider: data!) {
+                                    (result, error) in
+                                    
+                                    if (error != nil) {
+                                        reject("createVisitContextForConsumer_fail", "looks like createVisitContextForConsumer failed!", error)
+                                    } else {
+                                        
+                        //                do {
+                        //                    result!.legalText[0].setAccepted()
+                        //                    // result!.legalText[1].setAccepted()
+                        //                    let a = result!.legalText
+                        //
+                        //                    let valid = try AWSDKVisitService.isVisitContextValid(result!, cartMode: false)
+                        //                } catch {
+                        //                    print("Unexpected non-vending-machine-related error: \(error)")
+                        //                }
+                                        
+                                        // simulate the legal accepted
+                                        result!.legalText[0].setAccepted()
+                                        let data2 = result!.provider
+                                        if #available(iOS 9.0, *) {
+                                            let t2 = data2!.nameComponents.givenName
+                                        } else {
+                                            // Fallback on earlier versions
+                                        }
+                                        
+                                        resolve(result!)
+                                    }
+                                }
+                    }
+                }
+
+                // exp.fulfill()
+            }
+        }
+        
+    }
+    
+    @objc(visitContext:resolver:rejecter:)
+    func createVisitWithContext(_ visitContext: AWSDKVisitContext,
+                                resolver resolve: @escaping RCTPromiseResolveBlock,
+                                rejecter reject: @escaping RCTPromiseRejectBlock) -> Void {
+        
+        AWSDKVisitService.createVisit(with: visitContext) {
+            (result, error) in
+            
+            if (error != nil) {
+                reject("createVisitWithContext_fail", "looks like createVisitWithContext failed!", error)
+            } else {
+                resolve(result!)
+            }
+        }
+    }
 }
 

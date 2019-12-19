@@ -5,11 +5,31 @@
 
 RCT_EXTERN_METHOD(initialize:(RCTPromiseResolveBlock)resolve
                   rejecter:(RCTPromiseRejectBlock)reject);
+
 RCT_EXTERN_METHOD(authenticateConsumer:(NSString *)userName
                   (NSString*)password
-resolver:(RCTPromiseResolveBlock)resolve
-rejecter:(RCTPromiseRejectBlock)reject);
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject);
 
+RCT_EXTERN_METHOD(fetchPractices:(nonnull id<AWSDKConsumer>)consumer
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject);
+
+RCT_EXTERN_METHOD(getConsumerSpecialties:(nonnull id<AWSDKConsumer>)consumer
+                  (nonnull id<AWSDKPractice>)practice
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject);
+
+RCT_EXTERN_METHOD(createVisitContextForConsumer:(nonnull id<AWSDKConsumer>)consumer
+                  (nonnull id<AWSDKOnDemandSpecialty>)specialty
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject);
+
+RCT_EXTERN_METHOD(createVisitWithContext:(nonnull id<AWSDKVisitContext>)visitContext
+                  resolver:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject);
+
+// ============== Testing =========================
 RCT_EXTERN_METHOD(triggerRequest);
 RCT_EXTERN_METHOD(increment);
 RCT_EXTERN_METHOD(getCount:(RCTResponseSenderBlock)callback);

@@ -1,0 +1,146 @@
+/* 
+  Localizable.strings
+  AWSDK
+
+  Created by Calvin Chestnut on 9/28/15.
+  Copyright © 2015 American Well.
+  All rights reserved.
+ 
+  It is illegal to use, reproduce or distribute
+  any part of this Intellectual Property without
+  prior written authorization from American Well.
+*/
+
+
+// Accessibility
+
+"console.button.end" = "סוֹף";
+"console.button.end.hint" = "מסתיים הביקור שלך";
+
+"console.button.inviteGuest" = "הזמן אורח";
+"console.button.inviteGuest.hint" = "מזמין אורח לביקור שלך";
+
+"console.button.refresh" = "לְרַעֲנֵן";
+"console.button.refresh.hint" = "מרענן את הביקור שלך אם אתה נתקל בבעיות חיבור";
+
+"console.button.camera" = "מצלמה";
+"console.button.camera.hint" = "מעבר בין מצלמה קדמית, אחורית לבין מצלמה מושבתת";
+"console.button.camera.front" = "מצלמה קדמית";
+"console.button.camera.rear" = "מצלמה אחורית";
+"console.button.camera.none" = "מצלמה מושבתת";
+
+"console.muting.muted" = "מושתק";
+"console.muting.unmuted" = "השתקת";
+
+"console.button.speaker" = "רמקול מוטה";
+"console.button.speaker.hint" = "השתק את הדובר שלך";
+
+"console.button.mic" = "מיקרופון אילם";
+"console.button.mic.hint" = "משבית את המיקרופון";
+
+"console.button.dock" = "החלף משתתף לעגינה";
+"console.button.dock.hint" = "פתיחת רציף המציג משתתפים אחרים בסרטונים";
+
+"console.ivrButton.title.hint" = "קורא לרופא עם התוכנית הסלולארית שלך";
+"console.cancelButton.title.hint" = "ביטול הביקור לאחר אישור";
+
+
+
+// Text
+"console.cancel.confirm.instructions" = "זה יבטל את הביקור שלך. אם אתה זקוק לזמן נוסף, הקש במקום כלשהו על המסך.";
+"console.cancel.confirm" = "בטל ביקור";
+
+"console.cancelButton.confirm.title" = "אתה בטוח שאתה רוצה לבטל?";
+"console.cancelButton.confirm.message" = "לא תחויב אם תבטל את הביקור";
+"console.cancelButton.title" = "לְבַטֵל";
+
+"console.connect.timeout.title" = "מצטערים, לא הצלחנו להתחבר לספק זה.";
+"console.connect.timeout.message" = "ייתכן שהספק אינו זמין או נתקל בבעיות וידאו. בחר ספק אחר או צור קשר עם תמיכת הלקוחות לקבלת מידע נוסף.";
+
+"console.connect.disconnected.message" = "היתה בעיה בהתחברות לרשת כדי לעדכן את סטטוס הביקור.";
+
+"console.end.confirm.instructions" = "זה יסתיים הביקור שלך. אם אתה זקוק לזמן נוסף, הקש במקום כלשהו על המסך.";
+"console.end.confirm" = "סיום ביקור";
+
+"console.extension.title" = "האם אתה רוצה להרחיב את הביקור הזה?";
+"console.extension.message" = "%@ הציע להרחיב את השיחה. תחויב ב-%@ עבור %d דקות נוספות%@.";
+"console.extension.option.accept" = "כן";
+"console.extension.option.decline" = "לא";
+
+"console.guest.connect.timeout.title" = "אנו מצטערים, לא הצלחנו להתחבר לביקור הזה.";
+"console.guest.connect.timeout.message" = "בבקשה נסה שוב מאוחר יותר";
+"console.guest.end.confirm.instructions" = "זה ינתק אותך מהביקור.";
+"console.guest.end.confirm" = "השאר ביקור";
+"console.guest.waiting.canceled.title" = "בקר בוטל";
+"console.guest.waiting.canceled.message" = "הצרכן ביטל את הביקור הזה";
+"console.guest.waiting.disconnected" = "נראה שהווידיאו שלך מנותק.";
+"console.guest.waiting.ending" = "המתן בבקשה. אתה עוזב את הביקור.";
+"console.guest.waiting.loading" = "אנא המתן בזמן שאתה מחובר לביקור";
+"console.guest.waiting.refreshing" = "וידאו מרענן ... \n אם אתה מאבד את החיבור שלך, תוכל להצטרף מחדש לביקור על ידי הקשה על הלחצן' הצטרף עכשיו 'בדוא\"ל ההזמנה שלך.";
+
+"console.invite.max.title" = "לא ניתן להוסיף אורח";
+"console.invite.max.message" = "הגעת למספר המרבי של הזמנות שנשלחו";
+"console.invite.title" = "הזמן אורח";
+"console.invite.message" = "אנא הזן את כתובת הדוא\"ל של האורח שאתה רוצה להזמין את הביקור";
+"console.invite.placeholder" = "כתובת דוא\"ל של אורח";
+"console.invite.invite" = "להזמין";
+"console.invite.invalid.message" = "אנא הזן כתובת דוא\"ל תקנית";
+"console.invite.failed.title" = "ההזמנה נכשלה";
+"console.invite.failed.message" = "ההזמנה נכשלה. בבקשה נסה שוב מאוחר יותר.";
+"console.invite.invalid.title" = "אימייל לא חוקי";
+"console.invite.invalie.message" = "אנא הזן כתובת דוא\"ל תקנית";
+"console.invite.duplicate.message" = "This guest has already been invited";
+
+"console.ivr.confirm.title" = "התקשר חזרה";
+"console.ivr.confirm.message" = "אתה בטוח שאתה רוצה לדבר עם הספק בטלפון? \"שאלתי.";
+
+"console.ivr.error.title" = "אנחנו מצטערים";
+"console.ivr.error.message" = "אירעה שגיאה בניסיון לסיים את הביקור ולאפשר התקשרות.";
+
+"console.ivrButton.title" = "שיחה דרך טלפון";
+
+"console.providerSuggestEnd.message.free" = "%@ מעוניין לסיים את הביקור הזה.";
+"console.providerSuggestEnd.message.paid" = "%@ רוצה לסיים את הביקור הזה. אם תסיים, עדיין תחויב בסכום המלא.";
+"console.providerSuggestEnd.end" = "סיום ביקור";
+"console.providerSuggestEnd.continue" = "המשך";
+
+"console.splitscreen.warning" = "כניסה למצב מסך מלא להצגת וידאו";
+
+"console.timeRemainingAlert.message" = "נותרה לך דקה אחת.";
+
+"console.titleBar.timeRemaining.compact" = "%d משמאל";
+"console.titleBar.timeRemaining.regular" = "%d דקות שנותרו";
+"console.titleBar.timeRemaining.oneMinute.compact" = "1 דק' שמאלה";
+"console.titleBar.timeRemaining.oneMinute.regular" = "דקה אחת שנותרה";
+
+"console.waiting.consumerDisconnected" = "נראה שהסרטון שלך מנותק. אנחנו מנסים לחבר אותך עכשיו.";
+"console.waiting.consumerDisconnectedExtended.top" = "נראה כי אתה מתקשה להתחבר מחדש. אנחנו עדיין מנסים לחבר אותך.";
+"console.waiting.consumerDisconnectedExtended.bottom.ivr" = "אם אתה מעדיף, תוכל לדבר עם ספק הטלפון או להמשיך להמתין לווידאו.";
+"console.waiting.consumerDisconnectedExtended.bottom" = "אם אתה מעדיף לא לחכות, אתה יכול לסיים את הביקור.";
+"console.waiting.disconnected" = "נראה שהסרטון שלך מנותק. הקש על 'רענן' כדי לחדש או לסיים את הביקור.";
+"console.waiting.ending" = "המתן בבקשה. \n הביקור שלך הוא עטוף.";
+"console.waiting.loading" = "תחזיק חזק! אנחנו מחברים אותך עם %@";
+"console.waiting.notConnected" = "זה נראה כאילו אתה מתקשה להתחבר.";
+"console.waiting.notConnected.extended" = "אנחנו עדיין מנסים לחבר אותך. אם אתה מעדיף לא לחכות, תוכל לבטל את הביקור";
+"console.waiting.providerDisconnected" = "אנחנו מחברים מחדש את %@ video. המתן עד שהספק שלך יצטרף לביקור.";
+"console.waiting.providerDisconnectedExtended.top" = "אנחנו עדיין מחכים ש-%@ יחזור.";
+"console.waiting.providerDisconnectedExtended.bottom.ivr" = "אם אתה מעדיף, תוכל לדבר עם ספק הטלפון או להמשיך להמתין לווידאו.";
+"console.waiting.providerDisconnectedExtended.bottom" = "אם אתה מעדיף לא לחכות, אתה יכול לסיים את הביקור.";
+"console.waiting.providerNotConnected" = "התחברת אבל עדיין טוען את הסרטון של %@.";
+"console.waiting.providerNotConnected.free.ivr" = "אם אתה מעדיף לא לחכות, אתה יכול לדבר עם ספק בטלפון או לבטל את הביקור.";
+"console.waiting.providerNotConnected.paid.ivr" = "אם אתה מעדיף לא לחכות, תוכל לדבר עם ספק הטלפון או לבטל את הביקור. \n לא תחויב אם תבטל.";
+"console.waiting.providerNotConnected.free" = "אם אתה מעדיף לא לחכות, תוכל לבטל את הביקור.";
+"console.waiting.providerNotConnected.paid" = "אם אתה מעדיף לא לחכות, תוכל לבטל את הביקור. \n לא תחויב אם תבטל.";
+"console.waiting.refreshing" = "רענון וידאו ... \n הספק יתקשר אליך בחזרה אם תאבד את החיבור שלך.";
+
+"misc.cancel" = "לְבַטֵל";
+"misc.confirm" = "לְאַשֵׁר";
+"misc.no" = "לא";
+"misc.ok" = "בסדר";
+"misc.yes" = "כן";
+"misc.enabled" = "מופעל";
+"misc.disabled" = "נָכֶה";
+
+"topic.none" = "אף אחד";
+
+"test.noparams" = "מחרוזת הודעה";

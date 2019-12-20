@@ -1,0 +1,146 @@
+/* 
+  Localizable.strings
+  AWSDK
+
+  Created by Calvin Chestnut on 9/28/15.
+  Copyright © 2015 American Well.
+  All rights reserved.
+ 
+  It is illegal to use, reproduce or distribute
+  any part of this Intellectual Property without
+  prior written authorization from American Well.
+*/
+
+
+// Accessibility
+
+"console.button.end" = "Fin";
+"console.button.end.hint" = "Termine ta visite";
+
+"console.button.inviteGuest" = "Inviter un invité";
+"console.button.inviteGuest.hint" = "Invite un invité à votre visite";
+
+"console.button.refresh" = "Rafraîchir";
+"console.button.refresh.hint" = "Actualise votre visite si vous rencontrez des problèmes de connexion";
+
+"console.button.camera" = "Toggle Camera";
+"console.button.camera.hint" = "Bascule entre l'avant, l'arrière et la caméra désactivée";
+"console.button.camera.front" = "Caméra frontale";
+"console.button.camera.rear" = "Caméra arrière";
+"console.button.camera.none" = "Caméra désactivée";
+
+"console.muting.muted" = "En sourdine";
+"console.muting.unmuted" = "Non-muet";
+
+"console.button.speaker" = "Muet Speaker";
+"console.button.speaker.hint" = "Mutes votre haut-parleur";
+
+"console.button.mic" = "Mute Microphone";
+"console.button.mic.hint" = "Désactive ton micro";
+
+"console.button.dock" = "Activer le Dock Participant";
+"console.button.dock.hint" = "Ouvre un dock montrant les autres participants vidéo";
+
+"console.ivrButton.title.hint" = "Appelle le docteur avec ton plan cellulaire";
+"console.cancelButton.title.hint" = "Annule la visite après confirmation";
+
+
+
+// Text
+"console.cancel.confirm.instructions" = "Cela annulera votre visite. Si vous avez besoin de plus de temps, appuyez n'importe où sur l'écran.";
+"console.cancel.confirm" = "Annuler la visite";
+
+"console.cancelButton.confirm.title" = "Es-tu sûre de vouloir annuler?";
+"console.cancelButton.confirm.message" = "Vous ne serez pas débité si vous annulez la visite";
+"console.cancelButton.title" = "Annuler";
+
+"console.connect.timeout.title" = "Nous sommes désolés, nous n'avons pas pu nous connecter à ce fournisseur.";
+"console.connect.timeout.message" = "Le fournisseur peut être indisponible ou avoir des problèmes de vidéo. Veuillez choisir un autre fournisseur ou contacter le service clientèle pour plus d'informations.";
+
+"console.connect.disconnected.message" = "Un problème est survenu lors de la connexion au réseau pour mettre à jour le statut de la visite.";
+
+"console.end.confirm.instructions" = "Cela va terminer votre visite. Si vous avez besoin de plus de temps, appuyez n'importe où sur l'écran.";
+"console.end.confirm" = "Fin de la visite";
+
+"console.extension.title" = "Voulez-vous prolonger cette visite?";
+"console.extension.message" = "%@ a offert d'étendre cette conversation. Vous serez facturé %@ pour %d minute supplémentaire%@.";
+"console.extension.option.accept" = "Oui";
+"console.extension.option.decline" = "Non";
+
+"console.guest.connect.timeout.title" = "Nous sommes désolés, nous n'avons pas pu nous connecter à cette visite.";
+"console.guest.connect.timeout.message" = "Veuillez réessayer plus tard";
+"console.guest.end.confirm.instructions" = "Cela vous déconnectera de la visite.";
+"console.guest.end.confirm" = "Laissez visite";
+"console.guest.waiting.canceled.title" = "Visite annulée";
+"console.guest.waiting.canceled.message" = "Le consommateur a annulé cette visite";
+"console.guest.waiting.disconnected" = "Il semble que votre vidéo soit déconnectée.";
+"console.guest.waiting.ending" = "'S'il vous plaît, attendez. Tu pars de la visite.";
+"console.guest.waiting.loading" = "Veuillez patienter pendant que vous êtes connecté à la visite";
+"console.guest.waiting.refreshing" = "Rafraîchissement de la vidéo ... \ nSi vous perdez votre connexion, vous pouvez rejoindre la visite en cliquant sur le bouton Rejoindre maintenant dans votre e-mail d'invitation.";
+
+"console.invite.max.title" = "Impossible d'ajouter un invité";
+"console.invite.max.message" = "Vous avez atteint le nombre maximum d'invitations envoyées";
+"console.invite.title" = "Inviter un invité";
+"console.invite.message" = "S'il vous plaît entrer l'adresse e-mail de l'invité que vous souhaitez inviter à la visite";
+"console.invite.placeholder" = "Adresse e-mail de l'invité";
+"console.invite.invite" = "Inviter";
+"console.invite.invalid.message" = "S'il vous plaît, mettez une adresse email valide";
+"console.invite.failed.title" = "Inviter a échoué";
+"console.invite.failed.message" = "L'invitation n'a pas pu être envoyée. Veuillez réessayer plus tard.";
+"console.invite.invalid.title" = "Email invalide";
+"console.invite.invalie.message" = "S'il vous plaît, mettez une adresse email valide";
+"console.invite.duplicate.message" = "This guest has already been invited";
+
+"console.ivr.confirm.title" = "Rappeler";
+"console.ivr.confirm.message" = "Êtes-vous sûr de vouloir parler au fournisseur au téléphone?";
+
+"console.ivr.error.title" = "Nous sommes désolés";
+"console.ivr.error.message" = "Une erreur s'est produite lors de la tentative de fin de la visite et a activé le rappel.";
+
+"console.ivrButton.title" = "Parlez par téléphone";
+
+"console.providerSuggestEnd.message.free" = "%@ aimerait terminer cette visite.";
+"console.providerSuggestEnd.message.paid" = "'%@ aimerait terminer cette visite. Si vous terminez maintenant, vous serez toujours facturé le montant total.";
+"console.providerSuggestEnd.end" = "Fin de la visite";
+"console.providerSuggestEnd.continue" = "Continuer la visite";
+
+"console.splitscreen.warning" = "Entrer en mode plein écran pour voir la vidéo";
+
+"console.timeRemainingAlert.message" = "Il vous reste une minute.";
+
+"console.titleBar.timeRemaining.compact" = "%d Mins Gauche";
+"console.titleBar.timeRemaining.regular" = "%d minutes restantes";
+"console.titleBar.timeRemaining.oneMinute.compact" = "1 Min Gauche";
+"console.titleBar.timeRemaining.oneMinute.regular" = "1 minute restante";
+
+"console.waiting.consumerDisconnected" = "'Il semble que votre vidéo soit déconnectée. Nous essayons de vous reconnecter maintenant.";
+"console.waiting.consumerDisconnectedExtended.top" = "'Il semble que vous ayez des problèmes pour vous reconnecter. Nous essayons toujours de vous connecter.";
+"console.waiting.consumerDisconnectedExtended.bottom.ivr" = "Si vous préférez, vous pouvez parler au fournisseur par téléphone ou continuer à attendre la vidéo.";
+"console.waiting.consumerDisconnectedExtended.bottom" = "Si vous préférez ne pas attendre, vous pouvez terminer la visite.";
+"console.waiting.disconnected" = "Il semble que votre vidéo soit déconnectée. Appuyez sur Actualiser pour reprendre ou sur Terminer pour terminer votre visite. ";
+"console.waiting.ending" = "'S'il vous plaît, attendez. Votre visite se termine.";
+"console.waiting.loading" = "Tenir fermement! Nous vous connectons avec %@";
+"console.waiting.notConnected" = "On dirait que vous avez des problèmes pour vous connecter.";
+"console.waiting.notConnected.extended" = "Nous essayons toujours de vous connecter. Si vous préférez ne pas attendre, vous pouvez annuler la visite '";
+"console.waiting.providerDisconnected" = "Nous nous reconnectons à %@ video. Veuillez attendre que votre fournisseur rejoigne la visite. ";
+"console.waiting.providerDisconnectedExtended.top" = "Nous attendons toujours %@ pour rejoindre.";
+"console.waiting.providerDisconnectedExtended.bottom.ivr" = "Si vous préférez, vous pouvez parler au fournisseur par téléphone ou continuer à attendre la vidéo.";
+"console.waiting.providerDisconnectedExtended.bottom" = "Si vous préférez ne pas attendre, vous pouvez terminer la visite.";
+"console.waiting.providerNotConnected" = "Vous vous êtes connecté mais nous continuons à charger la vidéo de %@.";
+"console.waiting.providerNotConnected.free.ivr" = "Si vous préférez ne pas attendre, vous pouvez parler au fournisseur par téléphone ou annuler la visite.";
+"console.waiting.providerNotConnected.paid.ivr" = "Si vous préférez ne pas attendre, vous pouvez parler au fournisseur par téléphone ou annuler la visite. \ NVous ne serez pas facturé si vous annulez.";
+"console.waiting.providerNotConnected.free" = "Si vous préférez ne pas attendre, vous pouvez annuler la visite.";
+"console.waiting.providerNotConnected.paid" = "Si vous préférez ne pas attendre, vous pouvez annuler la visite. \ NVous ne serez pas facturé si vous annulez.";
+"console.waiting.refreshing" = "Rafraîchir la vidéo ... \ nLe fournisseur vous rappellera si vous perdez votre connexion.";
+
+"misc.cancel" = "Annuler";
+"misc.confirm" = "Confirmer";
+"misc.no" = "Non";
+"misc.ok" = "D'ACCORD";
+"misc.yes" = "Oui";
+"misc.enabled" = "Activée";
+"misc.disabled" = "Désactivé";
+
+"topic.none" = "Aucun";
+
+"test.noparams" = "Chaîne de message";

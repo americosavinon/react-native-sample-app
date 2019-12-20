@@ -24,37 +24,37 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Amwellservice from 'react-native-amwellservice';
+import {Amwellservice, RNCounterView} from 'react-native-amwellservice';
 
 const App: () => React$Node = () => {
   console.log(' ======== Testing =======');
   console.log(Amwellservice);
 
   Amwellservice.triggerRequest();
-  Amwellservice.initialize().then(
-    function(value) {
-      console.log(value); // "Success"
-    },
-    function(value) {
-      console.log('failed!');
-    },
-  );
+  // Amwellservice.initialize().then(
+  //   function(value) {
+  //     console.log(value); // "Success"
+  //   },
+  //   function(value) {
+  //     console.log('failed!');
+  //   },
+  // );
 
-  Amwellservice.increment();
+  // Amwellservice.increment();
 
-  Amwellservice.getCount(value => {
-    console.log('Get Count called:');
-    console.log(value);
-  });
+  // Amwellservice.getCount(value => {
+  //   console.log('Get Count called:');
+  //   console.log(value);
+  // });
 
-  Amwellservice.setCount(99).then(
-    function(value) {
-      console.log(value); // "3"
-    },
-    function(value) {
-      console.log('failed!');
-    },
-  );
+  // Amwellservice.setCount(99).then(
+  //   function(value) {
+  //     console.log(value); // "3"
+  //   },
+  //   function(value) {
+  //     console.log('failed!');
+  //   },
+  // );
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -63,12 +63,19 @@ const App: () => React$Node = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <Header />
+
           {global.HermesInternal == null ? null : (
             <View style={styles.engine}>
               <Text style={styles.footer}>Engine: Hermes</Text>
             </View>
           )}
           <View style={styles.body}>
+            <RNCounterView
+              //style={}
+              count={100}
+              //onUpdate={this._onUpdate}
+              ref={ref => (this.ref = ref)}
+            />
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>

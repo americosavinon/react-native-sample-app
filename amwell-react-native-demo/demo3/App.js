@@ -14,6 +14,9 @@ import {
   View,
   Text,
   StatusBar,
+  TouchableOpacity,
+  UIManager,
+  findNodeHandle
 } from 'react-native';
 
 import {
@@ -24,13 +27,13 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {Amwellservice, RNCounterView} from 'react-native-amwellservice';
+import {Amwellservice, RNCounterView, RNAmwellView} from 'react-native-amwellservice';
 
 const App: () => React$Node = () => {
   console.log(' ======== Testing =======');
-  console.log(Amwellservice);
+  // console.log(Amwellservice);
 
-  Amwellservice.triggerRequest();
+  // Amwellservice.triggerRequest();
   // Amwellservice.initialize().then(
   //   function(value) {
   //     console.log(value); // "Success"
@@ -55,6 +58,17 @@ const App: () => React$Node = () => {
   //     console.log('failed!');
   //   },
   // );
+
+
+  onButtonClick = (e) => {
+    console.log("test!!");
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this.mySwiftComponentInstance),
+      UIManager["AmwellView"].Commands.updateValueViaManager,
+      []
+    );
+  };
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -70,12 +84,16 @@ const App: () => React$Node = () => {
             </View>
           )}
           <View style={styles.body}>
-            <RNCounterView
-              //style={}
-              count={100}
-              //onUpdate={this._onUpdate}
-              ref={ref => (this.ref = ref)}
-            />
+           
+            <TouchableOpacity
+              style={[styles.wrapper]}
+              onPress={this.onButtonClick}
+            >
+              <RNAmwellView style={styles.border}
+              ref={(ref) => this.mySwiftComponentInstance = ref }
+              >
+              </RNAmwellView>
+            </TouchableOpacity>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
@@ -83,6 +101,7 @@ const App: () => React$Node = () => {
                 screen and then come back to see your edits.
               </Text>
             </View>
+            {/* 
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
@@ -101,7 +120,7 @@ const App: () => React$Node = () => {
                 Read the docs to discover what to do next:
               </Text>
             </View>
-            <LearnMoreLinks />
+            <LearnMoreLinks /> */}
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -118,7 +137,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.lighter,
   },
   sectionContainer: {
     marginTop: 32,
@@ -146,6 +165,17 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+
+  container: {
+    flex: 1, alignItems: "stretch"
+  },
+ 
+  border: {
+    borderColor: "#eee", borderBottomWidth: 1, paddingTop: 50, paddingBottom: 50,  height: 150
+  },
+  button: {
+    fontSize: 50, color: "orange"
+  }
 });
 
 export default App;

@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   # s.license    = { :type => "MIT", :file => "FILE_LICENSE" }
   s.authors      = { "Your Name" => "yourname@email.com" }
-  s.platforms    = { :ios => "9.0" }
+  s.platforms    = { :ios => "13.0" }
   s.source       = { :git => "https://github.com/github_account/react-native-amwellservice.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/src/**/*.{h,m,swift}"

@@ -326,7 +326,7 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-amwellservice: d6a071088769ae605e7bead264bbeba47cd08106
+  react-native-amwellservice: f8b2192fd1b6dfa5602cb875c3237056999015c9
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -339,6 +339,6 @@ SPEC CHECKSUMS:
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: 0d92df9f09a005695d4a031f2ba47b8d394de997
+PODFILE CHECKSUM: ea4a1de6102c6e30f8b44086f86be0ee94da7e60
 
 COCOAPODS: 1.8.4

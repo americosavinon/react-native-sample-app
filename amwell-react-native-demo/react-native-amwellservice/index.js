@@ -1,8 +1,10 @@
-import { NativeModules, requireNativeComponent } from "react-native";
+import { NativeModules, 
+    requireNativeComponent,
+} from "react-native";
 
 const { Amwellservice } = NativeModules;
 
-const COMPONENT_NAME = "CounterView";
-const RNCounterView = requireNativeComponent(COMPONENT_NAME);
+const RNCounterView = requireNativeComponent("CounterView");
+const RNAmwellView = requireNativeComponent("AmwellView");
 
-export { Amwellservice, RNCounterView };
+export { Amwellservice, RNCounterView, RNAmwellView };

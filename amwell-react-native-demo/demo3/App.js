@@ -16,7 +16,7 @@ import {
   StatusBar,
   TouchableOpacity,
   UIManager,
-  findNodeHandle
+  findNodeHandle,
 } from 'react-native';
 
 import {
@@ -27,7 +27,11 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {Amwellservice, RNCounterView, RNAmwellView} from 'react-native-amwellservice';
+import {
+  Amwellservice,
+  RNCounterView,
+  RNAmwellView,
+} from 'react-native-amwellservice';
 
 const App: () => React$Node = () => {
   console.log(' ======== Testing =======');
@@ -59,13 +63,12 @@ const App: () => React$Node = () => {
   //   },
   // );
 
-
-  onButtonClick = (e) => {
-    console.log("test!!");
+  onButtonClick = e => {
+    console.log('test!!');
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this.mySwiftComponentInstance),
-      UIManager["AmwellView"].Commands.updateValueViaManager,
-      []
+      UIManager['AmwellView'].Commands.updateValueViaManager,
+      [],
     );
   };
 
@@ -84,15 +87,14 @@ const App: () => React$Node = () => {
             </View>
           )}
           <View style={styles.body}>
-           
             <TouchableOpacity
               style={[styles.wrapper]}
-              onPress={this.onButtonClick}
-            >
-              <RNAmwellView style={styles.border}
-              ref={(ref) => this.mySwiftComponentInstance = ref }
-              >
-              </RNAmwellView>
+              onPress={this.onButtonClick}>
+              <RNAmwellView
+                style={styles.border}
+                ref={ref =>
+                  (this.mySwiftComponentInstance = ref)
+                }></RNAmwellView>
             </TouchableOpacity>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
@@ -167,15 +169,19 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    flex: 1, alignItems: "stretch"
+    flex: 1,
+    alignItems: 'stretch',
   },
- 
+
   border: {
-    borderColor: "#eee", borderBottomWidth: 1, paddingTop: 50, paddingBottom: 50,  height: 150
+    paddingTop: 50,
+    paddingBottom: 50,
+    height: 0,
   },
   button: {
-    fontSize: 50, color: "orange"
-  }
+    fontSize: 50,
+    color: 'orange',
+  },
 });
 
 export default App;

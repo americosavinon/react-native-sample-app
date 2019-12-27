@@ -1,8 +1,10 @@
-platform :ios, '10.0'
+platform :ios, '13.0'
 
 require_relative '../node_modules/react-native-unimodules/cocoapods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'expodemo' do
+  #use_frameworks! # this is important!
 
   rnPrefix = "../node_modules/react-native"
   
@@ -43,4 +45,5 @@ target 'expodemo' do
 
   # Automatically detect installed unimodules
   use_unimodules!
+  use_native_modules!
 end

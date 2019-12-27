@@ -1,17 +1,19 @@
 {
   "scripts": {
-    "postinstall": "jetify",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "addmodule": "bash scripts/addmodule.sh",
+    "postinstall": "bash scripts/post-install.sh"
   },
   "dependencies": {
     "expo": "~36.0.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-native": "~0.61.4",
+    "react-native-amwellservice": "../react-native-amwellservice/",
     "react-native-gesture-handler": "~1.5.0",
     "react-native-reanimated": "~1.4.0",
     "react-native-screens": "~2.0.0-alpha.12",

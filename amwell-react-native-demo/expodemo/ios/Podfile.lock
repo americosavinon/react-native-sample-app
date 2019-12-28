@@ -212,6 +212,7 @@ PODS:
   - React-jsinspector (0.61.5)
   - react-native-amwellservice (1.0.0):
     - React
+    - Toast-Swift
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
   - React-RCTAnimation (0.61.5):
@@ -253,6 +254,7 @@ PODS:
     - React
   - RNScreens (2.0.0-alpha.22):
     - React
+  - Toast-Swift (5.0.1)
   - UMBarCodeScannerInterface (5.0.0)
   - UMCameraInterface (5.0.0)
   - UMConstantsInterface (5.0.0)
@@ -261,8 +263,7 @@ PODS:
   - UMFileSystemInterface (5.0.0)
   - UMFontInterface (5.0.0)
   - UMImageLoaderInterface (5.0.0)
-  - UMPermissionsInterface (5.0.0):
-    - UMCore
+  - UMPermissionsInterface (5.0.0)
   - UMReactNativeAdapter (5.0.0):
     - React-Core
     - UMCore
@@ -331,6 +332,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -488,7 +490,7 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-amwellservice: f8b2192fd1b6dfa5602cb875c3237056999015c9
+  react-native-amwellservice: d5365ae6f531f1a6341dfc888f67491061a7bc50
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -502,6 +504,7 @@ SPEC CHECKSUMS:
   RNGestureHandler: 946a7691e41df61e2c4b1884deab41a4cdc3afff
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: 6adf01eb4080f44af6cca551207c6b0505066857
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   UMBarCodeScannerInterface: 3802c8574ef119c150701d679ab386e2266d6a54
   UMCameraInterface: 985d301f688ed392f815728f0dd906ca34b7ccb1
   UMConstantsInterface: bda5f8bd3403ad99e663eb3c4da685d063c5653c
@@ -510,7 +513,7 @@ SPEC CHECKSUMS:
   UMFileSystemInterface: 2ed004c9620f43f0b36b33c42ce668500850d6a4
   UMFontInterface: 24fbc0a02ade6c60ad3ee3e2b5d597c8dcfc3208
   UMImageLoaderInterface: 3976a14c588341228881ff75970fbabf122efca4
-  UMPermissionsInterface: 0f68a2e35b8951a03fa087e54f33bb2691bbf981
+  UMPermissionsInterface: 2abf9f7f4aa7110e27beaf634a7deda2d50ff3d7
   UMReactNativeAdapter: 230406e3335a8dbd4c9c0e654488a1cf3b44552f
   UMSensorsInterface: d708a892ef1500bdd9fc3ff03f7836c66d1634d3
   UMTaskManagerInterface: a98e37a576a5220bf43b8faf33cfdc129d2f441d

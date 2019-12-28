@@ -217,6 +217,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
+  - Toast-Swift (5.0.1)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -247,11 +248,13 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - Toast-Swift (~> 5.0.1)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -331,8 +334,9 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: e0e6de9e5033be2beb53d744dc6c9dd4c1fa4071
+PODFILE CHECKSUM: cd4896ddd267fd319e03aba29e94ad5a6a0e4e21
 
 COCOAPODS: 1.8.4

@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import AWSDK
+import Toast_Swift
 
 /**
  *  We need to use this controller to manage and control the video call testing.
@@ -21,36 +22,32 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
     // AWSDKVisitDelegate
     func providerDidEnterVisit() {
         print("providerDidEnterVisit")
+        self.view.makeToast("Now start to launch video!")
         createVisitConsole()
     }
     
     func visitDidComplete(_ visitSuccessful: Bool, with: AWCoreVisitEndReason) {
         print("visitDidComplete")
-    }
-    
-    func callbackStatusDidChange(_ status: AWSDKCallbackStatus) {
-        print("callbackStatusDidChange")
+        self.view.makeToast("Visit did complete!")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-        
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 40))
-        button.backgroundColor = .red
-        button.tintColor = .white
-        button.setTitle("Test Video", for: .normal)
+
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+        button.backgroundColor = .white
+        button.tintColor = .blue
+        button.setTitle("AmwellSDK ViewManager Component @ rally health", for: .normal)
         view.addSubview(button)
     }
     
     func testVideoCall() {
         launchVisit()
+        self.view.makeToast("Launch visit console ...... !")
     }
     
     func launchVisit() {
-        
         AWSDKService.initialize(withLaunchParams: [kAWSDKBundleID: "com.uhg.amwelldemo",
                                                    kAWSDKUrl: "https://iot58.amwellintegration.com/",
                                                    kAWSDKKey: "bf8a5665"]) { (success, error) in

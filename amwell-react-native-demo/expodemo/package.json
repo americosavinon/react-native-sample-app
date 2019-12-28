@@ -15,6 +15,7 @@
     "react-native": "~0.61.4",
     "react-native-amwellservice": "../react-native-amwellservice/",
     "react-native-gesture-handler": "~1.5.0",
+    "react-native-paper": "^3.4.0",
     "react-native-reanimated": "~1.4.0",
     "react-native-screens": "~2.0.0-alpha.12",
     "react-native-unimodules": "~0.7.0",

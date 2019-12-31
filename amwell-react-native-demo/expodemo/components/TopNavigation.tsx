@@ -12,9 +12,9 @@ import {
 import PropTypes from "prop-types";
 import { useNavigation } from "@react-navigation/native";
 
-const BackIcon = style => <Icon {...style} name="list-outline" />;
+const BackIcon = style => <Icon {...style} name="menu-outline" />;
 
-const EditIcon = style => <Icon {...style} name="cast-outline" />;
+const EditIcon = style => <Icon {...style} name="search-outline" />;
 
 const MenuIcon = style => <Icon {...style} name="log-out-outline" />;
 

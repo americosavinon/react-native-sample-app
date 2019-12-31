@@ -40,21 +40,11 @@ import {
 
 import { TopNavigationHeader } from "./components/TopNavigation";
 import AmwellVideoCall from "./components/AmwellVideoCall";
+import HomeScreen from "./components/HomeScreen";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationNativeContainer } from "@react-navigation/native";
 import { DrawerActions } from '@react-navigation/routers';
-
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, flexDirection: "column-reverse" }}>
-      <Button
-        onPress={() => navigation.navigate("Notifications")}
-        title="Go to notifications"
-      />
-    </View>
-  );
-}
 
 function NotificationsScreen({ navigation }) {
   return (

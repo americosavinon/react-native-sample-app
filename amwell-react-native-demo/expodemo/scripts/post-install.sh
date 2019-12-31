@@ -6,12 +6,12 @@ echo '========================================================='
 echo 'postinstall script for module' @ $npm_config_component
 echo '========================================================='
 
-if [ "$npm_config_component" = "react-native-amwellservice" ] 
-then
+#if [ "$npm_config_component" = "react-native-amwellservice" ] 
+#then
     echo -n "Post install amwellservice..."
     node node_modules/react-native-amwellservice/scripts/module_postinstall.js
     print_status
-fi
+#fi
 
 if [ "$npm_config_component" = "react-native-module1" ] 
 then

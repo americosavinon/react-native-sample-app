@@ -886,6 +886,21 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@eva-design/dss@^1.3.1":
+  version "1.3.1"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@eva-design/dss/-/dss-1.3.1.tgz#b9105b7df1791a89a789a1e617aa39e1066a1415"
+  integrity sha1-uRBbffF5GomniaHmF6o54QZqFBU=
+
+"@eva-design/eva@^1.3.1":
+  version "1.3.1"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@eva-design/eva/-/eva-1.3.1.tgz#d8c3a042a0fc43dcd9d6626b330b3166d6fe27c1"
+  integrity sha1-2MOgQqD8Q9zZ1mJrMwsxZtb+J8E=
+
+"@eva-design/processor@^1.3.1":
+  version "1.3.1"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@eva-design/processor/-/processor-1.3.1.tgz#178b760037ae9365d78cf78f223c5067ac4c0234"
+  integrity sha1-F4t2ADeuk2XXjPePIjxQZ6xMAjQ=
+
 "@expo/vector-icons@^10.0.2":
   version "10.0.6"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@expo/vector-icons/-/vector-icons-10.0.6.tgz#5718953ff0b97827d11dae5787976fa8ce5caaed"
@@ -1173,6 +1188,53 @@
     wcwidth "^1.0.1"
     ws "^1.1.0"
 
+"@react-navigation/core@^5.0.0-alpha.29":
+  version "5.0.0-alpha.29"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-navigation/core/-/core-5.0.0-alpha.29.tgz#547f3468c2c9fab839e72c76d5582c0396006a29"
+  integrity sha1-VH80aMLJ+rg55yx21VgsA5YAaik=
+  dependencies:
+    escape-string-regexp "^2.0.0"
+    query-string "^6.9.0"
+    shortid "^2.2.15"
+    use-subscription "^1.3.0"
+
+"@react-navigation/drawer@^5.0.0-alpha.30":
+  version "5.0.0-alpha.30"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-navigation/drawer/-/drawer-5.0.0-alpha.30.tgz#5ae9cce254e148a0d417d6fa030e5695426ebb3e"
+  integrity sha1-WunM4lThSKDUF9b6Aw5WlUJuuz4=
+  dependencies:
+    "@react-navigation/routers" "^5.0.0-alpha.18"
+    color "^3.1.2"
+
+"@react-navigation/native@^5.0.0-alpha.21":
+  version "5.0.0-alpha.21"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-navigation/native/-/native-5.0.0-alpha.21.tgz#346827f68b7667fc51a31eda784213a5f5041297"
+  integrity sha1-NGgn9ot2Z/xRox7aeEITpfUEEpc=
+  dependencies:
+    "@react-navigation/core" "^5.0.0-alpha.29"
+
+"@react-navigation/routers@^5.0.0-alpha.15":
+  version "5.0.0-alpha.15"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-navigation/routers/-/routers-5.0.0-alpha.15.tgz#0e6b06dd1c3f65512ced5797e81a19e3a5fd734b"
+  integrity sha1-DmsG3Rw/ZVEs7VeX6BoZ46X9c0s=
+  dependencies:
+    shortid "^2.2.15"
+
+"@react-navigation/routers@^5.0.0-alpha.18":
+  version "5.0.0-alpha.18"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-navigation/routers/-/routers-5.0.0-alpha.18.tgz#515ae91c5c4cd0156c505e4de810c3fe996ecd75"
+  integrity sha1-UVrpHFxM0BVsUF5N6BDD/pluzXU=
+  dependencies:
+    "@react-navigation/core" "^5.0.0-alpha.29"
+    shortid "^2.2.15"
+
+"@react-navigation/stack@^5.0.0-alpha.37":
+  version "5.0.0-alpha.37"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-navigation/stack/-/stack-5.0.0-alpha.37.tgz#5736ec6275e5b862960a93537530c51d11625e7d"
+  integrity sha1-VzbsYnXluGKWCpNTdTDFHRFiXn0=
+  dependencies:
+    "@react-navigation/routers" "^5.0.0-alpha.15"
+
 "@types/babel__core@^7.1.0":
   version "7.1.3"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@types/babel__core/-/babel__core-7.1.3.tgz#e441ea7df63cd080dfcd02ab199e6d16a735fc30"
@@ -1300,6 +1362,24 @@
   integrity sha1-U9Ixzr4aVA5+E3J/wfDROtSpujs=
   dependencies:
     "@types/yargs-parser" "*"
+
+"@ui-kitten/components@^4.3.2":
+  version "4.3.2"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@ui-kitten/components/-/components-4.3.2.tgz#58da1df3af9c20c280f061fcc0bb6a4e0d013e9c"
+  integrity sha1-WNod86+cIMKA8GH8wLtqTg0BPpw=
+  dependencies:
+    "@eva-design/dss" "^1.3.1"
+    "@eva-design/processor" "^1.3.1"
+    fecha "3.0.3"
+    hoist-non-react-statics "^3.2.1"
+    lodash.merge "^4.6.1"
+
+"@ui-kitten/eva-icons@^4.3.2":
+  version "4.3.2"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@ui-kitten/eva-icons/-/eva-icons-4.3.2.tgz#2c6810c9649903b529acf96a3c9c377f7373cf15"
+  integrity sha1-LGgQyWSZA7UprPlqPJw3f3NzzxU=
+  dependencies:
+    react-native-eva-icons "1.1.0"
 
 "@unimodules/core@~5.0.0":
   version "5.0.0"
@@ -1761,6 +1841,11 @@ blueimp-md5@^2.10.0:
   version "2.12.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/blueimp-md5/-/blueimp-md5-2.12.0.tgz#be7367938a889dec3ffbb71138617c117e9c130a"
   integrity sha1-vnNnk4qInew/+7cROGF8EX6cEwo=
+
+boolbase@^1.0.0, boolbase@~1.0.0:
+  version "1.0.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
+  integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
 
 bplist-creator@0.0.8:
   version "0.0.8"
@@ -2230,6 +2315,29 @@ css-in-js-utils@^2.0.0:
     hyphenate-style-name "^1.0.2"
     isobject "^3.0.1"
 
+css-select@^2.0.2:
+  version "2.1.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/css-select/-/css-select-2.1.0.tgz#6a34653356635934a81baca68d0255432105dbef"
+  integrity sha1-ajRlM1ZjWTSoG6ymjQJVQyEF2+8=
+  dependencies:
+    boolbase "^1.0.0"
+    css-what "^3.2.1"
+    domutils "^1.7.0"
+    nth-check "^1.0.2"
+
+css-tree@^1.0.0-alpha.37:
+  version "1.0.0-alpha.39"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/css-tree/-/css-tree-1.0.0-alpha.39.tgz#2bff3ffe1bb3f776cf7eefd91ee5cba77a149eeb"
+  integrity sha1-K/8//huz93bPfu/ZHuXLp3oUnus=
+  dependencies:
+    mdn-data "2.0.6"
+    source-map "^0.6.1"
+
+css-what@^3.2.1:
+  version "3.2.1"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/css-what/-/css-what-3.2.1.tgz#f4a8f12421064621b456755e34a03a2c22df5da1"
+  integrity sha1-9KjxJCEGRiG0VnVeNKA6LCLfXaE=
+
 cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   version "0.3.8"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/cssom/-/cssom-0.3.8.tgz#9f1276f5b2b463f2114d3f2c75250af8c1a36f4a"
@@ -2380,12 +2488,38 @@ diff-sequences@^24.9.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/diff-sequences/-/diff-sequences-24.9.0.tgz#5715d6244e2aa65f48bba0bc972db0b0b11e95b5"
   integrity sha1-VxXWJE4qpl9Iu6C8ly2wsLEelbU=
 
+dom-serializer@0:
+  version "0.2.2"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/dom-serializer/-/dom-serializer-0.2.2.tgz#1afb81f533717175d478655debc5e332d9f9bb51"
+  integrity sha1-GvuB9TNxcXXUeGVd68XjMtn5u1E=
+  dependencies:
+    domelementtype "^2.0.1"
+    entities "^2.0.0"
+
+domelementtype@1:
+  version "1.3.1"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/domelementtype/-/domelementtype-1.3.1.tgz#d048c44b37b0d10a7f2a3d5fee3f4333d790481f"
+  integrity sha1-0EjESzew0Qp/Kj1f7j9DM9eQSB8=
+
+domelementtype@^2.0.1:
+  version "2.0.1"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/domelementtype/-/domelementtype-2.0.1.tgz#1f8bdfe91f5a78063274e803b4bdcedf6e94f94d"
+  integrity sha1-H4vf6R9aeAYydOgDtL3O326U+U0=
+
 domexception@^1.0.1:
   version "1.0.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/domexception/-/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"
   integrity sha1-k3RCZEymoxJh7zbj7Gd/6AVYLJA=
   dependencies:
     webidl-conversions "^4.0.2"
+
+domutils@^1.7.0:
+  version "1.7.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/domutils/-/domutils-1.7.0.tgz#56ea341e834e06e6748af7a1cb25da67ea9f8c2a"
+  integrity sha1-Vuo0HoNOBuZ0ivehyyXaZ+qfjCo=
+  dependencies:
+    dom-serializer "0"
+    domelementtype "1"
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -2428,6 +2562,11 @@ end-of-stream@^1.1.0:
   integrity sha1-WuZKX0UFe682JuwU2gyl5LJDHrA=
   dependencies:
     once "^1.4.0"
+
+entities@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/entities/-/entities-2.0.0.tgz#68d6084cab1b079767540d80e56a39b423e4abf4"
+  integrity sha1-aNYITKsbB5dnVA2A5Wo5tCPkq/Q=
 
 envinfo@^7.1.0:
   version "7.5.0"
@@ -2484,6 +2623,11 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+
+escape-string-regexp@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+  integrity sha1-owME6Z2qMuI7L9IPUbq9B8/8o0Q=
 
 escodegen@^1.9.1:
   version "1.12.0"
@@ -2866,6 +3010,11 @@ fbjs@^1.0.0:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
+fecha@3.0.3:
+  version "3.0.3"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/fecha/-/fecha-3.0.3.tgz#fabbd416497649a42c24d34bfa726b579203a1e2"
+  integrity sha1-+rvUFkl2SaQsJNNL+nJrV5IDoeI=
+
 figures@^2.0.0:
   version "2.0.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/figures/-/figures-2.0.0.tgz#3ab1a2d2a62c8bfb431a0c94cb797a2fce27c962"
@@ -3160,7 +3309,7 @@ hoist-non-react-statics@^2.3.1:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha1-xZA89AnA39kI84jmGdhrnBF0y0c=
 
-hoist-non-react-statics@^3.3.0:
+hoist-non-react-statics@^3.2.1, hoist-non-react-statics@^3.3.0:
   version "3.3.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#101685d3aff3b23ea213163f6e8e12f4f111e19f"
   integrity sha1-EBaF06/zsj6iExY/bo4S9PER4Z8=
@@ -4197,6 +4346,11 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
+lodash.merge@^4.6.1:
+  version "4.6.2"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha1-VYqlO0O2YeGSWgr9+japoQhf5Xo=
+
 lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
@@ -4283,6 +4437,11 @@ md5-file@^3.2.3:
   integrity sha1-+bzrlB7KIhSkwHJ/XnADFOdw8G8=
   dependencies:
     buffer-alloc "^1.1.0"
+
+mdn-data@2.0.6:
+  version "2.0.6"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/mdn-data/-/mdn-data-2.0.6.tgz#852dc60fcaa5daa2e8cf6c9189c440ed3e042978"
+  integrity sha1-hS3GD8ql2qLoz2yRicRA7T4EKXg=
 
 mem@^1.1.0:
   version "1.1.0"
@@ -4666,6 +4825,11 @@ nan@^2.12.1:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha1-eBj3IgJ7JFmobwKV1DTR/CM2xSw=
 
+nanoid@^2.1.0:
+  version "2.1.8"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/nanoid/-/nanoid-2.1.8.tgz#2dbb0224231b246e3b4c819de7bfea6384dabf08"
+  integrity sha1-LbsCJCMbJG47TIGd57/qY4Tavwg=
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -4777,6 +4941,13 @@ npm-run-path@^2.0.0:
   integrity sha1-NakjLfo11wZ7TLLd8jV7GHFTbF8=
   dependencies:
     path-key "^2.0.0"
+
+nth-check@^1.0.2:
+  version "1.0.2"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/nth-check/-/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
+  integrity sha1-sr0pXDfj3VijvwcAN2Zjuk2c8Fw=
+  dependencies:
+    boolbase "~1.0.0"
 
 nullthrows@^1.1.0:
   version "1.1.1"
@@ -5274,6 +5445,15 @@ qs@~6.5.2:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
   integrity sha1-yzroBuh0BERYTvFUzo7pjUA/PjY=
 
+query-string@^6.9.0:
+  version "6.9.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/query-string/-/query-string-6.9.0.tgz#1c3b727c370cf00f177c99f328fda2108f8fa3dd"
+  integrity sha1-HDtyfDcM8A8XfJnzKP2iEI+Po90=
+  dependencies:
+    decode-uri-component "^0.2.0"
+    split-on-first "^1.0.0"
+    strict-uri-encode "^2.0.0"
+
 querystringify@^2.1.1:
   version "2.1.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
@@ -5310,10 +5490,15 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
 react-native-amwellservice@../react-native-amwellservice/:
   version "1.0.0"
 
-react-native-gesture-handler@~1.5.0:
-  version "1.5.2"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-gesture-handler/-/react-native-gesture-handler-1.5.2.tgz#281111550bf1eee10b7feba5278d142169892731"
-  integrity sha1-KBERVQvx7uELf+ulJ40UIWmJJzE=
+react-native-eva-icons@1.1.0:
+  version "1.1.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-eva-icons/-/react-native-eva-icons-1.1.0.tgz#323e55d759187edc216d049e7c0012a27383e0ed"
+  integrity sha1-Mj5V11kYftwhbQSefAASonOD4O0=
+
+react-native-gesture-handler@^1.5.3:
+  version "1.5.3"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-gesture-handler/-/react-native-gesture-handler-1.5.3.tgz#191b44701fab7ba54c27a2438cb5eaa252666e66"
+  integrity sha1-GRtEcB+re6VMJ6JDjLXqolJmbmY=
   dependencies:
     hammerjs "^2.0.8"
     hoist-non-react-statics "^2.3.1"
@@ -5329,10 +5514,15 @@ react-native-paper@^3.4.0:
     color "^3.1.2"
     react-native-safe-area-view "^0.14.6"
 
-react-native-reanimated@~1.4.0:
+react-native-reanimated@^1.4.0:
   version "1.4.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
   integrity sha1-fxrL+b4ISS2DT1EnAFcJeAUr4vk=
+
+react-native-safe-area-context@^0.6.1:
+  version "0.6.1"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-safe-area-context/-/react-native-safe-area-context-0.6.1.tgz#6886ec1769625ae1d8a0ba8921d99166a0e2e955"
+  integrity sha1-aIbsF2liWuHYoLqJIdmRZqDi6VU=
 
 react-native-safe-area-view@^0.14.6:
   version "0.14.8"
@@ -5341,12 +5531,20 @@ react-native-safe-area-view@^0.14.6:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-react-native-screens@~2.0.0-alpha.12:
+react-native-screens@^2.0.0-alpha.22:
   version "2.0.0-alpha.22"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-screens/-/react-native-screens-2.0.0-alpha.22.tgz#67cde460153985e400e0280ed3a0e5be07b0dc5a"
   integrity sha1-Z83kYBU5heQA4CgO06Dlvgew3Fo=
   dependencies:
     debounce "^1.2.0"
+
+react-native-svg@^9.13.6:
+  version "9.13.6"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-svg/-/react-native-svg-9.13.6.tgz#5365fba2bc460054b90851e71f2a71006a5d373f"
+  integrity sha1-U2X7orxGAFS5CFHnHypxAGpdNz8=
+  dependencies:
+    css-select "^2.0.2"
+    css-tree "^1.0.0-alpha.37"
 
 react-native-unimodules@~0.7.0:
   version "0.7.0"
@@ -5890,6 +6088,13 @@ shellwords@^0.1.1:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
   integrity sha1-1rkYHBpI05cyTISHHvvPxz/AZUs=
 
+shortid@^2.2.15:
+  version "2.2.15"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/shortid/-/shortid-2.2.15.tgz#2b902eaa93a69b11120373cd42a1f1fe4437c122"
+  integrity sha1-K5AuqpOmmxESA3PNQqHx/kQ3wSI=
+  dependencies:
+    nanoid "^2.1.0"
+
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
@@ -6030,6 +6235,11 @@ spdx-license-ids@^3.0.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/spdx-license-ids/-/spdx-license-ids-3.0.5.tgz#3694b5804567a458d3c8045842a6358632f62654"
   integrity sha1-NpS1gEVnpFjTyARYQqY1hjL2JlQ=
 
+split-on-first@^1.0.0:
+  version "1.1.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/split-on-first/-/split-on-first-1.1.0.tgz#f610afeee3b12bce1d0c30425e76398b78249a5f"
+  integrity sha1-9hCv7uOxK84dDDBCXnY5i3gkml8=
+
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/split-string/-/split-string-3.1.0.tgz#7cb09dda3a86585705c64b39a6466038682e8fe2"
@@ -6091,6 +6301,11 @@ stream-buffers@~2.2.0:
   version "2.2.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/stream-buffers/-/stream-buffers-2.2.0.tgz#91d5f5130d1cef96dcfa7f726945188741d09ee4"
   integrity sha1-kdX1Ew0c75bc+n9yaUUYh0HQnuQ=
+
+strict-uri-encode@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/strict-uri-encode/-/strict-uri-encode-2.0.0.tgz#b9c7330c7042862f6b142dc274bbcc5866ce3546"
+  integrity sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
 
 string-length@^2.0.0:
   version "2.0.0"
@@ -6523,6 +6738,13 @@ url-parse@^1.4.4:
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
+
+use-subscription@^1.3.0:
+  version "1.3.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/use-subscription/-/use-subscription-1.3.0.tgz#3df13a798e826c8d462899423293289a3362e4e6"
+  integrity sha1-PfE6eY6CbI1GKJlCMpMomjNi5OY=
+  dependencies:
+    object-assign "^4.1.1"
 
 use@^3.1.0:
   version "3.1.1"

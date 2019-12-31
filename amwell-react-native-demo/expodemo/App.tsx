@@ -1,17 +1,28 @@
 import React from "react";
 import {
   StyleSheet,
-  Text,
   Image,
   View,
   TouchableOpacity,
   UIManager,
-  Button,
   findNodeHandle,
+  SafeAreaView,
+  Button,
   Platform,
   ToastAndroid
 } from "react-native";
-import { Appbar } from "react-native-paper";
+
+import {
+  ApplicationProvider,
+  IconRegistry,
+  Divider,
+  Layout,
+  TopNavigation,
+  Text,
+  Icon
+} from "@ui-kitten/components";
+import { EvaIconsPack } from "@ui-kitten/eva-icons";
+import { mapping, light as lightTheme } from "@eva-design/eva";
 
 import {
   Amwellservice,
@@ -27,6 +38,33 @@ import {
   ReloadInstructions
 } from "react-native/Libraries/NewAppScreen";
 
+import { TopNavigationActionsShowcase } from "./components/TopNavigation";
+import AmwellVideoCall from "./components/AmwellVideoCall";
+
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { NavigationNativeContainer } from "@react-navigation/native";
+
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, flexDirection: "column-reverse" }}>
+      <Button
+        onPress={() => navigation.navigate("Notifications")}
+        title="Go to notifications"
+      />
+    </View>
+  );
+}
+
+function NotificationsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, flexDirection: "column-reverse" }}>
+      <Button onPress={() => navigation.goBack()} title="Go back home" />
+    </View>
+  );
+}
+
+const Drawer = createDrawerNavigator();
+
 export default function App() {
   console.log(" ======== Testing Launched! =======");
   // console.log(Amwellservice);
@@ -40,36 +78,29 @@ export default function App() {
     );
   };
 
-  _goBack = () => console.log("Went back");
-  _handleSearch = () => console.log("Searching");
-  _handleMore = () => console.log("Shown more");
-
   return (
-    <View style={styles.container}>
-      <Appbar.Header>
-        <Appbar.BackAction onPress={this._goBack} />
-        <Appbar.Content
-          title="Virtual Visit - Amwell SDK"
-          subtitle="Demo App with Native UI Module"
-        />
-        <Appbar.Action icon="magnify" onPress={this._handleSearch} />
-        <Appbar.Action icon="dots-vertical" onPress={this._handleMore} />
-      </Appbar.Header>
-      <View style={styles.contentContainer}>
-        <Text>Press to start test video call!</Text>
-        <TouchableOpacity onPress={this.onButtonClick}>
-          <Image
-            style={styles.button}
-            source={require("./images/video-call.jpeg")}
-          />
-        </TouchableOpacity>
-        <RNAmwellView
-          style={styles.nativeViewStyle}
-          ref={ref => (this.mySwiftComponentInstance = ref)}
-        ></RNAmwellView>
-        <Text>Note: Make sure Provider [Test Four] is online!</Text>
-      </View>
-    </View>
+    <React.Fragment>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider mapping={mapping} theme={lightTheme}>
+        <SafeAreaView style={{ flex: 1 }}>
+          <TopNavigationActionsShowcase
+            navigation={Drawer}
+          ></TopNavigationActionsShowcase>
+
+          <Divider />
+          <NavigationNativeContainer>
+            <Drawer.Navigator initialRouteName="VideoCall">
+              <Drawer.Screen name="Home" component={HomeScreen} />
+              <Drawer.Screen
+                name="Notifications"
+                component={NotificationsScreen}
+              />
+              <Drawer.Screen name="VideoCall" component={AmwellVideoCall} />
+            </Drawer.Navigator>
+          </NavigationNativeContainer>
+        </SafeAreaView>
+      </ApplicationProvider>
+    </React.Fragment>
   );
 }
 
@@ -115,14 +146,10 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: "#fff"
-  },
-
-  contentContainer: {
-    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    width: "100%",
     elevation: 4,
     shadowOffset: { width: 5, height: 5 },
     shadowColor: "grey",

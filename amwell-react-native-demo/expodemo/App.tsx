@@ -43,6 +43,7 @@ import AmwellVideoCall from "./components/AmwellVideoCall";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationNativeContainer } from "@react-navigation/native";
+import { DrawerActions } from '@react-navigation/routers';
 
 function HomeScreen({ navigation }) {
   return (
@@ -78,8 +79,11 @@ export default function App() {
     );
   };
 
+  const ref = React.useRef(null);
+
   toggleDrawerFunc = () => {
-    this.navigation.toggleDrawer();
+    console.log(ref.current);
+    ref.current.dispatch(DrawerActions.toggleDrawer());
   };
 
   return (
@@ -93,10 +97,7 @@ export default function App() {
 
           <Divider />
 
-          <NavigationNativeContainer
-            ref={navigation => {
-              this.navigation = navigation;
-            }}
+          <NavigationNativeContainer ref={ref}
           >
             <Drawer.Navigator initialRouteName="VideoCall">
               <Drawer.Screen name="Home" component={HomeScreen} />

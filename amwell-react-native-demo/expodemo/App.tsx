@@ -38,7 +38,7 @@ import {
   ReloadInstructions
 } from "react-native/Libraries/NewAppScreen";
 
-import { TopNavigationActionsShowcase } from "./components/TopNavigation";
+import { TopNavigationHeader } from "./components/TopNavigation";
 import AmwellVideoCall from "./components/AmwellVideoCall";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -78,17 +78,26 @@ export default function App() {
     );
   };
 
+  toggleDrawerFunc = () => {
+    this.navigation.toggleDrawer();
+  };
+
   return (
     <React.Fragment>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider mapping={mapping} theme={lightTheme}>
         <SafeAreaView style={{ flex: 1 }}>
-          <TopNavigationActionsShowcase
-            navigation={Drawer}
-          ></TopNavigationActionsShowcase>
+          <TopNavigationHeader
+            toggleDrawerFunc={this.toggleDrawerFunc}
+          ></TopNavigationHeader>
 
           <Divider />
-          <NavigationNativeContainer>
+
+          <NavigationNativeContainer
+            ref={navigation => {
+              this.navigation = navigation;
+            }}
+          >
             <Drawer.Navigator initialRouteName="VideoCall">
               <Drawer.Screen name="Home" component={HomeScreen} />
               <Drawer.Screen

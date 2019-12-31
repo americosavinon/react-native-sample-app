@@ -9,6 +9,8 @@ import {
   TopNavigation,
   TopNavigationAction
 } from "@ui-kitten/components";
+import PropTypes from "prop-types";
+import { useNavigation } from "@react-navigation/native";
 
 const BackIcon = style => <Icon {...style} name="list-outline" />;
 
@@ -22,20 +24,26 @@ const EditAction = props => <TopNavigationAction {...props} icon={EditIcon} />;
 
 const MenuAction = props => <TopNavigationAction {...props} icon={MenuIcon} />;
 
-export const TopNavigationActionsShowcase = () => {
-  const onBackPress = () => {
-    console.log(this);
+export class TopNavigationHeader extends React.Component {
+  onBackPress = () => {
+    // const navigation = useNavigation();
+    this.props.toggleDrawerFunc();
   };
 
-  const renderLeftControl = () => <BackAction onPress={onBackPress} />;
+  renderLeftControl = () => <BackAction onPress={this.onBackPress} />;
+  renderRightControls = () => [<EditAction />, <MenuAction />];
 
-  const renderRightControls = () => [<EditAction />, <MenuAction />];
+  render() {
+    return (
+      <TopNavigation
+        title="AmwellSDK DemoApp"
+        leftControl={this.renderLeftControl()}
+        rightControls={this.renderRightControls()}
+      />
+    );
+  }
+}
 
-  return (
-    <TopNavigation
-      title="AmwellSDK DemoApp"
-      leftControl={renderLeftControl()}
-      rightControls={renderRightControls()}
-    />
-  );
+TopNavigationHeader.protoTypes = {
+  toggleDrawerFunc: PropTypes.func
 };

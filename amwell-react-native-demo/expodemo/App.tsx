@@ -41,10 +41,13 @@ import {
 import { TopNavigationHeader } from "./components/TopNavigation";
 import AmwellVideoCall from "./components/AmwellVideoCall";
 import HomeScreen from "./components/HomeScreen";
+import Settings from "./components/Settings";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import { NavigationNativeContainer } from "@react-navigation/native";
 import { DrawerActions } from '@react-navigation/routers';
+import { enableScreens } from 'react-native-screens';
 
 function NotificationsScreen({ navigation }) {
   return (
@@ -54,7 +57,20 @@ function NotificationsScreen({ navigation }) {
   );
 }
 
+function ProfileScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, flexDirection: "column-reverse" }}>
+      <Button
+          onPress={() => navigation.navigate("Profile")}
+          title="Go to Profile"
+        />
+    </View>
+  );
+}
+
 const Drawer = createDrawerNavigator();
+
+enableScreens();
 
 export default function App() {
   console.log(" ======== Testing Launched! =======");
@@ -73,6 +89,7 @@ export default function App() {
 
   toggleDrawerFunc = () => {
     console.log(ref.current);
+
     ref.current.dispatch(DrawerActions.toggleDrawer());
   };
 
@@ -86,14 +103,14 @@ export default function App() {
           ></TopNavigationHeader>
 
           <Divider />
-
+          
           <NavigationNativeContainer ref={ref}
           >
             <Drawer.Navigator initialRouteName="VideoCall">
               <Drawer.Screen name="Home" component={HomeScreen} />
               <Drawer.Screen
-                name="Notifications"
-                component={NotificationsScreen}
+                name="Settings"
+                component={Settings}
               />
               <Drawer.Screen name="VideoCall" component={AmwellVideoCall} />
             </Drawer.Navigator>

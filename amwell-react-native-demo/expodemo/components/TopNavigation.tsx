@@ -10,7 +10,6 @@ import {
   TopNavigationAction
 } from "@ui-kitten/components";
 import PropTypes from "prop-types";
-import { useNavigation } from "@react-navigation/native";
 
 const BackIcon = style => <Icon {...style} name="menu-outline" />;
 

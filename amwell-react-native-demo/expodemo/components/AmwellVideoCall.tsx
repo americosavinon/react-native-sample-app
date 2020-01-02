@@ -5,20 +5,10 @@ import {
   View,
   Text,
   TouchableOpacity,
-  UIManager,
-  findNodeHandle,
-  SafeAreaView,
-  Button,
-  Platform,
-  ToastAndroid
 } from "react-native";
 
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions
 } from "react-native/Libraries/NewAppScreen";
 
 import {

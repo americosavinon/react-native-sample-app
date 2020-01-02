@@ -40,14 +40,6 @@ import {
 
 import { TopNavigationHeader } from "./components/TopNavigation";
 import AmwellVideoCall from "./components/AmwellVideoCall";
-import HomeScreen from "./components/HomeScreen";
-import Settings from "./components/Settings";
-
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
-import { NavigationNativeContainer } from "@react-navigation/native";
-import { DrawerActions } from '@react-navigation/routers';
-import { enableScreens } from 'react-native-screens';
 
 function NotificationsScreen({ navigation }) {
   return (
@@ -68,10 +60,6 @@ function ProfileScreen({ navigation }) {
   );
 }
 
-const Drawer = createDrawerNavigator();
-
-enableScreens();
-
 export default function App() {
   console.log(" ======== Testing Launched! =======");
   // console.log(Amwellservice);
@@ -90,7 +78,7 @@ export default function App() {
   toggleDrawerFunc = () => {
     console.log(ref.current);
 
-    ref.current.dispatch(DrawerActions.toggleDrawer());
+    // ref.current.dispatch(DrawerActions.toggleDrawer());
   };
 
   return (
@@ -101,10 +89,12 @@ export default function App() {
           <TopNavigationHeader
             toggleDrawerFunc={this.toggleDrawerFunc}
           ></TopNavigationHeader>
-
           <Divider />
+          <Layout style={{flex: 1}}>
+            <AmwellVideoCall />
+          </Layout>
           
-          <NavigationNativeContainer ref={ref}
+          {/* <NavigationNativeContainer ref={ref}
           >
             <Drawer.Navigator initialRouteName="VideoCall">
               <Drawer.Screen name="Home" component={HomeScreen} />
@@ -114,7 +104,7 @@ export default function App() {
               />
               <Drawer.Screen name="VideoCall" component={AmwellVideoCall} />
             </Drawer.Navigator>
-          </NavigationNativeContainer>
+          </NavigationNativeContainer> */}
         </SafeAreaView>
       </ApplicationProvider>
     </React.Fragment>

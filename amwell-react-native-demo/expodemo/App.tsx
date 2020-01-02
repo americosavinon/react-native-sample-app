@@ -16,10 +16,6 @@ import {
   ApplicationProvider,
   IconRegistry,
   Divider,
-  Layout,
-  TopNavigation,
-  Text,
-  Icon
 } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { mapping, light as lightTheme } from "@eva-design/eva";
@@ -31,15 +27,18 @@ import {
 } from "react-native-amwellservice";
 
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions
 } from "react-native/Libraries/NewAppScreen";
+
+import HomeScreen from "./components/HomeScreen";
+import Settings from "./components/Settings";
 
 import { TopNavigationHeader } from "./components/TopNavigation";
 import AmwellVideoCall from "./components/AmwellVideoCall";
+
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { NavigationNativeContainer } from "@react-navigation/native";
+import { DrawerActions } from '@react-navigation/routers';
 
 function NotificationsScreen({ navigation }) {
   return (
@@ -60,6 +59,8 @@ function ProfileScreen({ navigation }) {
   );
 }
 
+const Drawer = createDrawerNavigator();
+
 export default function App() {
   console.log(" ======== Testing Launched! =======");
   // console.log(Amwellservice);
@@ -78,7 +79,7 @@ export default function App() {
   toggleDrawerFunc = () => {
     console.log(ref.current);
 
-    // ref.current.dispatch(DrawerActions.toggleDrawer());
+    ref.current.dispatch(DrawerActions.toggleDrawer());
   };
 
   return (
@@ -90,11 +91,7 @@ export default function App() {
             toggleDrawerFunc={this.toggleDrawerFunc}
           ></TopNavigationHeader>
           <Divider />
-          <Layout style={{flex: 1}}>
-            <AmwellVideoCall />
-          </Layout>
-          
-          {/* <NavigationNativeContainer ref={ref}
+          <NavigationNativeContainer ref={ref}
           >
             <Drawer.Navigator initialRouteName="VideoCall">
               <Drawer.Screen name="Home" component={HomeScreen} />
@@ -104,7 +101,7 @@ export default function App() {
               />
               <Drawer.Screen name="VideoCall" component={AmwellVideoCall} />
             </Drawer.Navigator>
-          </NavigationNativeContainer> */}
+          </NavigationNativeContainer>
         </SafeAreaView>
       </ApplicationProvider>
     </React.Fragment>

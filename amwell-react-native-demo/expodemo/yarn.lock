@@ -1211,13 +1211,6 @@
     "@react-navigation/routers" "^5.0.0-alpha.18"
     color "^3.1.2"
 
-"@react-navigation/native-stack@^5.0.0-alpha.19":
-  version "5.0.0-alpha.19"
-  resolved "https://registry.yarnpkg.com/@react-navigation/native-stack/-/native-stack-5.0.0-alpha.19.tgz#9d7487ae05da9f80258c54d9fe95a3b45911279d"
-  integrity sha512-w9b3veTvsola9PtNMjM3ET08ZGd76FaKiX8EkGlnGX3Oj5jXMU9cG8aJy1nNiAaxXxA0HVudNh+Vvb6LMLi5yQ==
-  dependencies:
-    "@react-navigation/routers" "^5.0.0-alpha.18"
-
 "@react-navigation/native@^5.0.0-alpha.21":
   version "5.0.0-alpha.21"
   resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.0-alpha.21.tgz#346827f68b7667fc51a31eda784213a5f5041297"

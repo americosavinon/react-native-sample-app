@@ -1,18 +1,16 @@
 import React from "react";
 import {
   StyleSheet,
+  Image,
+  View,
+  TouchableOpacity,
   UIManager,
   findNodeHandle,
-  SafeAreaView,
 } from "react-native";
 
 import {
-  ApplicationProvider,
-  IconRegistry,
-  Divider,
-} from "@ui-kitten/components";
-import { EvaIconsPack } from "@ui-kitten/eva-icons";
-import { mapping, light as lightTheme } from "@eva-design/eva";
+  Colors,
+} from "react-native/Libraries/NewAppScreen";
 
 import {
   Amwellservice,
@@ -21,20 +19,22 @@ import {
 } from "react-native-amwellservice";
 
 import {
-  Colors,
-} from "react-native/Libraries/NewAppScreen";
+  Divider,
+  Layout,
+  Text,
+} from '@ui-kitten/components';
 
-import { useScreens } from 'react-native-screens';
-import { TopNavigationHeader } from "./src/components/TopNavigation";
+import { Toolbar } from '../../components/toolbar.component';
 
-useScreens();
+import {
+  SafeAreaLayout,
+  SafeAreaLayoutElement,
+  SaveAreaInset,
+} from '../../components/safe-area-layout.component';
 
-export default function App() {
-
-  console.log(" ======== Testing Launched! =======");
-  // console.log(Amwellservice);
-
-  onButtonClick = e => {
+export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
+  
+  const onButtonClick = e => {
     console.log("button clicked!!!");
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this.mySwiftComponentInstance),
@@ -43,25 +43,39 @@ export default function App() {
     );
   };
 
-  const ref = React.useRef(null);
-
-  toggleDrawerFunc = () => {
-    // console.log(ref.current);
-    // ref.current.dispatch(DrawerActions.toggleDrawer());
-  };
-
   return (
-    <React.Fragment>
-      <IconRegistry icons={EvaIconsPack} />
-      <ApplicationProvider mapping={mapping} theme={lightTheme}>
-        <SafeAreaView style={{ flex: 1 }}>
-        </SafeAreaView>
-      </ApplicationProvider>
-    </React.Fragment>
-  );
+    <SafeAreaLayout
+      style={styles.safeArea}
+      insets={SaveAreaInset.TOP}>
+      <Toolbar
+        title='Amwell SDK Virtual Visit Demo'
+        onBackPress={props.navigation.goBack}
+      />
+      <Divider/>
+      <Layout style={styles.container}>
+      <View style={styles.container}>
+        <Text>Press to start test video call!</Text>
+        <TouchableOpacity onPress={onButtonClick}>
+          <Image
+            style={styles.button}
+            source={require("../../assets/video-call.jpeg")}
+          />
+        </TouchableOpacity>
+        <RNAmwellView
+          style={styles.nativeViewStyle}
+          ref={ref => (this.mySwiftComponentInstance = ref)}
+        ></RNAmwellView>
+        <Text>Note: Make sure Provider [Test Four] is online!</Text>
+      </View>
+      </Layout>
+    </SafeAreaLayout>
+  )
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   scrollView: {
     backgroundColor: Colors.lighter
   },

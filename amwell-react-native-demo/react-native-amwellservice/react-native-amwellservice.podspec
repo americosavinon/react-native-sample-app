@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = "ios/Frameworks/AWSDK.framework","ios/Frameworks/WebRTC.framework"
 
   s.dependency "React"
-  s.dependency "Toast-Swift"
   
   # ...
   # s.dependency "..."

@@ -9,7 +9,61 @@
 import Foundation
 import SwiftUI
 import AWSDK
-import Toast_Swift
+
+class ToastLabel: UILabel {
+    var textInsets = UIEdgeInsets.zero {
+        didSet { invalidateIntrinsicContentSize() }
+    }
+
+    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+        let insetRect = bounds.inset(by: textInsets)
+        let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
+        let invertedInsets = UIEdgeInsets(top: -textInsets.top, left: -textInsets.left, bottom: -textInsets.bottom, right: -textInsets.right)
+
+        return textRect.inset(by: invertedInsets)
+    }
+
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: rect.inset(by: textInsets))
+    }
+}
+
+extension UIViewController {
+    static let DELAY_SHORT = 1.5
+    static let DELAY_LONG = 3.0
+
+    func showToast(_ text: String, delay: TimeInterval = DELAY_LONG) {
+        let label = ToastLabel()
+        label.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.alpha = 0
+        label.text = text
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 20
+        label.numberOfLines = 0
+        label.textInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label)
+
+        let saveArea = view.safeAreaLayoutGuide
+        label.centerXAnchor.constraint(equalTo: saveArea.centerXAnchor, constant: 0).isActive = true
+        label.leadingAnchor.constraint(greaterThanOrEqualTo: saveArea.leadingAnchor, constant: 15).isActive = true
+        label.trailingAnchor.constraint(lessThanOrEqualTo: saveArea.trailingAnchor, constant: -15).isActive = true
+        label.bottomAnchor.constraint(equalTo: saveArea.bottomAnchor, constant: -30).isActive = true
+
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+            label.alpha = 1
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.5, delay: delay, options: .curveEaseOut, animations: {
+                label.alpha = 0
+            }, completion: {_ in
+                label.removeFromSuperview()
+            })
+        })
+    }
+}
 
 /**
  *  We need to use this controller to manage and control the video call testing.
@@ -22,13 +76,14 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
     // AWSDKVisitDelegate
     func providerDidEnterVisit() {
         print("providerDidEnterVisit")
-        self.view.makeToast("Now start to launch video!")
+        showToast("Now start to launch video!")
         createVisitConsole()
     }
     
     func visitDidComplete(_ visitSuccessful: Bool, with: AWCoreVisitEndReason) {
         print("visitDidComplete")
-        self.view.makeToast("Visit did complete!")
+        // self.view.makeToast("Visit did complete!")
+        showToast("Visit did complete!")
     }
     
     override func viewDidLoad() {
@@ -44,7 +99,8 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
     
     func testVideoCall() {
         launchVisit()
-        self.view.makeToast("Launch visit console ...... !")
+
+        showToast("Launch visit console ... !")
     }
     
     func launchVisit() {
@@ -84,6 +140,10 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                             print(data)
                                                                                                                             if (item.nameComponents.familyName! == "Four") {
                                                                                                                                 provider = item
+                                                                                                                                if (provider.availability == AWSDKMobileAvailability.Offline ) {
+                                                                                
+                                                                                                                                    self.showToast("Provider is offline :(  ... !")
+                                                                                                                                }
                                                                                                                                 break;
                                                                                                                             }
                                                                                                                         }
@@ -102,6 +162,8 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                     if (error != nil) {
                                                                                                                                         print(error)
                                                                                                                                     } else {
+                                                                                                                                        self.showToast("createVisitContext success!")
+                                                                                                                                        
                                                                                                                                         self.context = result as! AWSDKVisitContext
                                                                                                                                         self.context!.legalText[0].setAccepted()
                                                                                                                                         self.context!.selectedModality = AWSDKService.availableModalities![0]
@@ -123,6 +185,8 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                                     if (error != nil) {
                                                                                                                                                         print(error!)
                                                                                                                                                     } else {
+                                                                                                                                                        self.showToast("start visit now!");
+                                                                                                                                                      
                                                                                                                                                         print(result)
                                                                                                                                                     }
                                                                                                                                                     

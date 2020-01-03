@@ -12,9 +12,15 @@ export default function HomeScreen({ navigation }) {
         <View style={{ flex: 1, alignItems: 'center', justifyContent: "center"}}>
             <Text>Home Page Demo!</Text>
         <Button
-          onPress={() => navigation.navigate("Notifications")}
-          title="Go to notifications"
+            onPress={() => navigation.navigate("Settings")}
+            title="Go to notifications"
         />
-      </View>
+        </View>
     );
-  }
+}
+
+HomeScreen.navigationOptions = {
+    header: (
+        <Text>Hello</Text>
+    ),
+};

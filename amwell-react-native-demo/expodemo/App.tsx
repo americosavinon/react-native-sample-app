@@ -1,15 +1,9 @@
 import React from "react";
 import {
   StyleSheet,
-  Image,
-  View,
-  TouchableOpacity,
   UIManager,
   findNodeHandle,
   SafeAreaView,
-  Button,
-  Platform,
-  ToastAndroid
 } from "react-native";
 
 import {
@@ -31,37 +25,18 @@ import {
 } from "react-native/Libraries/NewAppScreen";
 
 import HomeScreen from "./components/HomeScreen";
-import Settings from "./components/Settings";
+import Settings from "./components/SettingsNavigator";
 
 import { TopNavigationHeader } from "./components/TopNavigation";
-import AmwellVideoCall from "./components/AmwellVideoCall";
+import TabNavigation from "./components/TabNavigation";
 
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { NavigationNativeContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DrawerActions } from '@react-navigation/routers';
 
-function NotificationsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, flexDirection: "column-reverse" }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
-
-function ProfileScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, flexDirection: "column-reverse" }}>
-      <Button
-          onPress={() => navigation.navigate("Profile")}
-          title="Go to Profile"
-        />
-    </View>
-  );
-}
-
-const Drawer = createDrawerNavigator();
-
 export default function App() {
+
   console.log(" ======== Testing Launched! =======");
   // console.log(Amwellservice);
 
@@ -78,7 +53,6 @@ export default function App() {
 
   toggleDrawerFunc = () => {
     console.log(ref.current);
-
     ref.current.dispatch(DrawerActions.toggleDrawer());
   };
 
@@ -87,20 +61,11 @@ export default function App() {
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider mapping={mapping} theme={lightTheme}>
         <SafeAreaView style={{ flex: 1 }}>
-          <TopNavigationHeader
-            toggleDrawerFunc={this.toggleDrawerFunc}
-          ></TopNavigationHeader>
-          <Divider />
-          <NavigationNativeContainer ref={ref}
-          >
-            <Drawer.Navigator initialRouteName="VideoCall">
-              <Drawer.Screen name="Home" component={HomeScreen} />
-              <Drawer.Screen
-                name="Settings"
-                component={Settings}
-              />
-              <Drawer.Screen name="VideoCall" component={AmwellVideoCall} />
-            </Drawer.Navigator>
+          {/* <TopNavigationHeader toggleDrawerFunc={this.toggleDrawerFunc}
+          ></TopNavigationHeader> 
+          <Divider /> */}
+          <NavigationNativeContainer ref={ref}>
+            <TabNavigation></TabNavigation>
           </NavigationNativeContainer>
         </SafeAreaView>
       </ApplicationProvider>

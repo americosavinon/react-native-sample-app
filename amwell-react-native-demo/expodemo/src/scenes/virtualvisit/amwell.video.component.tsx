@@ -5,12 +5,10 @@ import {
   View,
   TouchableOpacity,
   UIManager,
-  findNodeHandle,
+  findNodeHandle
 } from "react-native";
 
-import {
-  Colors,
-} from "react-native/Libraries/NewAppScreen";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import {
   Amwellservice,
@@ -18,24 +16,22 @@ import {
   RNAmwellView
 } from "react-native-amwellservice";
 
-import {
-  Divider,
-  Layout,
-  Text,
-} from '@ui-kitten/components';
+import { Divider, Layout, Text } from "@ui-kitten/components";
 
-import { Toolbar } from '../../components/toolbar.component';
+import { Toolbar } from "../../components/toolbar.component";
 
 import {
   SafeAreaLayout,
   SafeAreaLayoutElement,
-  SaveAreaInset,
-} from '../../components/safe-area-layout.component';
+  SaveAreaInset
+} from "../../components/safe-area-layout.component";
 
 export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
-  
   const onButtonClick = e => {
     console.log("button clicked!!!");
+    // console.log(UIManager.getConstants());
+
+    console.log(UIManager.getViewManagerConfig("AmwellView"));
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this.mySwiftComponentInstance),
       UIManager["AmwellView"].Commands.updateValueViaManager,
@@ -44,37 +40,35 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   };
 
   return (
-    <SafeAreaLayout
-      style={styles.safeArea}
-      insets={SaveAreaInset.TOP}>
+    <SafeAreaLayout style={styles.safeArea} insets={SaveAreaInset.TOP}>
       <Toolbar
-        title='Amwell SDK Virtual Visit Demo'
+        title="Amwell SDK Virtual Visit Demo"
         onBackPress={props.navigation.goBack}
       />
-      <Divider/>
+      <Divider />
       <Layout style={styles.container}>
-      <View style={styles.container}>
-        <Text>Press to start test video call!</Text>
-        <TouchableOpacity onPress={onButtonClick}>
-          <Image
-            style={styles.button}
-            source={require("../../assets/video-call.jpeg")}
-          />
-        </TouchableOpacity>
-        <RNAmwellView
-          style={styles.nativeViewStyle}
-          ref={ref => (this.mySwiftComponentInstance = ref)}
-        ></RNAmwellView>
-        <Text>Note: Make sure Provider [Test Four] is online!</Text>
-      </View>
+        <View style={styles.container}>
+          <Text>Press to start test video call!</Text>
+          <TouchableOpacity onPress={onButtonClick}>
+            <Image
+              style={styles.button}
+              source={require("../../assets/video-call.jpeg")}
+            />
+          </TouchableOpacity>
+          <RNAmwellView
+            style={styles.nativeViewStyle}
+            ref={ref => (this.mySwiftComponentInstance = ref)}
+          ></RNAmwellView>
+          <Text>Note: Make sure Provider [Test Four] is online!</Text>
+        </View>
       </Layout>
     </SafeAreaLayout>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   safeArea: {
-    flex: 1,
+    flex: 1
   },
   scrollView: {
     backgroundColor: Colors.lighter

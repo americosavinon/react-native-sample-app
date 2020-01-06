@@ -1,28 +1,16 @@
 {
   "name": "expodemo",
-  "displayName": "expo virtual visit",
+  "displayName": "expo demo",
   "expo": {
     "name": "expodemo",
-    "slug": "expo-virtual-visit",
+    "slug": "expo-template-bare",
     "privacy": "unlisted",
     "sdkVersion": "36.0.0",
     "version": "1.0.0",
-    "icon": "./src/assets/icon.png",
-    "splash": {
-      "image": "./src/assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
     "entryPoint": "node_modules/expo/AppEntry.js",
     "ios": {
       "bundleIdentifier": "com.rallyhealth.demo.virtualvisit"
     },
-    "platforms": [
-      "ios"
-    ]
+    "platforms": ["ios", "android", "web"]
   }
 }

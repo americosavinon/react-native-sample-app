@@ -12,8 +12,8 @@ import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import {
   Amwellservice,
-  RNCounterView,
-  RNAmwellView
+  RNAmwellView,
+  AmwellVirtualVisitView
 } from "react-native-amwellservice";
 
 import { Divider, Layout, Text } from "@ui-kitten/components";
@@ -39,6 +39,10 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
     );
   };
 
+  const onUpdate = (event: Object) => {
+    alert("Received params: " + JSON.stringify(event));
+  };
+
   return (
     <SafeAreaLayout style={styles.safeArea} insets={SaveAreaInset.TOP}>
       <Toolbar
@@ -55,10 +59,11 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
               source={require("../../assets/video-call.jpeg")}
             />
           </TouchableOpacity>
-          <RNAmwellView
+          <AmwellVirtualVisitView
+            onUpdate={this.onUpdate}
             style={styles.nativeViewStyle}
             ref={ref => (this.mySwiftComponentInstance = ref)}
-          ></RNAmwellView>
+          ></AmwellVirtualVisitView>
           <Text>Note: Make sure Provider [Test Four] is online!</Text>
         </View>
       </Layout>

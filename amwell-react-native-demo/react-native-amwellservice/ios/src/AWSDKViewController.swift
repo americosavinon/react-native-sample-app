@@ -77,6 +77,7 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
     func providerDidEnterVisit() {
         print("providerDidEnterVisit")
         showToast("Now start to launch video!")
+        onUpdate!(["virtualvisit-progress": "Now start to launch video!"])
         createVisitConsole()
     }
     
@@ -84,6 +85,7 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
         print("visitDidComplete")
         // self.view.makeToast("Visit did complete!")
         showToast("Visit did complete!")
+        onUpdate!(["virtualvisit-progress": "Visit did complete!"])
     }
     
     override func viewDidLoad() {
@@ -96,10 +98,13 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
         button.setTitle("AmwellSDK ViewManager Component @ rally health", for: .normal)
         view.addSubview(button)
     }
+
+    @objc var onUpdate: RCTDirectEventBlock?
     
     func testVideoCall() {
         launchVisit()
 
+        onUpdate!(["virtualvisit-progress": "start to launch visit console!"])
         showToast("Launch visit console ... !")
     }
     
@@ -143,6 +148,7 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                 if (provider.availability == AWSDKMobileAvailability.Offline ) {
                                                                                 
                                                                                                                                     self.showToast("Provider is offline :(  ... !")
+                                                                                                                                    onUpdate!(["virtualvisit-progress": "Provider is offline :(  ... !"])
                                                                                                                                 }
                                                                                                                                 break;
                                                                                                                             }

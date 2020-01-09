@@ -6,6 +6,11 @@ echo '========================================================='
 echo 'postinstall script for module' @ $npm_config_component
 echo '========================================================='
 
+FILE=./node_modules/react-native-amwellservice/scripts/module_postinstall.js
+if test -f "$FILE"; then
+    echo "$FILE exist"
+fi
+
 #if [ "$npm_config_component" = "react-native-amwellservice" ] 
 #then
     echo -n "Post install amwellservice..."

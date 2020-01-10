@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Image,
   View,
   TouchableOpacity,
   UIManager,
-  findNodeHandle,
-  ToastAndroid
+  findNodeHandle
 } from "react-native";
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
@@ -28,8 +27,11 @@ import {
 } from "../../components/safe-area-layout.component";
 
 export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
-  const onButtonClick = e => {
+  const [message, setMessage] = useState("");
+
+  const onButtonClick = () => {
     console.log("virtual visit demo clicked!");
+    setMessage("");
 
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this.mySwiftComponentInstance),
@@ -39,8 +41,15 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   };
 
   const onUpdate = (event: Object) => {
-    // console.log("Received params: " + JSON.stringify(event));
-    Toast.show(JSON.stringify(event));
+    if (event["vv-debug"] == "Wait for provider to connect!") {
+      setMessage(event["vv-debug"]);
+    }
+
+    if (event["vv-error"] != null) {
+      setMessage(event["vv-error"]);
+    } else {
+      Toast.show(event["vv-debug"]);
+    }
   };
 
   return (
@@ -52,6 +61,10 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
       <Divider />
       <Layout style={styles.container}>
         <View style={styles.container}>
+          <Text style={{ fontWeight: "bold", paddingBottom: 20 }}>
+            {message}
+          </Text>
+
           <Text>Press to start test video call!</Text>
           <TouchableOpacity onPress={onButtonClick}>
             <Image
@@ -128,7 +141,7 @@ const styles = StyleSheet.create({
   },
 
   nativeViewStyle: {
-    height: 100,
+    height: 1,
     color: Colors.black,
     borderWidth: 0,
     width: "90%"

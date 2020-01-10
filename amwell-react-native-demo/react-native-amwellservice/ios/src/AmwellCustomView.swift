@@ -26,6 +26,7 @@ class AmwellCustomView: UIView {
     
     //common func to init our view
     private func setupView() {
-      backgroundColor = .red
+        // this is for debug
+        backgroundColor = .lightGray
     }
 }

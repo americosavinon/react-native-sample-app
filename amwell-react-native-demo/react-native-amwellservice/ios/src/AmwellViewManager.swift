@@ -29,19 +29,9 @@ class AmwellViewManager: RCTViewManager {
     }
     
     // MARK: Bridged methods
-    @objc func triggerRequest() -> Void {
-        print("trigger Request")
-    }
-    
-    @objc func test() -> Void {
-        print("test called!")
-    }
-    
     @objc func updateValueViaManager(_ node: NSNumber) {
-        print("updateValueViaManager")
-        
         DispatchQueue.main.async {
-            self.viewController!.testVideoCall()
+            self.viewController!.demoVideoCall()
         }
     }
 }

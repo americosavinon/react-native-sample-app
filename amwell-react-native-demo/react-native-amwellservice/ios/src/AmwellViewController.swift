@@ -10,61 +10,6 @@ import Foundation
 import SwiftUI
 import AWSDK
 
-class ToastLabel: UILabel {
-    var textInsets = UIEdgeInsets.zero {
-        didSet { invalidateIntrinsicContentSize() }
-    }
-
-    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
-        let insetRect = bounds.inset(by: textInsets)
-        let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
-        let invertedInsets = UIEdgeInsets(top: -textInsets.top, left: -textInsets.left, bottom: -textInsets.bottom, right: -textInsets.right)
-
-        return textRect.inset(by: invertedInsets)
-    }
-
-    override func drawText(in rect: CGRect) {
-        super.drawText(in: rect.inset(by: textInsets))
-    }
-}
-
-extension UIViewController {
-    static let DELAY_SHORT = 1.5
-    static let DELAY_LONG = 3.0
-
-    func showToast(_ text: String, delay: TimeInterval = DELAY_LONG) {
-        let label = ToastLabel()
-        label.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 15)
-        label.alpha = 0
-        label.text = text
-        label.clipsToBounds = true
-        label.layer.cornerRadius = 20
-        label.numberOfLines = 0
-        label.textInsets = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-
-        let saveArea = view.safeAreaLayoutGuide
-        label.centerXAnchor.constraint(equalTo: saveArea.centerXAnchor, constant: 0).isActive = true
-        label.leadingAnchor.constraint(greaterThanOrEqualTo: saveArea.leadingAnchor, constant: 15).isActive = true
-        label.trailingAnchor.constraint(lessThanOrEqualTo: saveArea.trailingAnchor, constant: -15).isActive = true
-        label.bottomAnchor.constraint(equalTo: saveArea.bottomAnchor, constant: -30).isActive = true
-
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
-            label.alpha = 1
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.5, delay: delay, options: .curveEaseOut, animations: {
-                label.alpha = 0
-            }, completion: {_ in
-                label.removeFromSuperview()
-            })
-        })
-    }
-}
-
 /**
  *  We need to use this controller to manage and control the video call testing.
  */
@@ -81,17 +26,12 @@ class AmwellViewController: UIViewController, AWSDKVisitDelegate {
     
     // AWSDKVisitDelegate
     func providerDidEnterVisit() {
-        print("providerDidEnterVisit")
-        showToast("Now start to launch video!")
-        self.myView!.onUpdate!(["virtualvisit-progress": "Now start to launch video!"])
+        self.Debug("Now start to launch video!")
         createVisitConsole()
     }
     
     func visitDidComplete(_ visitSuccessful: Bool, with: AWCoreVisitEndReason) {
-        print("visitDidComplete")
-        // self.view.makeToast("Visit did complete!")
-        showToast("Visit did complete!")
-        self.myView!.onUpdate!(["virtualvisit-progress": "Visit did complete!"])
+        self.Debug("Virtual Visit is completed!")
     }
     
     override func viewDidLoad() {
@@ -99,10 +39,20 @@ class AmwellViewController: UIViewController, AWSDKVisitDelegate {
         // Do any additional setup after loading the view.
     }
 
-    func testVideoCall() {
+    // This is the main function
+    func demoVideoCall() {
         launchVisit()
-        self.myView!.onUpdate!(["virtualvisit-progress": "start to launch visit console!"])
-        showToast("Launch visit console ... !")
+        self.Debug("Launch visit console!")
+    }
+    
+    func Debug(_ message: String) {
+        print(message)
+        self.myView!.onUpdate!(["vv-debug": message])
+    }
+    
+    func Error(_ message: String) {
+        print(message)
+        self.myView!.onUpdate!(["vv-error": message])
     }
     
     func launchVisit() {
@@ -110,7 +60,7 @@ class AmwellViewController: UIViewController, AWSDKVisitDelegate {
                                                    kAWSDKUrl: "https://iot58.amwellintegration.com/",
                                                    kAWSDKKey: "bf8a5665"]) { (success, error) in
                                                     if success {
-                                                        print("AWSDKService initialize successfully!")
+                                                        self.Debug("AWSDKService initialize successfully!")
                                                         
                                                         AWSDKAuthenticationService.authenticateConsumer(withUsername: "yunfeng.lin@rallyhealth.com",
                                                                                                         password: "cs123!@#",
@@ -143,9 +93,7 @@ class AmwellViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                             if (item.nameComponents.familyName! == "Four") {
                                                                                                                                 provider = item
                                                                                                                                 if (provider.availability == AWSDKMobileAvailability.Offline ) {
-                                                                                
-                                                                                                                                    self.showToast("Provider is offline :(  ... !")
-                                                                                                                                    self.myView!.onUpdate!(["virtualvisit-progress": "Provider is offline :(  ... !"])
+                                                                                                                                    self.Error("Provider is offline :(  ... !")
                                                                                                                                 }
                                                                                                                                 break;
                                                                                                                             }
@@ -165,7 +113,7 @@ class AmwellViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                     if (error != nil) {
                                                                                                                                         print(error)
                                                                                                                                     } else {
-                                                                                                                                        self.showToast("createVisitContext success!")
+                                                                                                                                        self.Debug("Create VisitContext success!")
                                                                                                                                         
                                                                                                                                         self.context = result as! AWSDKVisitContext
                                                                                                                                         self.context!.legalText[0].setAccepted()
@@ -175,12 +123,11 @@ class AmwellViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                             (result, error) in
                                                                                                                                             
                                                                                                                                             if (error != nil) {
-                                                                                                                                                print(error)
+                                                                                                                                                self.Debug(error.debugDescription)
                                                                                                                                             } else {
                                                                                                                                                 var visit = result as! AWSDKVisit
                                                                                                                                                 self.visit = visit
                                                                                                                                                 self.visit!.delegate = self
-                                                                                                                                                // visitData.callbackDelegate = self
                                                                                                                                                 
                                                                                                                                                 AWSDKVisitService.start(self.visit!) {
                                                                                                                                                     (result, error) in
@@ -188,8 +135,7 @@ class AmwellViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                                     if (error != nil) {
                                                                                                                                                         print(error!)
                                                                                                                                                     } else {
-                                                                                                                                                        self.showToast("start visit now!");
-                                                                                                                                                        print(result)
+                                                                                                                                                        self.Debug("Wait for provider to connect!")
                                                                                                                                                     }
                                                                                                                                                     
                                                                                                                                                 }

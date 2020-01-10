@@ -5,19 +5,20 @@ import {
   View,
   TouchableOpacity,
   UIManager,
-  findNodeHandle
+  findNodeHandle,
+  ToastAndroid
 } from "react-native";
 
 import { Colors } from "react-native/Libraries/NewAppScreen";
 
 import {
   Amwellservice,
-  RNAmwellView,
   AmwellVirtualVisitView
 } from "react-native-amwellservice";
 
+// The toast is for simple debug/demo usage
+import Toast from "react-native-simple-toast";
 import { Divider, Layout, Text } from "@ui-kitten/components";
-
 import { Toolbar } from "../../components/toolbar.component";
 
 import {
@@ -28,10 +29,8 @@ import {
 
 export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   const onButtonClick = e => {
-    console.log("button clicked!!!");
-    // console.log(UIManager.getConstants());
+    console.log("virtual visit demo clicked!");
 
-    console.log(UIManager.getViewManagerConfig("AmwellView"));
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this.mySwiftComponentInstance),
       UIManager["AmwellView"].Commands.updateValueViaManager,
@@ -40,7 +39,8 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   };
 
   const onUpdate = (event: Object) => {
-    alert("Received params: " + JSON.stringify(event));
+    // console.log("Received params: " + JSON.stringify(event));
+    Toast.show(JSON.stringify(event));
   };
 
   return (
@@ -60,7 +60,7 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
             />
           </TouchableOpacity>
           <AmwellVirtualVisitView
-            onUpdate={this.onUpdate}
+            onUpdate={onUpdate}
             style={styles.nativeViewStyle}
             ref={ref => (this.mySwiftComponentInstance = ref)}
           ></AmwellVirtualVisitView>

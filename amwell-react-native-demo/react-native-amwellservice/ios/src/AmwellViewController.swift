@@ -68,16 +68,22 @@ extension UIViewController {
 /**
  *  We need to use this controller to manage and control the video call testing.
  */
-class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
+class AmwellViewController: UIViewController, AWSDKVisitDelegate {
     var console:AWCoreVisitConsoleController?
     var visit: AWSDKVisit?
     var context: AWSDKVisitContext?
+    var myView: AmwellCustomView?
+    
+    override func loadView() {
+       self.myView = AmwellCustomView()
+       super.view = self.myView
+    }
     
     // AWSDKVisitDelegate
     func providerDidEnterVisit() {
         print("providerDidEnterVisit")
         showToast("Now start to launch video!")
-        onUpdate!(["virtualvisit-progress": "Now start to launch video!"])
+        self.myView!.onUpdate!(["virtualvisit-progress": "Now start to launch video!"])
         createVisitConsole()
     }
     
@@ -85,26 +91,17 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
         print("visitDidComplete")
         // self.view.makeToast("Visit did complete!")
         showToast("Visit did complete!")
-        onUpdate!(["virtualvisit-progress": "Visit did complete!"])
+        self.myView!.onUpdate!(["virtualvisit-progress": "Visit did complete!"])
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
-        button.backgroundColor = .white
-        button.tintColor = .blue
-        button.setTitle("AmwellSDK ViewManager Component @ rally health", for: .normal)
-        view.addSubview(button)
     }
 
-    @objc var onUpdate: RCTDirectEventBlock?
-    
     func testVideoCall() {
         launchVisit()
-
-        onUpdate!(["virtualvisit-progress": "start to launch visit console!"])
+        self.myView!.onUpdate!(["virtualvisit-progress": "start to launch visit console!"])
         showToast("Launch visit console ... !")
     }
     
@@ -148,7 +145,7 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                 if (provider.availability == AWSDKMobileAvailability.Offline ) {
                                                                                 
                                                                                                                                     self.showToast("Provider is offline :(  ... !")
-                                                                                                                                    onUpdate!(["virtualvisit-progress": "Provider is offline :(  ... !"])
+                                                                                                                                    self.myView!.onUpdate!(["virtualvisit-progress": "Provider is offline :(  ... !"])
                                                                                                                                 }
                                                                                                                                 break;
                                                                                                                             }
@@ -192,7 +189,6 @@ class AWSDKViewController: UIViewController, AWSDKVisitDelegate {
                                                                                                                                                         print(error!)
                                                                                                                                                     } else {
                                                                                                                                                         self.showToast("start visit now!");
-                                                                                                                                                      
                                                                                                                                                         print(result)
                                                                                                                                                     }
                                                                                                                                                     

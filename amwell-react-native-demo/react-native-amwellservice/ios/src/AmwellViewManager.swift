@@ -13,10 +13,10 @@ import SwiftUI
 @objc(AmwellViewManager)
 class AmwellViewManager: RCTViewManager {
     
-    var viewController : AWSDKViewController?
+    var viewController : AmwellViewController?
     
     override init() {
-        viewController = AWSDKViewController()
+        viewController = AmwellViewController()
     }
     
     override func view() -> UIView! {

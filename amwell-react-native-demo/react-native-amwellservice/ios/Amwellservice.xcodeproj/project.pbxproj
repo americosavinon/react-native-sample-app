@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0682568523B2B4C6006A33E4 /* AmwellViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682568423B2B4C6006A33E4 /* AmwellViewManager.swift */; };
-		0682568723B2BD2D006A33E4 /* AWSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682568623B2BD2D006A33E4 /* AWSDKViewController.swift */; };
+		0682568723B2BD2D006A33E4 /* AmwellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682568623B2BD2D006A33E4 /* AmwellViewController.swift */; };
 		0682568923B2BDEB006A33E4 /* AmwellViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0682568823B2BDEB006A33E4 /* AmwellViewManager.m */; };
-		3107A64E23ABEE3D00EF8ED2 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107A64D23ABEE3D00EF8ED2 /* CounterView.swift */; };
-		3107A65023ABEE9E00EF8ED2 /* CounterViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3107A64F23ABEE9E00EF8ED2 /* CounterViewManager.m */; };
-		3107A65223ABEED300EF8ED2 /* CounterViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107A65123ABEED300EF8ED2 /* CounterViewManager.swift */; };
 		311CA052239CABD6002A3C78 /* Amwellservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311CA051239CABD6002A3C78 /* Amwellservice.swift */; };
+		312451D023C8B56F00661A72 /* AmwellCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312451CF23C8B56F00661A72 /* AmwellCustomView.swift */; };
 		313402FD23A8332600692E6C /* AmwellserviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313402FC23A8332600692E6C /* AmwellserviceTests.swift */; };
 		3134031123A849DA00692E6C /* libAmwellservice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 134814201AA4EA6300B7C361 /* libAmwellservice.a */; };
 		31CBB2DC239B594D00D098AC /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CBB2DA239B594D00D098AC /* WebRTC.framework */; };
@@ -36,13 +34,11 @@
 
 /* Begin PBXFileReference section */
 		0682568423B2B4C6006A33E4 /* AmwellViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AmwellViewManager.swift; path = src/AmwellViewManager.swift; sourceTree = "<group>"; };
-		0682568623B2BD2D006A33E4 /* AWSDKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AWSDKViewController.swift; path = src/AWSDKViewController.swift; sourceTree = "<group>"; };
+		0682568623B2BD2D006A33E4 /* AmwellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AmwellViewController.swift; path = src/AmwellViewController.swift; sourceTree = "<group>"; };
 		0682568823B2BDEB006A33E4 /* AmwellViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AmwellViewManager.m; path = src/AmwellViewManager.m; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libAmwellservice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAmwellservice.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3107A64D23ABEE3D00EF8ED2 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CounterView.swift; path = src/CounterView.swift; sourceTree = "<group>"; };
-		3107A64F23ABEE9E00EF8ED2 /* CounterViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CounterViewManager.m; path = src/CounterViewManager.m; sourceTree = "<group>"; };
-		3107A65123ABEED300EF8ED2 /* CounterViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CounterViewManager.swift; path = src/CounterViewManager.swift; sourceTree = "<group>"; };
 		311CA051239CABD6002A3C78 /* Amwellservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Amwellservice.swift; path = src/Amwellservice.swift; sourceTree = "<group>"; };
+		312451CF23C8B56F00661A72 /* AmwellCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AmwellCustomView.swift; path = src/AmwellCustomView.swift; sourceTree = "<group>"; };
 		313402FA23A8332600692E6C /* AmwellserviceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AmwellserviceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		313402FC23A8332600692E6C /* AmwellserviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmwellserviceTests.swift; sourceTree = "<group>"; };
 		313402FE23A8332600692E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,12 +102,10 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				312451CF23C8B56F00661A72 /* AmwellCustomView.swift */,
 				0682568823B2BDEB006A33E4 /* AmwellViewManager.m */,
-				0682568623B2BD2D006A33E4 /* AWSDKViewController.swift */,
+				0682568623B2BD2D006A33E4 /* AmwellViewController.swift */,
 				0682568423B2B4C6006A33E4 /* AmwellViewManager.swift */,
-				3107A65123ABEED300EF8ED2 /* CounterViewManager.swift */,
-				3107A64F23ABEE9E00EF8ED2 /* CounterViewManager.m */,
-				3107A64D23ABEE3D00EF8ED2 /* CounterView.swift */,
 				31ACBFF723A7D8CB003FA2F1 /* Amwellservice-Bridging-Header.h */,
 				311CA051239CABD6002A3C78 /* Amwellservice.swift */,
 				31CBB2DE239B59BE00D098AC /* Amwellservice.m */,
@@ -259,13 +253,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				31CBB2E0239B59BE00D098AC /* Amwellservice.m in Sources */,
-				3107A65023ABEE9E00EF8ED2 /* CounterViewManager.m in Sources */,
+				312451D023C8B56F00661A72 /* AmwellCustomView.swift in Sources */,
 				0682568923B2BDEB006A33E4 /* AmwellViewManager.m in Sources */,
 				0682568523B2B4C6006A33E4 /* AmwellViewManager.swift in Sources */,
 				311CA052239CABD6002A3C78 /* Amwellservice.swift in Sources */,
-				3107A64E23ABEE3D00EF8ED2 /* CounterView.swift in Sources */,
-				0682568723B2BD2D006A33E4 /* AWSDKViewController.swift in Sources */,
-				3107A65223ABEED300EF8ED2 /* CounterViewManager.swift in Sources */,
+				0682568723B2BD2D006A33E4 /* AmwellViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

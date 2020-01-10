@@ -212,9 +212,11 @@ PODS:
   - React-jsinspector (0.61.5)
   - react-native-amwellservice (1.0.0):
     - React
-    - Toast-Swift
-  - react-native-safe-area-context (0.6.1):
+  - react-native-safe-area-context (0.6.2):
     - React
+  - react-native-simple-toast (1.0.0):
+    - React
+    - Toast (~> 4.0.0)
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
   - React-RCTAnimation (0.61.5):
@@ -258,9 +260,9 @@ PODS:
     - React
   - RNScreens (2.0.0-alpha.22):
     - React
-  - RNSVG (9.13.6):
+  - RNSVG (10.0.0):
     - React
-  - Toast-Swift (5.0.1)
+  - Toast (4.0.0)
   - UMBarCodeScannerInterface (5.0.0)
   - UMCameraInterface (5.0.0)
   - UMConstantsInterface (5.0.0)
@@ -308,6 +310,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-amwellservice (from `../node_modules/react-native-amwellservice`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-simple-toast (from `../node_modules/react-native-simple-toast`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -341,7 +344,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
-    - Toast-Swift
+    - Toast
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -409,6 +412,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-amwellservice"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-simple-toast:
+    :path: "../node_modules/react-native-simple-toast"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -505,8 +510,9 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-amwellservice: d5365ae6f531f1a6341dfc888f67491061a7bc50
-  react-native-safe-area-context: 1f8a52fb0ab1321eef9a7099bd2c360d4e38264b
+  react-native-amwellservice: 201cf59df5ac3bce26904919cb519a3765353333
+  react-native-safe-area-context: 25260c5d0b9c53fd7aa88e569e2edae72af1f6a3
+  react-native-simple-toast: 6c376bd79b1e255a4bee90a72ead6447f96ea10d
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -521,8 +527,8 @@ SPEC CHECKSUMS:
   RNGestureHandler: 02905abe54e1f6e59c081a10b4bd689721e17aa6
   RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
   RNScreens: 6adf01eb4080f44af6cca551207c6b0505066857
-  RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
-  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  RNSVG: 9d45f03136ecc9b5497e12f6f20838b568acb9f4
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   UMBarCodeScannerInterface: 3802c8574ef119c150701d679ab386e2266d6a54
   UMCameraInterface: 985d301f688ed392f815728f0dd906ca34b7ccb1
   UMConstantsInterface: bda5f8bd3403ad99e663eb3c4da685d063c5653c
@@ -537,6 +543,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: a98e37a576a5220bf43b8faf33cfdc129d2f441d
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
-PODFILE CHECKSUM: 0bd4262673e018a6a4a04030cc00936b51e43268
+PODFILE CHECKSUM: d04d904f18d6989fc3a323983685557102d1307a
 
 COCOAPODS: 1.8.4

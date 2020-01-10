@@ -15,8 +15,7 @@
 //@interface RCT_EXTERN_REMAP_MODULE(CounterView, CounterViewManager, RCTViewManager)
 
 // all NSNumber arguments are required to be marked as "nonnull"
-RCT_EXTERN_METHOD(test)
-RCT_EXTERN_METHOD(triggerRequest)
 RCT_EXTERN_METHOD(updateValueViaManager:(nonnull NSNumber *)node)
+RCT_EXPORT_VIEW_PROPERTY(onUpdate, RCTDirectEventBlock)
 
 @end

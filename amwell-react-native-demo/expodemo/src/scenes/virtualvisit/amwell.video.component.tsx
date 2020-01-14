@@ -28,19 +28,27 @@ import {
 
 export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(false);
 
   const onButtonClick = () => {
     console.log("virtual visit demo clicked!");
+    console.log(Amwellservice);
+    Amwellservice.sampleMethod("sss", 1, () => {
+      console.log("callback!");
+    });
     setMessage("");
 
-    UIManager.dispatchViewManagerCommand(
-      findNodeHandle(this.mySwiftComponentInstance),
-      UIManager["AmwellView"].Commands.updateValueViaManager,
-      []
-    );
+    // UIManager.dispatchViewManagerCommand(
+    //   findNodeHandle(this.mySwiftComponentInstance),
+    //   UIManager["AmwellView"].Commands.updateValueViaManager,
+    //   []
+    // );
   };
 
-  const onUpdate = (event: Object) => {
+  const onClick = (event: Object) => {
+    console.log("Received params: " + JSON.stringify(event));
+
+    /*
     if (event["vv-debug"] == "Wait for provider to connect!") {
       setMessage(event["vv-debug"]);
     }
@@ -49,7 +57,7 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
       setMessage(event["vv-error"]);
     } else {
       Toast.show(event["vv-debug"]);
-    }
+    }*/
   };
 
   return (
@@ -73,9 +81,9 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
             />
           </TouchableOpacity>
           <AmwellVirtualVisitView
-            onUpdate={onUpdate}
+            onChangeMessage={onClick}
             style={styles.nativeViewStyle}
-            ref={ref => (this.mySwiftComponentInstance = ref)}
+            // ref={ref => (this.mySwiftComponentInstance = ref)}
           ></AmwellVirtualVisitView>
           <Text>Note: Make sure Provider [Test Four] is online!</Text>
         </View>
@@ -141,9 +149,9 @@ const styles = StyleSheet.create({
   },
 
   nativeViewStyle: {
-    height: 1,
+    height: 100,
     color: Colors.black,
-    borderWidth: 0,
+    borderWidth: 1,
     width: "90%"
   },
 

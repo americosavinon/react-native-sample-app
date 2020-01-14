@@ -47,4 +47,10 @@ target 'expodemo' do
   # Automatically detect installed unimodules
   use_unimodules!
   use_native_modules!
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+  pod 'react-native-amwellservice', :path => '../node_modules/react-native-amwellservice'
+
 end

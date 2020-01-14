@@ -83,6 +83,31 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'  // From node_modules
     api fileTree(include: ['*.jar'], dir: 'libs')
     api project(':sdk')
+    api 'androidx.appcompat:appcompat:1.0.2'
+    api 'com.google.android.material:material:1.0.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'info.android15.nucleus5:nucleus:7.0.0'
+    api 'info.android15.nucleus5:nucleus-support-v4:7.0.0'
+    api 'info.android15.nucleus5:nucleus-support-v7:7.0.0'
+    api 'com.jakewharton:butterknife:10.1.0'
+    api 'com.google.dagger:dagger:2.23.2'
+    api 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+    api 'de.hdodenhof:circleimageview:2.2.0'
+    api 'com.facebook.stetho:stetho:1.5.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api 'com.github.livefront:bridge:v1.1.2'
+    api 'frankiesardo:icepick:3.2.0'
+    api 'com.github.gilcunningham:materialdatetimepicker:3.6.4'
+    // These two dependencies are here to suppress an error caused by at least one dependency using earlier
+    // versions of these modules
+    api 'androidx.legacy:legacy-support-v13:1.0.0'
+    api 'androidx.media:media:1.0.1'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'androidx.test:core:1.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    annotationProcessor 'frankiesardo:icepick-processor:3.2.0'
 }
 
 def configureReactNativePom(def pom) {

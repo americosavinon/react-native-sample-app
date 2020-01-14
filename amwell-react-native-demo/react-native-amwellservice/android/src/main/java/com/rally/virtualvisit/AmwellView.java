@@ -1,4 +1,4 @@
-package com.reactlibrary;
+package com.rally.virtualvisit;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

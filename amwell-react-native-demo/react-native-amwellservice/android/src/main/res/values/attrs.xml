@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    * Copyright 2016 American Well Systems
+    * All rights reserved.
+    * <p/>
+    * It is illegal to use, reproduce or distribute
+    * any part of this Intellectual Property without
+    * prior written authorization from American Well.
+-->
+<resources>
+    <declare-styleable name="VisitReportSubHeaderView">
+        <attr name="titleText" format="string" localization="suggested"/>
+    </declare-styleable>
+</resources>

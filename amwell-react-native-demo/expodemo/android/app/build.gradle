@@ -143,6 +143,26 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+repositories {
+    // ref: https://www.baeldung.com/maven-local-repository
+    mavenLocal()
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url "$rootDir/../node_modules/react-native/android"
+    }
+    maven {
+        // Android JSC is installed from npm
+        url "$rootDir/../node_modules/jsc-android/dist"
+    }
+    google()
+    jcenter()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    maven { url "https://clojars.org/repo/" } // for icepick
+    maven { url "https://jitpack.io" } // for bridge
+}
+
 dependencies {
     implementation project(':react-native-amwellservice')
     implementation project(':react-native-svg')

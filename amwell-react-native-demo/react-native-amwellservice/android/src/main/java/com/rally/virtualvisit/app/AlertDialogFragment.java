@@ -51,8 +51,8 @@ public class AlertDialogFragment extends DialogFragment {
 
         final DialogInterface.OnClickListener buttonListener = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-//                ((BaseSampleNucleusActivity) getActivity()).onDialogResult(
-//                        resultCode, whichButton);
+                ((BaseSampleNucleusActivity) getActivity()).onDialogResult(
+                        resultCode, whichButton);
             }
         };
 

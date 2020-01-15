@@ -34,6 +34,7 @@ import com.americanwell.sdk.entity.SDKPasswordError;
 import com.americanwell.sdk.logging.AWSDKLogger;
 import com.americanwell.sdk.util.ConfigurationWrapper;
 import com.livefront.bridge.Bridge;
+import com.rally.virtualvisit.app.AlertDialogResult;
 import com.rally.virtualvisit.util.LocaleUtils;
 import com.rally.virtualvisit.util.SampleNamedNothingSelectedSpinnerAdapter;
 import com.rally.virtualvisit.util.SampleUtils;
@@ -52,6 +53,7 @@ import butterknife.ButterKnife;
 import icepick.State;
 import nucleus5.view.NucleusAppCompatActivity;
 
+import static com.americanwell.sdk.logging.AWSDKLogger.LOG_CATEGORY_DEFAULT;
 import static com.rally.virtualvisit.app.AlertDialogResult.Action.FATAL_EVENT;
 import static com.rally.virtualvisit.app.AlertDialogResult.Action.FINISH;
 import static com.rally.virtualvisit.app.AlertDialogResult.Action.GOTO_LOGIN;
@@ -398,6 +400,27 @@ public abstract class BaseSampleNucleusActivity<P extends BaseSampleNucleusRxPre
     private AWSDKLogger getLogger(Context ctx) {
         // return ((SampleApplication) ctx.getApplicationContext()).getAWSDK().getDefaultLogger();
         return null;
+    }
+
+    public void onDialogResult(@AlertDialogResult.Action int resultCode, int whichButton) {
+        switch (resultCode) {
+            case GO_HOME:
+                // goHome();
+                break;
+            case FINISH:
+                finish();
+                break;
+            case GOTO_LOGIN:
+            case FATAL_EVENT:
+                // logOut();
+                break;
+            case NO_ACTION:
+                getLogger(this).w(LOG_CATEGORY_DEFAULT, LOG_TAG, "Dialog dismissed. No action required");
+                break;
+            default:
+                getLogger(this).w(LOG_CATEGORY_DEFAULT, LOG_TAG, "Unhandled dialog result.");
+                break;
+        }
     }
 
     public AWSDKLogger getDefaultLogger() {

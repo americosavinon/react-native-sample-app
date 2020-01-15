@@ -13,13 +13,12 @@ import android.text.TextUtils;
 
 import com.americanwell.sdk.entity.SystemConfiguration;
 
-import com.americanwell.sdksample.R;
 import com.americanwell.sdk.entity.consumer.BiologicalSex;
 import com.americanwell.sdk.entity.consumer.Gender;
 import com.americanwell.sdk.entity.consumer.GenderIdentity;
 import com.americanwell.sdk.internal.entity.consumer.BiologicalSexImpl;
 import com.americanwell.sdk.internal.entity.consumer.GenderIdentityImpl;
-import com.americanwell.sdksample.BaseSampleNucleusActivity;
+import com.rally.virtualvisit.BaseSampleNucleusActivity;
 
 import java.util.ArrayList;
 import java.util.List;

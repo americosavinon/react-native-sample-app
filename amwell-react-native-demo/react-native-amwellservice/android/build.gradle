@@ -53,6 +53,10 @@ android {
     lintOptions {
         abortOnError false
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 }
 
 apply from: 'gradle/build-include.gradle'
@@ -87,7 +91,7 @@ dependencies {
     api 'com.google.android.material:material:1.0.0'
     api 'androidx.cardview:cardview:1.0.0'
     api 'info.android15.nucleus5:nucleus:7.0.0'
-    api 'info.android15.nucleus5:nucleus-support-v4:7.0.0'
+   //  api 'info.android15.nucleus5:nucleus-support-v4:7.0.0'
     api 'info.android15.nucleus5:nucleus-support-v7:7.0.0'
     api 'com.jakewharton:butterknife:10.1.0'
     api 'com.google.dagger:dagger:2.23.2'

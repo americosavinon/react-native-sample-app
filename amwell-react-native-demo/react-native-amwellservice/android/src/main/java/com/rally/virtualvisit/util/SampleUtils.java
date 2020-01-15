@@ -21,7 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
 import com.americanwell.sdk.entity.visit.Visit;
-import com.americanwell.sdksample.visit.VisitSummaryActivity;
+
 import com.google.android.material.textfield.TextInputLayout;
 
 import android.text.Html;
@@ -47,14 +47,11 @@ import com.americanwell.sdk.entity.pharmacy.Pharmacy;
 import com.americanwell.sdk.entity.provider.ProviderVisibility;
 import com.americanwell.sdk.logging.AWSDKLogger;
 import com.americanwell.sdk.manager.ValidationReason;
-import com.americanwell.sdksample.BaseSampleNucleusActivity;
-import com.americanwell.sdksample.R;
-import com.americanwell.sdksample.app.AlertDialogFragment;
-import com.americanwell.sdksample.app.AlertDialogResult;
-import com.americanwell.sdksample.home.HomeActivity;
-import com.americanwell.sdksample.login.LoginActivity;
-import com.americanwell.sdksample.login.ThirdPartyLoginActivity;
-import com.americanwell.sdksample.profile.UpdateConsumerActivity;
+
+import com.rally.virtualvisit.BaseSampleNucleusActivity;
+import com.rally.virtualvisit.app.AlertDialogFragment;
+import com.rally.virtualvisit.app.AlertDialogResult;
+import com.virtualvisit.R;
 
 import java.lang.reflect.Field;
 import java.text.DecimalFormat;
@@ -67,7 +64,7 @@ import static com.americanwell.sdk.entity.provider.ProviderVisibility.OFFLINE;
 import static com.americanwell.sdk.entity.provider.ProviderVisibility.ON_CALL;
 import static com.americanwell.sdk.entity.provider.ProviderVisibility.WEB_AVAILABLE;
 import static com.americanwell.sdk.entity.provider.ProviderVisibility.WEB_BUSY;
-import static com.americanwell.sdksample.app.AlertDialogResult.Action.NO_ACTION;
+import static com.rally.virtualvisit.app.AlertDialogResult.Action.NO_ACTION;
 
 /**
  * Some common utilities used in the activities
@@ -181,6 +178,7 @@ public class SampleUtils {
                 title,
                 message,
                 resultCode).create();
+
         dialogFrag.show(activity.getSupportFragmentManager(), "AlertDialog");
 
         return dialogFrag;
@@ -405,7 +403,7 @@ public class SampleUtils {
 
         //      Using the quantity string gives us more power as to how to handle the localization in
         //      the future
-        return res.getQuantityString(R.plurals.waiting_room_plurals, finalCount, finalCount);
+        return res.getQuantityString(0, finalCount, finalCount);
     }
 
     // utility method for Pharmacy activities
@@ -506,38 +504,6 @@ public class SampleUtils {
         return digitChars;
     }
 
-    // convenience method to return to services list
-    public void goHome(final Context ctx) {
-        final Intent intent = HomeActivity.makeIntent(ctx);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        ctx.startActivity(intent);
-    }
-
-    // convenience method to goto my account activity
-    public void gotoMyAccount(final Context ctx) {
-        final Intent intent = UpdateConsumerActivity.makeIntent(ctx);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        ctx.startActivity(intent);
-    }
-
-    // Convenience method to go to visit summary activity.
-    public void goToVisitSummary(final Context ctx, final Visit visit) {
-        final Intent intent = VisitSummaryActivity.makeIntent(ctx, visit);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        ctx.startActivity(intent);
-    }
-
-    // convenience method to logout user
-    public void logOut(final Activity activity) {
-        Intent intent = activity.getResources().getBoolean(R.bool.use_third_party_auth) ?
-                new Intent(activity, ThirdPartyLoginActivity.class) :
-                new Intent(activity, LoginActivity.class);
-
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        activity.startActivity(intent);
-        activity.finish();
-    }
 
     public static String formatDistance(double distance) {
         DecimalFormat df2 = new DecimalFormat("#,###.00 mi");
@@ -631,23 +597,23 @@ public class SampleUtils {
      * @return The resource id of the {@link Drawable}
      */
 
-    public static @DrawableRes
-    int getModalityDrawable(VisitModality visitModality) {
-        @DrawableRes
-        int drawableRes = 0;
-        if (visitModality != null) {
-            switch (visitModality.getModalityType()) {
-                case VisitModalityType.PHONE:
-                    drawableRes = R.drawable.icon_phone_visit_appt_list;
-                    break;
-                case VisitModalityType.VIDEO:
-                    drawableRes = R.drawable.icon_video_visit_appt_list;
-                    break;
-                default:
-                    break;
-            }
-        }
-        return drawableRes;
-    }
+//    public static @DrawableRes
+//    int getModalityDrawable(VisitModality visitModality) {
+//        @DrawableRes
+//        int drawableRes = 0;
+//        if (visitModality != null) {
+//            switch (visitModality.getModalityType()) {
+//                case VisitModalityType.PHONE:
+//                    drawableRes = R.drawable.icon_phone_visit_appt_list;
+//                    break;
+//                case VisitModalityType.VIDEO:
+//                    drawableRes = R.drawable.icon_video_visit_appt_list;
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
+//        return drawableRes;
+//    }
 
 }

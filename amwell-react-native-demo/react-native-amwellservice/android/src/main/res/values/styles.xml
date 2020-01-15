@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+    * Copyright 2018 American Well Systems
+    * All rights reserved.
+    * <p>
+    * It is illegal to use, reproduce or distribute
+    * any part of this Intellectual Property without
+    * prior written authorization from American Well.
+-->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textDirection">locale</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.NoTitleBar">
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="TextAppearance.AmericanWell" parent="@style/TextAppearance.AppCompat"/>
+
+    <style name="TextAppearance.AmericanWell.Small">
+        <item name="android:textColor">@color/awsdk_color_black</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_body</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Small.Charcoal" parent="TextAppearance.AmericanWell.Small">
+        <item name="android:textColor">@color/charcoal</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Small.MediumGrey" parent="TextAppearance.AmericanWell.Small">
+        <item name="android:textColor">@color/medium_grey</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Medium">
+        <item name="android:textColor">@color/awsdk_color_black</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_subhead</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.MediumLarger">
+        <item name="android:textColor">@color/awsdk_color_black</item>
+        <item name="android:textSize">@dimen/textSizeMediumLarger</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.MediumLarger.White" parent="TextAppearance.AmericanWell.MediumLarger">
+        <item name="android:textColor">@color/awsdk_color_white</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.MediumLarge">
+        <item name="android:textColor">@color/awsdk_color_black</item>
+        <item name="android:textSize">@dimen/textSizeMediumLarge</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Large">
+        <item name="android:textColor">@color/awsdk_color_black</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_large</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Micro">
+        <item name="android:textColor">@color/awsdk_color_black</item>
+        <item name="android:textSize">@dimen/textSizeMicro</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Micro.White" parent="TextAppearance.AmericanWell.Micro">
+        <item name="android:textColor">@color/awsdk_color_white</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Small.Inverse" parent="@android:style/TextAppearance.Inverse">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_body</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Small.DarkGray"><!--parent="@style/TextAppearance.AmericanWell.Small"-->
+        <item name="android:textColor">@color/awsdk_color_darkgray</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Medium.Inverse" parent="@android:style/TextAppearance.Inverse">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_subhead</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.MediumLarge.Inverse" parent="@android:style/TextAppearance.Inverse">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/textSizeMediumLarge</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Large.Inverse" parent="@android:style/TextAppearance.Inverse">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_large</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.MediumLarge.Primary" parent="TextAppearance.AmericanWell.MediumLarge">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.MediumLarge.Primary.Selected" parent="TextAppearance.AmericanWell.MediumLarge.Primary">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.MediumLarge.Gray" parent="TextAppearance.AmericanWell.MediumLarge">
+        <item name="android:textColor">@color/color_text_gray</item>
+    </style>
+
+    <style name="PasswordHintOkStyle" parent="TextAppearance.AmericanWell">
+        <item name="android:textColor">@color/awsdk_color_darkgray</item>
+        <item name="android:textSize">@dimen/textSizeMicro</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:gravity">start</item>
+        <item name="android:paddingBottom">3dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:drawableStart">@drawable/ic_checkmark_green</item>
+        <item name="android:drawablePadding">4dp</item>
+    </style>
+
+    <style name="PasswordHintStyle.Error" parent="PasswordHintOkStyle">
+        <item name="android:textColor">@color/cherry</item>
+        <item name="android:drawableStart">@drawable/ic_fail_red</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/color_link</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.ExtraSmall">
+        <item name="android:textColor">@color/awsdk_color_black</item>
+        <item name="android:textSize">@dimen/textSizeExtraSmall</item>
+    </style>
+
+    <style name="InputLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:paddingBottom">@dimen/input_label_vertical_spacing</item>
+        <item name="android:paddingStart">@dimen/input_label_horizontal_spacing</item>
+        <item name="android:paddingEnd">@dimen/input_label_horizontal_spacing</item>
+    </style>
+
+    <style name="Widget.AmericanWell.AppCompat.Button.Colored" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">48dp</item>
+    </style>
+
+    <style name="DatePickerDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TimePickerDialog" parent="DatePickerDialog" />
+
+    <!--New Styles - Going forward all UI should use these styles-->
+
+    <!--Text Styles-->
+    <style name="TextAppearance.AmericanWell.Headline">
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_headline</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Title">
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_title</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.SubHead">
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_subhead</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.SubHead.Secondary">
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.SubHead.Disabled">
+        <item name="android:textColor">@color/black_38</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Body">
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_body</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Body.Secondary">
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+    <style name="TextAppearance.AmericanWell.Availablity">
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textSize">@dimen/awsdk_text_size_availability</item>
+    </style>
+
+    <!-- design approved styles -->
+
+    <style name="Headline">
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">#de000000</item>
+    </style>
+
+    <style name="HeadlineCentered">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="HeadlineCentered.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TitleWhite">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">#de000000</item>
+    </style>
+
+    <style name="TitleLight">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">#de000000</item>
+    </style>
+
+    <style name="TitleCentered">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="TitleCenteredDark">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Subhead">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+    </style>
+
+    <style name="Subhead.Secondary">
+        <item name="android:textColor">#8a000000</item>
+    </style>
+
+    <style name="Subhead.Dark">
+        <item name="android:textColor">#de000000</item>
+    </style>
+
+    <style name="Subhead.Disabled">
+        <item name="android:textColor">#61000000</item>
+    </style>
+
+    <style name="Subhead.Black">
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Subhead.Centered">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Subhead.Centered.Dark">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="Body">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#de000000</item>
+    </style>
+
+    <style name="Body.Disabled">
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">#61000000</item>
+    </style>
+
+    <style name="Availability">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineSpacingExtra">7sp</item>
+        <item name="android:textColor">#de000000</item>
+    </style>
+
+    <style name="MaterialDesktopLightBody">
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="BodyLink">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/neon_carrot</item>
+    </style>
+
+    <style name="BodySecondary">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:minHeight">@dimen/button_minimum_height</item>
+        <item name="android:minWidth">@dimen/button_minimum_width</item>
+    </style>
+
+    <style name="Button.TextWhite">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Button.TextWhite.Supernova">
+        <item name="android:background">@color/supernova</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Button.BodySecondaryCentered">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/black_38</item>
+    </style>
+
+    <style name="BodyLink.Button">
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="BodyLink.Button.End">
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:layout_gravity">end</item>
+    </style>
+</resources>

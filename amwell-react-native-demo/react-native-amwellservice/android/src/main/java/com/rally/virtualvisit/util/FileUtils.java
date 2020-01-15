@@ -21,7 +21,7 @@ import android.webkit.MimeTypeMap;
 import com.americanwell.sdk.AWSDK;
 import com.americanwell.sdk.entity.FileAttachment;
 import com.americanwell.sdk.entity.UploadAttachment;
-import com.americanwell.sdksample.BaseSampleNucleusActivity;
+import com.rally.virtualvisit.BaseSampleNucleusActivity;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -148,7 +148,7 @@ public class FileUtils {
      */
 
     public void openAttachment(final BaseSampleNucleusActivity activity, final FileAttachment fileAttachment) {
-        final com.americanwell.sdksample.util.SampleUtils utils = new com.americanwell.sdksample.util.SampleUtils(activity.getDefaultLogger());
+        final SampleUtils utils = new SampleUtils(activity.getDefaultLogger());
         try {
             // Note: sample code: this code will download the attachment every time it's clicked on
             // in a production app, you'd probably want to keep track of downloaded files and reopen

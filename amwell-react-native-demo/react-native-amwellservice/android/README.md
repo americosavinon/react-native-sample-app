@@ -19,3 +19,8 @@ We included Amwell SDK v6.0 for this service.
 
 The AWSDK/sdk directory contains the Android library AAR file, corresponding Javadoc in a JAR file, and a small build
 .gradle.
+
+Current Setting we use to lineup with UHC Mobile
+
+Gradle Version = 5.5
+com.android.tools.build:gradle:3.5.3

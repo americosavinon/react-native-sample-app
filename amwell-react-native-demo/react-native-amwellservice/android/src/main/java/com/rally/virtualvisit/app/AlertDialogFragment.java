@@ -18,7 +18,7 @@ import androidx.appcompat.app.AlertDialog;
 import android.text.TextUtils;
 
 import com.rally.virtualvisit.BaseSampleNucleusActivity;
-import com.virtualvisit.R;
+import com.rally.virtualvisit.R;
 
 import static com.rally.virtualvisit.app.DialogData.CANCEL_ON_TOUCH_OUTSIDE;
 import static com.rally.virtualvisit.app.DialogData.MESSAGE;

@@ -36,7 +36,8 @@ import java.util.Locale;
 
 import androidx.annotation.NonNull;
 
-import com.virtualvisit.R;
+
+import com.rally.virtualvisit.R;
 
 import static android.content.DialogInterface.BUTTON_NEGATIVE;
 import static android.content.DialogInterface.BUTTON_POSITIVE;

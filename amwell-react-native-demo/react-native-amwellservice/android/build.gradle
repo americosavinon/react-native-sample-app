@@ -10,10 +10,10 @@
 //   original location:
 //   - https://github.com/facebook/react-native/blob/0.58-stable/local-cli/templates/HelloWorld/android/app/build.gradle
 
-def DEFAULT_COMPILE_SDK_VERSION = 28
-def DEFAULT_BUILD_TOOLS_VERSION = '28.0.3'
-def DEFAULT_MIN_SDK_VERSION = 21
-def DEFAULT_TARGET_SDK_VERSION = 28
+def DEFAULT_COMPILE_SDK_VERSION = 29
+def DEFAULT_BUILD_TOOLS_VERSION = '29.0.2'
+def DEFAULT_MIN_SDK_VERSION = 23
+def DEFAULT_TARGET_SDK_VERSION = 29
 
 def safeExtGet(prop, fallback) {
     rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
@@ -33,7 +33,7 @@ buildscript {
             jcenter()
         }
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.4.1'
+            classpath 'com.android.tools.build:gradle:3.5.3'
         }
     }
 }
@@ -59,9 +59,6 @@ android {
     }
 }
 
-apply from: 'gradle/build-include.gradle'
-apply from: 'gradle/build-awsdk-dependencies.gradle'
-
 repositories {
     // ref: https://www.baeldung.com/maven-local-repository
     mavenLocal()
@@ -82,16 +79,21 @@ repositories {
     maven { url "https://jitpack.io" } // for bridge
 }
 
+apply from: 'gradle/build-include.gradle'
+apply from: 'gradle/build-awsdk-dependencies.gradle'
+
 dependencies {
-    //noinspection GradleDynamicVersion
+    // noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
+
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':sdk')
+    api project(':awsdk')
+
     api 'androidx.appcompat:appcompat:1.0.2'
     api 'com.google.android.material:material:1.0.0'
     api 'androidx.cardview:cardview:1.0.0'
     api 'info.android15.nucleus5:nucleus:7.0.0'
-   //  api 'info.android15.nucleus5:nucleus-support-v4:7.0.0'
+    api 'info.android15.nucleus5:nucleus-support-v4:7.0.0'
     api 'info.android15.nucleus5:nucleus-support-v7:7.0.0'
     api 'com.jakewharton:butterknife:10.1.0'
     api 'com.google.dagger:dagger:2.23.2'
@@ -121,7 +123,7 @@ def configureReactNativePom(def pom) {
         name packageJson.title
         artifactId packageJson.name
         version = packageJson.version
-        group = "com.reactlibrary"
+        group = "com.rally.virtualvisit"
         description packageJson.description
         url packageJson.repository.baseUrl
 

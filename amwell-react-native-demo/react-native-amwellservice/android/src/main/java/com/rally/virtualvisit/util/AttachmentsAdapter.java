@@ -15,7 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.americanwell.sdk.entity.AttachmentReference;
-import com.virtualvisit.R;
+import com.rally.virtualvisit.R;
 
 /**
  * Helper adapter for File Attachments, used in secure messaging

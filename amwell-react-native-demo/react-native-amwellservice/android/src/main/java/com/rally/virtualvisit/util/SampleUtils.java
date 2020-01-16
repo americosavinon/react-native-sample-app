@@ -49,9 +49,9 @@ import com.americanwell.sdk.logging.AWSDKLogger;
 import com.americanwell.sdk.manager.ValidationReason;
 
 import com.rally.virtualvisit.BaseSampleNucleusActivity;
+import com.rally.virtualvisit.R;
 import com.rally.virtualvisit.app.AlertDialogFragment;
 import com.rally.virtualvisit.app.AlertDialogResult;
-import com.virtualvisit.R;
 
 import java.lang.reflect.Field;
 import java.text.DecimalFormat;

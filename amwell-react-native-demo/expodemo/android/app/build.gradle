@@ -100,7 +100,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.expodemo"
+        applicationId "com.rally.expodemo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -115,6 +115,8 @@ android {
         }
     }
     buildTypes {
+        debug {
+        }
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
@@ -164,7 +166,7 @@ repositories {
 }
 
 dependencies {
-    implementation project(':react-native-amwellservice')
+    // implementation project(':react-native-amwellservice')
     implementation project(':react-native-svg')
     implementation project(':react-native-safe-area-context')
     implementation project(':react-native-screens')
@@ -174,6 +176,7 @@ dependencies {
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
     addUnimodulesDependencies()
+    // implementation project(path: ':')
 
     if (enableHermes) {
         def hermesPath = "../../node_modules/hermes-engine/android/";
@@ -190,3 +193,7 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+applyNativeModulesAppBuildGradle(project)

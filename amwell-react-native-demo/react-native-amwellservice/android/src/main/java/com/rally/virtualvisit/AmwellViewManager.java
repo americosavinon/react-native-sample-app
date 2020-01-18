@@ -5,14 +5,21 @@ import android.util.Log;
 
 import com.americanwell.sdk.AWSDK;
 import com.americanwell.sdk.AWSDKFactory;
+import com.americanwell.sdk.entity.Authentication;
+import com.americanwell.sdk.entity.SDKError;
 import com.americanwell.sdk.exception.AWSDKInstantiationException;
 import com.americanwell.sdk.logging.AWSDKLogger;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.rally.virtualvisit.rx.SDKResponse;
+import com.rally.virtualvisit.rx.service.AuthenticationService;
 
+import java.io.IOException;
 import java.util.Map;
+
+import io.reactivex.Observable;
 
 import static com.americanwell.sdk.logging.AWSDKLogger.LOG_CATEGORY_AUDIO;
 import static com.americanwell.sdk.logging.AWSDKLogger.LOG_CATEGORY_DEFAULT;
@@ -82,6 +89,21 @@ public class AmwellViewManager extends SimpleViewManager<com.rally.virtualvisit.
             awsdk.getDefaultLogger().setLogCategories(categories);
 
             awsdk.getDefaultLogger().log(0, "Initialized sdk success!", "Category", null);
+
+            // start to test some service code logic here
+            AuthenticationService authenticationService = new AuthenticationService(awsdk);
+
+            // initialize sdk
+            authenticationService.initializeSdk("https://iot58.amwellintegration.com/",
+                    "bf8a5665", null, null).subscribe(x -> {
+                System.out.println("SDK Initialize Success!");
+                authenticationService.authenticate("yunfeng.lin@rallyhealth.com", "cs123!@#")
+                        .subscribe(a -> {
+                            Authentication auth = a.getResult();
+                            System.out.println("Auth success!");
+                            System.out.println("Consumer Name:" + auth.getConsumerInfo().getFullName());
+                        }, err -> System.out.println("auth error!"));
+            }, error -> System.out.println(error.getMessage()));
         }
         catch (AWSDKInstantiationException e) {
             Log.e(LOG_TAG, "Unable to instantiate AWSDK instance", e);// using android log here b/c defaultlogger won't be available

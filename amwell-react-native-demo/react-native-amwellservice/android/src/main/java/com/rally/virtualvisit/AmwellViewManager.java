@@ -7,17 +7,31 @@ import com.americanwell.sdk.AWSDK;
 import com.americanwell.sdk.AWSDKFactory;
 import com.americanwell.sdk.entity.Authentication;
 import com.americanwell.sdk.entity.SDKError;
+import com.americanwell.sdk.entity.VisitModality;
+import com.americanwell.sdk.entity.VisitModalityType;
+import com.americanwell.sdk.entity.practice.PracticeInfo;
+import com.americanwell.sdk.entity.provider.Provider;
+import com.americanwell.sdk.entity.provider.ProviderInfo;
+import com.americanwell.sdk.entity.visit.Visit;
+import com.americanwell.sdk.entity.visit.VisitContext;
 import com.americanwell.sdk.exception.AWSDKInstantiationException;
 import com.americanwell.sdk.logging.AWSDKLogger;
+import com.americanwell.sdk.manager.ConsumerManager;
 import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.rally.virtualvisit.rx.SDKResponse;
 import com.rally.virtualvisit.rx.service.AuthenticationService;
+import com.rally.virtualvisit.rx.service.ConsumerService;
+import com.rally.virtualvisit.rx.service.PracticeProvidersService;
+import com.americanwell.sdk.entity.consumer.Consumer;
+import com.rally.virtualvisit.rx.service.VisitService;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import io.reactivex.Observable;
 
@@ -92,6 +106,9 @@ public class AmwellViewManager extends SimpleViewManager<com.rally.virtualvisit.
 
             // start to test some service code logic here
             AuthenticationService authenticationService = new AuthenticationService(awsdk);
+            PracticeProvidersService practiceProvidersService = new PracticeProvidersService(awsdk);
+            ConsumerService consumerService = new ConsumerService(awsdk);
+            VisitService visitService = new VisitService(awsdk);
 
             // initialize sdk
             authenticationService.initializeSdk("https://iot58.amwellintegration.com/",
@@ -102,6 +119,80 @@ public class AmwellViewManager extends SimpleViewManager<com.rally.virtualvisit.
                             Authentication auth = a.getResult();
                             System.out.println("Auth success!");
                             System.out.println("Consumer Name:" + auth.getConsumerInfo().getFullName());
+
+                            consumerService.getConsumer(auth)
+                                    .subscribe(consumer -> {
+                                        Consumer consumerItem = consumer.getResult();
+                                        practiceProvidersService.getPractices(consumerItem)
+                                                .subscribe(practice -> {
+                                                    List<PracticeInfo> info = practice.getResult();
+                                                    System.out.println("get practice info");
+
+                                                    // get the provider
+                                                    practiceProvidersService.findProviders(consumerItem, info.get(0), null)
+                                                            .subscribe(providers -> {
+                                                                List<ProviderInfo> providerInfos = providers.getResult();
+                                                                ProviderInfo target = providerInfos.get(0);
+
+                                                                // Loop through the Providers
+                                                                for(int i = 0; i < providerInfos.size(); i ++ ) {
+                                                                    ProviderInfo pInfo = providerInfos.get(i);
+                                                                    if (pInfo.getLastName() == "Four") {
+                                                                        target = pInfo;
+                                                                        break;
+                                                                    }
+                                                                }
+
+                                                                // find the provider with provider Info
+                                                                practiceProvidersService.getProvider(null, target)
+                                                                        .subscribe(provider -> {
+                                                                            Provider pInfo = provider.getResult();
+
+                                                                            // create visit context
+                                                                            visitService.getVisitContext(consumerItem, pInfo)
+                                                                                    .subscribe(vcontext -> {
+                                                                                        VisitContext ctx = vcontext.getResult();
+                                                                                        System.out.println("Create VisitContext success!");
+                                                                                        // update the context
+                                                                                        Set<VisitModality> availableModalities = ctx.getPractice().getVisitModalities();
+                                                                                        VisitModality visitModality = null;
+                                                                                        for (VisitModality vm : availableModalities) {
+                                                                                            visitModality = vm;
+                                                                                            // video is the default
+                                                                                            if (VisitModalityType.VIDEO.equals(vm.getModalityType())) {
+                                                                                                break;
+                                                                                            }
+                                                                                        }
+
+                                                                                        ctx.getLegalTexts().get(0).setAccepted(true);
+                                                                                        ctx.setModality(visitModality);
+
+                                                                                        // create visit
+                                                                                        visitService.buildVisit(ctx)
+                                                                                                .subscribe(visit -> {
+                                                                                                    Visit vEntity = visit.getResult();
+
+                                                                                                    // now we need to start visit
+                                                                                                    visitService.startVisit(vEntity,
+                                                                                                            vEntity.getConsumer().getAddress(), null)
+                                                                                                            .subscribe(x1 -> {
+                                                                                                                System.out.println(x1.getError());
+                                                                                                            }, err -> {
+                                                                                                                System.out.println(err.getMessage());
+                                                                                                            });
+                                                                                                }, err -> System.out.println("build visit failed"));
+
+                                                                                    }, err -> System.out.println("get visit context failed"));
+
+                                                                        }, err -> System.out.println("get provider failed"));
+
+                                                            }, err -> System.out.println("get providerInfo failed!"));
+
+                                                }, err -> System.out.println("get practice failed!"));
+
+                                    }, err -> System.out.println("get consumer failed!"));
+
+
                         }, err -> System.out.println("auth error!"));
             }, error -> System.out.println(error.getMessage()));
         }

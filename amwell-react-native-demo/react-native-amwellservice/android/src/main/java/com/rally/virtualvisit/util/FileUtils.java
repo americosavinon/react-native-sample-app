@@ -21,7 +21,6 @@ import android.webkit.MimeTypeMap;
 import com.americanwell.sdk.AWSDK;
 import com.americanwell.sdk.entity.FileAttachment;
 import com.americanwell.sdk.entity.UploadAttachment;
-import com.rally.virtualvisit.BaseSampleNucleusActivity;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -139,52 +138,4 @@ public class FileUtils {
         return result;
     }
 
-    /**
-     * download and open the given FileAttachment
-     * will open in the default viewer for the type
-     *
-     * @param activity
-     * @param fileAttachment
-     */
-
-    public void openAttachment(final BaseSampleNucleusActivity activity, final FileAttachment fileAttachment) {
-        final SampleUtils utils = new SampleUtils(activity.getDefaultLogger());
-        try {
-            // Note: sample code: this code will download the attachment every time it's clicked on
-            // in a production app, you'd probably want to keep track of downloaded files and reopen
-            // rather than redownload
-            final File attachment = downloadAttachment(activity, fileAttachment);
-            final MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
-
-            // Use FileProvider for "targetSdkVersion" = 24+
-            // For a full read:
-            // https://inthecheesefactory.com/blog/how-to-share-access-to-file-with-fileprovider-on-android-nougat/en
-            //
-            // Note: this requires update to AndroidManifest.xml and the addition of
-            // res/xml/provider_paths.xml
-            //
-            final Uri uri = FileProvider.getUriForFile(activity,
-                    activity.getApplicationContext().getPackageName() + ".provider", attachment);
-
-            String type = "*/*";
-            String fileExtension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
-            if (mimeTypeMap.hasExtension(fileExtension)) {
-                type = mimeTypeMap.getMimeTypeFromExtension(fileExtension);
-            }
-
-            final Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(uri, type);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-            try {
-                activity.startActivity(intent);
-            }
-            catch (ActivityNotFoundException e) {
-                utils.handleError(activity, e);
-            }
-        }
-        catch (IOException ioe) {
-            utils.handleError(activity, ioe);
-        }
-    }
 }

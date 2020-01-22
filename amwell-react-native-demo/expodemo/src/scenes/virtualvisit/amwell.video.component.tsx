@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   StyleSheet,
   Image,
@@ -30,6 +30,9 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(false);
 
+  const amwellviewInstance = useRef(null);
+  // useEffect(() => mySwiftComponentInstance.current);
+
   const onButtonClick = () => {
     console.log("virtual visit demo clicked!");
     console.log(Amwellservice);
@@ -38,11 +41,7 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
     });
     setMessage("");
 
-    // UIManager.dispatchViewManagerCommand(
-    //   findNodeHandle(this.mySwiftComponentInstance),
-    //   UIManager["AmwellView"].Commands.updateValueViaManager,
-    //   []
-    // );
+    amwellviewInstance.current.testVideoCall();
   };
 
   const onClick = (event: Object) => {
@@ -83,7 +82,7 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
           <AmwellVirtualVisitView
             onChangeMessage={onClick}
             style={styles.nativeViewStyle}
-            // ref={ref => (this.mySwiftComponentInstance = ref)}
+            ref={amwellviewInstance}
           ></AmwellVirtualVisitView>
           <Text>Note: Make sure Provider [Test Four] is online!</Text>
         </View>

@@ -108,7 +108,7 @@ public class LocaleUtils {
         };
 
         // hide keyboard before displaying date picker
-        SampleUtils.hideKeyboard(context);
+        // SampleUtils.hideKeyboard(context);
 
         DatePickerDialog datePickerDalog = getDatePickerDialog(
                 calendar,

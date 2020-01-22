@@ -1,6 +1,7 @@
 package com.rally.virtualvisit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.americanwell.sdk.AWSDK;
@@ -172,14 +173,22 @@ public class AmwellViewManager extends SimpleViewManager<com.rally.virtualvisit.
                                                                                                 .subscribe(visit -> {
                                                                                                     Visit vEntity = visit.getResult();
 
-                                                                                                    // now we need to start visit
-                                                                                                    visitService.startVisit(vEntity,
-                                                                                                            vEntity.getConsumer().getAddress(), null)
+                                                                                                    // now we need to start visit, we might get provider offline error here.
+                                                                                                    visitService.startVisit(vEntity, vEntity.getConsumer().getAddress(), null)
                                                                                                             .subscribe(x1 -> {
-                                                                                                                System.out.println(x1.getError());
+
+                                                                                                                if (x1.getIntent() != null) {
+                                                                                                                    System.out.println(x1.getIntent());
+                                                                                                                    // start activity
+                                                                                                                    Intent intentView = x1.getIntent();
+                                                                                                                    intentView.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                                                                                    applicationContext.startActivity(x1.getIntent());
+//                                                                                                                  finish();
+                                                                                                                }
                                                                                                             }, err -> {
                                                                                                                 System.out.println(err.getMessage());
                                                                                                             });
+
                                                                                                 }, err -> System.out.println("build visit failed"));
 
                                                                                     }, err -> System.out.println("get visit context failed"));

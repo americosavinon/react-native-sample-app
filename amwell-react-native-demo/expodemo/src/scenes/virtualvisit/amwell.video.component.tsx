@@ -36,12 +36,13 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   const onButtonClick = () => {
     console.log("virtual visit demo clicked!");
     console.log(Amwellservice);
-    Amwellservice.sampleMethod("sss", 1, () => {
-      console.log("callback!");
-    });
-    setMessage("");
+    // Amwellservice.sampleMethod("sss", 1, () => {
+    //   console.log("callback!");
+    // });
+    // setMessage("");
 
-    amwellviewInstance.current.testVideoCall();
+    // // console.log(amwellviewInstance);
+    // amwellviewInstance.current.testVideoCall();
   };
 
   const onUpdate = (event: Object) => {
@@ -82,11 +83,11 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
               source={require("../../assets/video-call.jpeg")}
             />
           </TouchableOpacity>
-          <AmwellVirtualVisitView
+          {/* <AmwellVirtualVisitView
             onChangeMessage={onClick}
             style={styles.nativeViewStyle}
             ref={amwellviewInstance}
-          ></AmwellVirtualVisitView>
+          ></AmwellVirtualVisitView> */}
           <Text>Note: Make sure Provider [Test Four] is online!</Text>
         </View>
       </Layout>

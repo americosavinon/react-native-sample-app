@@ -1134,7 +1134,7 @@
   dependencies:
     serve-static "^1.13.1"
 
-"@react-native-community/cli-platform-android@^3.0.0-alpha.1":
+"@react-native-community/cli-platform-android@^3.0.0":
   version "3.0.3"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/cli-platform-android/-/cli-platform-android-3.0.3.tgz#e652abce79a7c1e3a8280228123e99df2c4b97b6"
   integrity sha1-5lKrznmnweOoKAIoEj6Z3yxLl7Y=
@@ -1147,7 +1147,7 @@
     slash "^3.0.0"
     xmldoc "^1.1.2"
 
-"@react-native-community/cli-platform-ios@^3.0.0-alpha.1":
+"@react-native-community/cli-platform-ios@^3.0.0":
   version "3.0.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/cli-platform-ios/-/cli-platform-ios-3.0.0.tgz#3a48a449c0c33af3b0b3d19d3256de99388fe15f"
   integrity sha1-OkikScDDOvOws9GdMlbemTiP4V8=
@@ -1172,7 +1172,7 @@
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/cli-types/-/cli-types-3.0.0.tgz#488d46605cb05e88537e030f38da236eeda74652"
   integrity sha1-SI1GYFywXohTfgMPONojbu2nRlI=
 
-"@react-native-community/cli@^3.0.0-alpha.1":
+"@react-native-community/cli@^3.0.0":
   version "3.0.4"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/cli/-/cli-3.0.4.tgz#a9dba1bc77855a6e45fccaabb017360645d936bb"
   integrity sha1-qduhvHeFWm5F/MqrsBc2BkXZNrs=
@@ -1216,10 +1216,10 @@
     wcwidth "^1.0.1"
     ws "^1.1.0"
 
-"@react-native-community/masked-view@0.1.5":
-  version "0.1.5"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/masked-view/-/masked-view-0.1.5.tgz#25421be6cd943a4b1660b62cfbcd45be8891462c"
-  integrity sha1-JUIb5s2UOksWYLYs+81FvoiRRiw=
+"@react-native-community/masked-view@^0.1.5":
+  version "0.1.6"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@react-native-community/masked-view/-/masked-view-0.1.6.tgz#c7f2ac187c1f25aa8c30d11baa8f4398eca3bb84"
+  integrity sha1-x/KsGHwfJaqMMNEbqo9DmOyju4Q=
 
 "@react-navigation/bottom-tabs@^5.0.0-alpha.29":
   version "5.0.0-alpha.34"
@@ -1373,7 +1373,7 @@
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@types/qs/-/qs-6.9.0.tgz#2a5fa918786d07d3725726f7f650527e1cfeaffd"
   integrity sha1-Kl+pGHhtB9NyVyb39lBSfhz+r/0=
 
-"@types/react-native@^0.60.15":
+"@types/react-native@~0.60.23":
   version "0.60.31"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@types/react-native/-/react-native-0.60.31.tgz#a7af12197f884ad8dd22cda2df9862ed72973ded"
   integrity sha1-p68SGX+IStjdIs2i35hi7XKXPe0=
@@ -1381,7 +1381,7 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.0":
+"@types/react@*", "@types/react@~16.9.0":
   version "16.9.19"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@types/react/-/react-16.9.19.tgz#c842aa83ea490007d29938146ff2e4d9e4360c40"
   integrity sha1-yEKqg+pJAAfSmTgUb/Lk2eQ2DEA=
@@ -1789,7 +1789,7 @@ babel-plugin-syntax-trailing-function-commas@^7.0.0-beta.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-7.0.0-beta.0.tgz#aa213c1435e2bffeb6fca842287ef534ad05d5cf"
   integrity sha1-qiE8FDXiv/62/KhCKH71NK0F1c8=
 
-babel-preset-expo@^8.0.0, babel-preset-expo@~8.0.0:
+babel-preset-expo@~8.0.0:
   version "8.0.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/babel-preset-expo/-/babel-preset-expo-8.0.0.tgz#08c042363189f2d871381f0d0dbf9644e9f67aea"
   integrity sha1-CMBCNjGJ8thxOB8NDb+WROn2euo=
@@ -2368,7 +2368,7 @@ css-in-js-utils@^2.0.0:
     hyphenate-style-name "^1.0.2"
     isobject "^3.0.1"
 
-css-select@^2.0.2:
+css-select@^2.1.0:
   version "2.1.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/css-select/-/css-select-2.1.0.tgz#6a34653356635934a81baca68d0255432105dbef"
   integrity sha1-ajRlM1ZjWTSoG6ymjQJVQyEF2+8=
@@ -2378,7 +2378,7 @@ css-select@^2.0.2:
     domutils "^1.7.0"
     nth-check "^1.0.2"
 
-css-tree@^1.0.0-alpha.37:
+css-tree@^1.0.0-alpha.39:
   version "1.0.0-alpha.39"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/css-tree/-/css-tree-1.0.0-alpha.39.tgz#2bff3ffe1bb3f776cf7eefd91ee5cba77a149eeb"
   integrity sha1-K/8//huz93bPfu/ZHuXLp3oUnus=
@@ -2866,7 +2866,7 @@ expo-web-browser@~8.0.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/expo-web-browser/-/expo-web-browser-8.0.0.tgz#8a4451c744c115569a4c810dac8851f219a21c72"
   integrity sha1-ikRRx0TBFVaaTIENrIhR8hmiHHI=
 
-expo@^36.0.0:
+expo@~36.0.0:
   version "36.0.2"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/expo/-/expo-36.0.2.tgz#17e5470c056f8615ebdd6819087af6a1032cf1ad"
   integrity sha1-F+VHDAVvhhXr3WgZCHr2oQMs8a0=
@@ -3871,7 +3871,7 @@ jest-environment-node@^24.9.0:
     jest-mock "^24.9.0"
     jest-util "^24.9.0"
 
-jest-expo@^36.0.0:
+jest-expo@~36.0.0:
   version "36.0.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/jest-expo/-/jest-expo-36.0.1.tgz#0b16b9fe4ffddb812af03f4bde0b6d1a1a415591"
   integrity sha1-Cxa5/k/924Eq8D9L3gttGhpBVZE=
@@ -5537,7 +5537,7 @@ react-devtools-core@^3.6.3:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-react-dom@16.9.0:
+react-dom@~16.9.0:
   version "16.9.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-dom/-/react-dom-16.9.0.tgz#5e65527a5e26f22ae3701131bcccaee9fb0d3962"
   integrity sha1-XmVSel4m8irjcBExvMyu6fsNOWI=
@@ -5591,15 +5591,15 @@ react-native-paper@^3.4.0:
     color "^3.1.2"
     react-native-safe-area-view "^0.14.6"
 
-react-native-reanimated@~1.4.0:
-  version "1.4.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-reanimated/-/react-native-reanimated-1.4.0.tgz#7f1acbf9be08492d834f512700570978052be2f9"
-  integrity sha1-fxrL+b4ISS2DT1EnAFcJeAUr4vk=
+react-native-reanimated@^1.4.0:
+  version "1.7.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-reanimated/-/react-native-reanimated-1.7.0.tgz#896db2576552ac59d288a1f6c7f00afc171f240c"
+  integrity sha1-iW2yV2VSrFnSiKH2x/AK/BcfJAw=
 
-react-native-safe-area-context@0.6.0:
-  version "0.6.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-safe-area-context/-/react-native-safe-area-context-0.6.0.tgz#f53f5a5bcafb462a8798a26b145e68946389ad60"
-  integrity sha1-9T9aW8r7RiqHmKJrFF5olGOJrWA=
+react-native-safe-area-context@^0.6.2:
+  version "0.6.2"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-safe-area-context/-/react-native-safe-area-context-0.6.2.tgz#d467ac8a953426bfbb6d8f417222b0dc3952be7a"
+  integrity sha1-1GesipU0Jr+7bY9BciKw3DlSvno=
 
 react-native-safe-area-view@^0.14.6:
   version "0.14.8"
@@ -5608,10 +5608,10 @@ react-native-safe-area-view@^0.14.6:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-react-native-screens@2.0.0-alpha.12:
-  version "2.0.0-alpha.12"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-screens/-/react-native-screens-2.0.0-alpha.12.tgz#35a6ef3b472958e9d35f0ca9e582d0d158f8e379"
-  integrity sha1-NabvO0cpWOnTXwyp5YLQ0Vj443k=
+react-native-screens@^2.0.0-alpha.22:
+  version "2.0.0-alpha.29"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-screens/-/react-native-screens-2.0.0-alpha.29.tgz#57811863ea95f21d3d7277b4e5a57d7cc422efd2"
+  integrity sha1-V4EYY+qV8h09cne05aV9fMQi79I=
   dependencies:
     debounce "^1.2.0"
 
@@ -5620,20 +5620,20 @@ react-native-simple-toast@^1.0.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-simple-toast/-/react-native-simple-toast-1.0.0.tgz#116f00774c00b082bde2c44585028f4015b9aaaa"
   integrity sha1-EW8Ad0wAsIK94sRFhQKPQBW5qqo=
 
-react-native-svg@9.13.3:
-  version "9.13.3"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-svg/-/react-native-svg-9.13.3.tgz#6414b337d55af169ac2487ab70f3108404434446"
-  integrity sha1-ZBSzN9Va8WmsJIercPMQhARDREY=
+react-native-svg@^10.0.0:
+  version "10.1.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-svg/-/react-native-svg-10.1.0.tgz#f7be0f814fb79b06dda6d938bf8e609f47318789"
+  integrity sha1-974PgU+3mwbdptk4v45gn0cxh4k=
   dependencies:
-    css-select "^2.0.2"
-    css-tree "^1.0.0-alpha.37"
+    css-select "^2.1.0"
+    css-tree "^1.0.0-alpha.39"
 
 react-native-tab-view@^2.11.0:
   version "2.12.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-tab-view/-/react-native-tab-view-2.12.0.tgz#357c8632fd16a622ab16e6965779171bb00a85d0"
   integrity sha1-NXyGMv0WpiKrFuaWV3kXG7AKhdA=
 
-react-native-unimodules@0.7.0:
+react-native-unimodules@~0.7.0:
   version "0.7.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-unimodules/-/react-native-unimodules-0.7.0.tgz#ce4e48898c3ef0b986b87e7421303abf8afc862c"
   integrity sha1-zk5IiYw+8LmGuH50ITA6v4r8hiw=
@@ -5662,7 +5662,7 @@ react-native-view-shot@3.0.2:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-view-shot/-/react-native-view-shot-3.0.2.tgz#daccaec5b8038a680b17533ff7e72876e68c7d0d"
   integrity sha1-2syuxbgDimgLF1M/9+coduaMfQ0=
 
-react-native-web@^0.11.7:
+react-native-web@~0.11.7:
   version "0.11.7"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native-web/-/react-native-web-0.11.7.tgz#d173d5a9b58db23b6d442c4bc4c81e9939adac23"
   integrity sha1-0XPVqbWNsjttRCxLxMgemTmtrCM=
@@ -5678,15 +5678,15 @@ react-native-web@^0.11.7:
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
 
-react-native@0.61.4:
-  version "0.61.4"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native/-/react-native-0.61.4.tgz#9ec6e8a2aa8eac57143dcfa39115c7d9a139bc2c"
-  integrity sha1-nsbooqqOrFcUPc+jkRXH2aE5vCw=
+react-native@~0.61.4:
+  version "0.61.5"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"
+  integrity sha1-biGstWy9daO66x9wIBpm9CYAu6g=
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@react-native-community/cli" "^3.0.0-alpha.1"
-    "@react-native-community/cli-platform-android" "^3.0.0-alpha.1"
-    "@react-native-community/cli-platform-ios" "^3.0.0-alpha.1"
+    "@react-native-community/cli" "^3.0.0"
+    "@react-native-community/cli-platform-android" "^3.0.0"
+    "@react-native-community/cli-platform-ios" "^3.0.0"
     abort-controller "^3.0.0"
     art "^0.10.0"
     base64-js "^1.1.2"
@@ -5733,7 +5733,7 @@ react-timer-mixin@^0.13.4:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
   integrity sha1-daAMPJTBOr4ptD1jtMZaiPyCZNM=
 
-react@16.9.0:
+react@~16.9.0:
   version "16.9.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"
   integrity sha1-QLovmvE7waONddvy9DWaUYXE96o=
@@ -6697,10 +6697,10 @@ typedarray@^0.0.6:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^3.7.2:
-  version "3.7.5"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/typescript/-/typescript-3.7.5.tgz#0692e21f65fd4108b9330238aac11dd2e177a1ae"
-  integrity sha1-BpLiH2X9QQi5MwI4qsEd0uF3oa4=
+typescript@~3.6.3:
+  version "3.6.4"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/typescript/-/typescript-3.6.4.tgz#b18752bb3792bc1a0281335f7f6ebf1bbfc5b91d"
+  integrity sha1-sYdSuzeSvBoCgTNff26/G7/FuR0=
 
 ua-parser-js@^0.7.18, ua-parser-js@^0.7.19:
   version "0.7.21"

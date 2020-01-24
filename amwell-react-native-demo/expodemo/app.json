@@ -11,11 +11,7 @@
     "ios": {
       "bundleIdentifier": "com.rallyhealth.demo.virtualvisit"
     },
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "icon": "./src/assets/icon.png",
     "splash": {
       "image": "./src/assets/splash.png",
@@ -25,8 +21,6 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   }
 }

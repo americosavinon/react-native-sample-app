@@ -9,9 +9,17 @@ import {
 
 const { Amwellservice } = NativeModules;
 
+const RCTAmwellView = requireNativeComponent(
+  "AmwellView",
+  AmwellVirtualVisitView
+);
+
+// We are exporting services for non UI features and a custom View for UI Native component
+export { Amwellservice };
+
 // We wrap the View component with native functions, so the main project dont' need to deal with platform specific logic
 // All service logic should be wrapped as cross platform here
-class AmwellVirtualVisitView extends React.Component {
+export class AmwellVirtualVisitView extends React.Component {
   constructor(props) {
     super(props);
     this._onChange = this._onChange.bind(this);
@@ -59,13 +67,4 @@ AmwellVirtualVisitView.propTypes = {
    */
   onChangeMessage: PropTypes.func,
   testVideoCall: PropTypes.func
-};
-
-var RCTAmwellView = requireNativeComponent(
-  "AmwellView",
-  AmwellVirtualVisitView
-);
-module.exports = {
-  AmwellVirtualVisitView,
-  Amwellservice
 };

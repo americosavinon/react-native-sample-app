@@ -58,7 +58,25 @@ public class AmwellView extends Button {
 
     }
 
-    // private void changeStatus() {
+    /**
+     *
+     * This how Native send message back to React Native Js
+     * @param message
+     */
+    private void onSendMessage(String message) {
+        System.out.println(message);
+
+        WritableMap event = Arguments.createMap();
+        event.putString("message", message);
+        event.putBoolean("isOn", isOn);
+
+        ReactContext reactContext = (ReactContext)getContext();
+        reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+                getId(),
+                "onChange",
+                event);
+    }
+
     public void onReceiveNativeEvent() {
         System.out.println("onReceiveNativeEvent called~!");
         WritableMap event = Arguments.createMap();
@@ -138,6 +156,8 @@ public class AmwellView extends Button {
         ConsumerService consumerService = new ConsumerService(awsdk);
         VisitService visitService = new VisitService(awsdk);
 
+        AmwellView self = this;
+
         // initialize sdk
         authenticationService.initializeSdk("https://iot58.amwellintegration.com/",
                 "bf8a5665", null, null).subscribe(x -> {
@@ -145,8 +165,8 @@ public class AmwellView extends Button {
             authenticationService.authenticate("yunfeng.lin@rallyhealth.com", "cs123!@#")
                     .subscribe(a -> {
                         Authentication auth = a.getResult();
-                        System.out.println("Auth success!");
-                        System.out.println("Consumer Name:" + auth.getConsumerInfo().getFullName());
+                        self.onSendMessage("Auth success!");
+                        self.onSendMessage("Consumer Name:" + auth.getConsumerInfo().getFullName());
 
                         consumerService.getConsumer(auth)
                                 .subscribe(consumer -> {
@@ -154,7 +174,7 @@ public class AmwellView extends Button {
                                     practiceProvidersService.getPractices(consumerItem)
                                             .subscribe(practice -> {
                                                 List<PracticeInfo> info = practice.getResult();
-                                                System.out.println("get practice info");
+                                                self.onSendMessage("get practice info");
 
                                                 // get the provider
                                                 practiceProvidersService.findProviders(null, info.get(0), null)
@@ -173,7 +193,7 @@ public class AmwellView extends Button {
 
                                                             // check if the provider is offline
                                                             if (target.getVisibility() == ProviderVisibility.OFFLINE) {
-                                                                System.out.println("Provider is offline!");
+                                                                self.onSendMessage("Provider is offline!");
                                                                 return;
                                                             }
 
@@ -186,7 +206,7 @@ public class AmwellView extends Button {
                                                                         visitService.getVisitContext(consumerItem, pInfo)
                                                                                 .subscribe(vcontext -> {
                                                                                     VisitContext ctx = vcontext.getResult();
-                                                                                    System.out.println("Create VisitContext success!");
+                                                                                    self.onSendMessage("Create VisitContext success!");
                                                                                     // update the context
                                                                                     Set<VisitModality> availableModalities = ctx.getPractice().getVisitModalities();
                                                                                     VisitModality visitModality = null;
@@ -212,11 +232,12 @@ public class AmwellView extends Button {
 
                                                                                                             if (x1.getIntent() != null) {
                                                                                                                 System.out.println(x1.getIntent());
+
                                                                                                                 // start activity
                                                                                                                 Intent intentView = x1.getIntent();
                                                                                                                 intentView.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                                                                                                 applicationContext.startActivity(x1.getIntent());
-//                                                                                                                  finish();
+//                                                                                                              finish();
                                                                                                             }
                                                                                                         }, err -> {
                                                                                                             System.out.println(err.getMessage());
@@ -252,7 +273,6 @@ public class AmwellView extends Button {
             String[] categories = {LOG_CATEGORY_DEFAULT, LOG_CATEGORY_VIDEO, LOG_CATEGORY_AUDIO,
                     LOG_CATEGORY_PERMISSIONS, LOG_CATEGORY_MEDIA, LOG_CATEGORY_VISIT, LOG_CATEGORY_NETWORKING};
             awsdk.getDefaultLogger().setLogCategories(categories);
-
             awsdk.getDefaultLogger().log(0, "Initialized sdk success!", "Category", null);
         }
         catch (AWSDKInstantiationException e) {

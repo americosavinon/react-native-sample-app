@@ -38,7 +38,7 @@ public class AmwellViewManager extends SimpleViewManager<com.rally.virtualvisit.
                         "statusChange",
                         MapBuilder.of(
                                 "phasedRegistrationNames",
-                                MapBuilder.of("bubbled", "onUpdate")))
+                                MapBuilder.of("bubbled", "onStatusChange")))
                 .build();
     }
 

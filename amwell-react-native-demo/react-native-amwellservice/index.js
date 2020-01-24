@@ -55,7 +55,7 @@ export class AmwellVirtualVisitView extends React.Component {
       <RCTAmwellView
         {...this.props}
         isOn={this.state.isOn}
-        onUpdate={this._onChange}
+        onStatusChange={this._onChange}
       />
     );
   }

@@ -44,9 +44,10 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
     amwellviewInstance.current.testVideoCall();
   };
 
-  const onUpdate = (event: Object) => {
+  const onClick = (event: Object) => {
     console.log("Received params: " + JSON.stringify(event));
 
+    /*
     if (event["vv-debug"] == "Wait for provider to connect!") {
       setMessage(event["vv-debug"]);
     }
@@ -55,11 +56,7 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
       setMessage(event["vv-error"]);
     } else {
       Toast.show(event["vv-debug"]);
-    }
-  };
-
-  const onClick = (event: Object) => {
-    console.log("Received params: " + JSON.stringify(event));
+    }*/
   };
 
   return (

@@ -10,10 +10,10 @@
 //   original location:
 //   - https://github.com/facebook/react-native/blob/0.58-stable/local-cli/templates/HelloWorld/android/app/build.gradle
 
-def DEFAULT_COMPILE_SDK_VERSION = 28
-def DEFAULT_BUILD_TOOLS_VERSION = '28.0.3'
-def DEFAULT_MIN_SDK_VERSION = 16
-def DEFAULT_TARGET_SDK_VERSION = 28
+def DEFAULT_COMPILE_SDK_VERSION = 29
+def DEFAULT_BUILD_TOOLS_VERSION = '29.0.2'
+def DEFAULT_MIN_SDK_VERSION = 23
+def DEFAULT_TARGET_SDK_VERSION = 29
 
 def safeExtGet(prop, fallback) {
     rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
@@ -33,13 +33,15 @@ buildscript {
             jcenter()
         }
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.4.1'
+            classpath 'com.android.tools.build:gradle:3.5.3'
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.41"
         }
     }
 }
 
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion safeExtGet('compileSdkVersion', DEFAULT_COMPILE_SDK_VERSION)
@@ -50,8 +52,17 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    dataBinding {
+        enabled = true
+    }
+
     lintOptions {
         abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
 }
 
@@ -68,11 +79,49 @@ repositories {
     }
     google()
     jcenter()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    maven { url "https://clojars.org/repo/" } // for icepick
+    maven { url "https://jitpack.io" } // for bridge
 }
 
+apply from: 'gradle/build-include.gradle'
+apply from: 'gradle/build-awsdk-dependencies.gradle'
+
 dependencies {
-    //noinspection GradleDynamicVersion
+    // noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
+
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':awsdk')
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.41"
+
+    api 'androidx.appcompat:appcompat:1.0.2'
+    api 'com.google.android.material:material:1.0.0'
+    api 'androidx.cardview:cardview:1.0.0'
+    api 'info.android15.nucleus5:nucleus:7.0.0'
+    api 'info.android15.nucleus5:nucleus-support-v4:7.0.0'
+    api 'info.android15.nucleus5:nucleus-support-v7:7.0.0'
+    api 'com.jakewharton:butterknife:10.1.0'
+    api 'com.google.dagger:dagger:2.23.2'
+    api 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+    api 'de.hdodenhof:circleimageview:2.2.0'
+    api 'com.facebook.stetho:stetho:1.5.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api 'com.github.livefront:bridge:v1.1.2'
+    api 'frankiesardo:icepick:3.2.0'
+    api 'com.github.gilcunningham:materialdatetimepicker:3.6.4'
+    // These two dependencies are here to suppress an error caused by at least one dependency using earlier
+    // versions of these modules
+    api 'androidx.legacy:legacy-support-v13:1.0.0'
+    api 'androidx.media:media:1.0.1'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'androidx.test:core:1.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.23.2'
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    annotationProcessor 'frankiesardo:icepick-processor:3.2.0'
 }
 
 def configureReactNativePom(def pom) {
@@ -82,7 +131,7 @@ def configureReactNativePom(def pom) {
         name packageJson.title
         artifactId packageJson.name
         version = packageJson.version
-        group = "com.reactlibrary"
+        group = "com.rally.virtualvisit"
         description packageJson.description
         url packageJson.repository.baseUrl
 

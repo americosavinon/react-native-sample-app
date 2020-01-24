@@ -1,3 +1,9 @@
 ./ios/Pods
 ./ios/Podfile
 ./ios/Podfile.lock
+./android/.gradle
+./android/.idea
+./android/build
+./android/local.properties
+./android/gradlew
+./android/gradlew.bat

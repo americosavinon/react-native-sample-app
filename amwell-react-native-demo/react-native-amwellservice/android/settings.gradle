@@ -1,0 +1,6 @@
+include ':awsdk'
+project(':awsdk').projectDir = new File(settingsDir, '../AWSDK_android/sdk')
+
+// This is required. Normally the project is named after the root folder name however certain characters are not
+// allowed so we add this for conformity.
+rootProject.name = 'AmwellNativeModule'

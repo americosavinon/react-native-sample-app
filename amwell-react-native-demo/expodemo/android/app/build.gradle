@@ -1,4 +1,6 @@
 apply plugin: "com.android.application"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
 
 import com.android.build.OutputFile
 
@@ -100,12 +102,17 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.expodemo"
+        applicationId "com.rally.expodemo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
     }
+
+    dataBinding {
+        enabled = true
+    }
+
     splits {
         abi {
             reset()
@@ -115,6 +122,8 @@ android {
         }
     }
     buildTypes {
+        debug {
+        }
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
@@ -140,16 +149,33 @@ android {
 }
 
 def jscFlavor = 'org.webkit:android-jsc:+'
-
 def enableHermes = project.ext.react.get("enableHermes", false);
 
+repositories {
+    // ref: https://www.baeldung.com/maven-local-repository
+    mavenLocal()
+    maven {
+        // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+        url "$rootDir/../node_modules/react-native/android"
+    }
+    maven {
+        // Android JSC is installed from npm
+        url "$rootDir/../node_modules/jsc-android/dist"
+    }
+    google()
+    jcenter()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    maven { url "https://clojars.org/repo/" } // for icepick
+    maven { url "https://jitpack.io" } // for bridge
+}
+
 dependencies {
-    implementation project(':react-native-screens')
-    implementation project(':react-native-reanimated')
-    implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.41"
+
     addUnimodulesDependencies()
 
     if (enableHermes) {
@@ -167,3 +193,6 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle");
+applyNativeModulesAppBuildGradle(project)

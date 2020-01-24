@@ -32,6 +32,8 @@ build/
 .gradle
 local.properties
 *.iml
+project/
+target/
 
 # node.js
 #

@@ -1,25 +1,63 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NativeModules, requireNativeComponent } from "react-native";
+import {
+  NativeModules,
+  requireNativeComponent,
+  UIManager,
+  findNodeHandle
+} from "react-native";
 
 const { Amwellservice } = NativeModules;
-const RNAmwellView = requireNativeComponent("AmwellView");
+
+const RCTAmwellView = requireNativeComponent(
+  "AmwellView",
+  AmwellVirtualVisitView
+);
 
 // We are exporting services for non UI features and a custom View for UI Native component
-export { Amwellservice, RNAmwellView };
+export { Amwellservice };
 
-export class AmwellVirtualVisitView extends React.PureComponent {
-  _onUpdate = event => {
-    if (!this.props.onUpdate) {
+// We wrap the View component with native functions, so the main project dont' need to deal with platform specific logic
+// All service logic should be wrapped as cross platform here
+export class AmwellVirtualVisitView extends React.Component {
+  constructor(props) {
+    super(props);
+    this._onChange = this._onChange.bind(this);
+    this.state = {
+      isOn: false
+    };
+  }
+
+  _onChange(event: Event) {
+    if (!this.props.onChangeMessage) {
       return;
     }
 
-    // process raw event...
-    this.props.onUpdate(event.nativeEvent);
-  };
+    this.setState({
+      isOn: event.nativeEvent.isOn
+    });
+
+    // This is to pass the overwrite event function from React Native project.
+    this.props.onChangeMessage(event.nativeEvent);
+  }
+
+  // This is the demo function to launch a video call
+  testVideoCall() {
+    UIManager.dispatchViewManagerCommand(
+      findNodeHandle(this),
+      UIManager["AmwellView"].Commands.testVideoCall,
+      []
+    );
+  }
 
   render() {
-    return <RNAmwellView {...this.props} onUpdate={this._onUpdate} />;
+    return (
+      <RCTAmwellView
+        {...this.props}
+        isOn={this.state.isOn}
+        onStatusChange={this._onChange}
+      />
+    );
   }
 }
 
@@ -27,5 +65,6 @@ AmwellVirtualVisitView.propTypes = {
   /**
    *  Callback that is called when the current player item ends.
    */
-  onUpdate: PropTypes.func
+  onChangeMessage: PropTypes.func,
+  testVideoCall: PropTypes.func
 };

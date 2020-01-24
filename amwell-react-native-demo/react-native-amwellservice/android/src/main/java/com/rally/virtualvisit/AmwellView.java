@@ -65,10 +65,9 @@ public class AmwellView extends Button {
         event.putBoolean("isOn", isOn);
 
         ReactContext reactContext = (ReactContext)getContext();
-
         reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
                 getId(),
-                "statusChange",
+                "onChange",
                 event);
 
         if (isOn) {

@@ -29,7 +29,7 @@ class AmwellViewManager: RCTViewManager {
     }
     
     // MARK: Bridged methods
-    @objc func updateValueViaManager(_ node: NSNumber) {
+    @objc func testVideoCall(_ node: NSNumber) {
         DispatchQueue.main.async {
             self.viewController!.demoVideoCall()
         }

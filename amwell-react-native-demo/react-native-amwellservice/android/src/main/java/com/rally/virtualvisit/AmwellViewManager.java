@@ -35,10 +35,10 @@ public class AmwellViewManager extends SimpleViewManager<com.rally.virtualvisit.
     public Map getExportedCustomBubblingEventTypeConstants() {
         return MapBuilder.builder()
                 .put(
-                        "statusChange",
-                        MapBuilder.of(
-                                "phasedRegistrationNames",
-                                MapBuilder.of("bubbled", "onStatusChange")))
+                    "onChange",
+                    MapBuilder.of(
+                        "phasedRegistrationNames",
+                        MapBuilder.of("bubbled", "onUpdate")))
                 .build();
     }
 
@@ -56,8 +56,10 @@ public class AmwellViewManager extends SimpleViewManager<com.rally.virtualvisit.
             AmwellView view,
             int commandType,
             ReadableArray args) {
+
         Assertions.assertNotNull(view);
         Assertions.assertNotNull(args);
+
         switch (commandType) {
             case COMMAND_TEST_VIDEO_CALL: {
                 view.demoVideoCall();

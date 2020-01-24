@@ -41,6 +41,7 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
     });
     setMessage("");
 
+    // console.log(amwellviewInstance.current);
     amwellviewInstance.current.testVideoCall();
   };
 

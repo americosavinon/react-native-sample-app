@@ -36,9 +36,9 @@ export const AmwellVideoScreen = (props): SafeAreaLayoutElement => {
   const onButtonClick = () => {
     console.log("virtual visit demo clicked!");
     console.log(Amwellservice);
-    Amwellservice.sampleMethod("sss", 1, () => {
-      console.log("callback!");
-    });
+    // Amwellservice.sampleMethod("sss", 1, () => {
+    //   console.log("callback!");
+    // });
     setMessage("");
 
     // console.log(amwellviewInstance.current);

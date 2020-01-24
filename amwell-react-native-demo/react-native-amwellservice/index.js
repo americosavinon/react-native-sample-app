@@ -22,13 +22,13 @@ export { Amwellservice };
 export class AmwellVirtualVisitView extends React.Component {
   constructor(props) {
     super(props);
-    this._onChange = this._onChange.bind(this);
+    this._onUpdate = this._onUpdate.bind(this);
     this.state = {
       isOn: false
     };
   }
 
-  _onChange(event: Event) {
+  _onUpdate(event: Event) {
     if (!this.props.onChangeMessage) {
       return;
     }
@@ -55,7 +55,7 @@ export class AmwellVirtualVisitView extends React.Component {
       <RCTAmwellView
         {...this.props}
         isOn={this.state.isOn}
-        onStatusChange={this._onChange}
+        onUpdate={this._onUpdate}
       />
     );
   }

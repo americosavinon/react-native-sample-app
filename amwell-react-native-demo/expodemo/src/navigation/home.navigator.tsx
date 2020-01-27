@@ -1,47 +1,42 @@
-import React from 'react';
-import {
-  CompositeNavigationProp,
-  RouteProp,
-} from '@react-navigation/core';
+import React from "react";
+import { CompositeNavigationProp, RouteProp } from "@react-navigation/core";
 import {
   createDrawerNavigator,
   DrawerContentComponentProps,
-  DrawerNavigationProp,
-} from '@react-navigation/drawer';
+  DrawerNavigationProp
+} from "@react-navigation/drawer";
 import {
   BottomTabBarProps,
   BottomTabNavigationProp,
-  createBottomTabNavigator,
-} from '@react-navigation/bottom-tabs';
-import { TodoNavigator } from './todo.navigator';
-import { ProfileNavigator } from './profile.navigator';
-import { AppRoute } from './app-routes';
-import {
-  AboutScreen,
-  HomeDrawer,
-  HomeTabBar,
-} from '../scenes/home';
-import {
-  AmwellVideoScreen,
-} from '../scenes/virtualvisit';
+  createBottomTabNavigator
+} from "@react-navigation/bottom-tabs";
+import { TodoNavigator } from "./todo.navigator";
+import { ProfileNavigator } from "./profile.navigator";
+import { AppRoute } from "./app-routes";
+import { AboutScreen, HomeDrawer, HomeTabBar } from "../scenes/home";
+import { AmwellVideoScreen } from "../scenes/virtualvisit";
+
+import { AmwellInlineWebScreen } from "../scenes/webview";
+
 import {
   HomeIcon,
   InfoIcon,
   LayoutIcon,
   PersonIcon,
-  VideoIcon,
-} from '../assets/icons';
+  VideoIcon
+} from "../assets/icons";
 
 type HomeDrawerNavigatorParams = {
   [AppRoute.HOME]: undefined;
   [AppRoute.ABOUT]: undefined;
   [AppRoute.VIRTUAL_VISIT]: undefined;
-}
+  [AppRoute.VIRTUAL_VISIT_WEBVIEW]: undefined;
+};
 
 type HomeBottomTabsNavigatorParams = {
   [AppRoute.TODO]: undefined;
   [AppRoute.PROFILE]: undefined;
-}
+};
 
 export type TodoTabNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<HomeBottomTabsNavigatorParams, AppRoute.TODO>,
@@ -85,12 +80,12 @@ const HomeBottomNavigator = (): React.ReactElement => (
     <BottomTab.Screen
       name={AppRoute.TODO}
       component={TodoNavigator}
-      options={{ title: 'TODO', tabBarIcon: LayoutIcon }}
+      options={{ title: "TODO", tabBarIcon: LayoutIcon }}
     />
     <BottomTab.Screen
       name={AppRoute.PROFILE}
       component={ProfileNavigator}
-      options={{ title: 'PROFILE', tabBarIcon: PersonIcon }}
+      options={{ title: "PROFILE", tabBarIcon: PersonIcon }}
     />
   </BottomTab.Navigator>
 );
@@ -101,18 +96,22 @@ export const HomeNavigator = (): React.ReactElement => (
     <Drawer.Screen
       name={AppRoute.HOME}
       component={HomeBottomNavigator}
-      options={{ title: 'Home', drawerIcon: HomeIcon }}
+      options={{ title: "Home", drawerIcon: HomeIcon }}
     />
     <Drawer.Screen
       name={AppRoute.ABOUT}
       component={AboutScreen}
-      options={{ title: 'About', drawerIcon: InfoIcon }}
+      options={{ title: "About", drawerIcon: InfoIcon }}
     />
     <Drawer.Screen
       name={AppRoute.VIRTUAL_VISIT}
       component={AmwellVideoScreen}
-      options={{ title: 'Virtual Visit', drawerIcon: VideoIcon }}
+      options={{ title: "Virtual Visit", drawerIcon: VideoIcon }}
+    />
+    <Drawer.Screen
+      name={AppRoute.VIRTUAL_VISIT_WEBVIEW}
+      component={AmwellInlineWebScreen}
+      options={{ title: "Virtual Visit Webview", drawerIcon: VideoIcon }}
     />
   </Drawer.Navigator>
 );
-

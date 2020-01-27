@@ -217,6 +217,8 @@ PODS:
   - react-native-simple-toast (1.0.0):
     - React
     - Toast (~> 4.0.0)
+  - react-native-webview (8.0.5):
+    - React
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
   - React-RCTAnimation (0.61.5):
@@ -311,6 +313,7 @@ DEPENDENCIES:
   - react-native-amwellservice (from `../node_modules/react-native-amwellservice`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-simple-toast (from `../node_modules/react-native-simple-toast`)
+  - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -414,6 +417,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-simple-toast:
     :path: "../node_modules/react-native-simple-toast"
+  react-native-webview:
+    :path: "../node_modules/react-native-webview"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -513,6 +518,7 @@ SPEC CHECKSUMS:
   react-native-amwellservice: 201cf59df5ac3bce26904919cb519a3765353333
   react-native-safe-area-context: 25260c5d0b9c53fd7aa88e569e2edae72af1f6a3
   react-native-simple-toast: 6c376bd79b1e255a4bee90a72ead6447f96ea10d
+  react-native-webview: d12c8352c853e401fb6fff69a3461d0bca9f0c0b
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
